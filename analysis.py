@@ -3,7 +3,10 @@
 # outputs a scatter plot of each pair of variables
 # Author: Laura Condon
 
-import numpy as np            
-import pandas as pd  
-import matplotlib.plyplot as plt     
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+iris_set = pd.read_csv("iris.data")
+
 
