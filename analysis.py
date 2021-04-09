@@ -62,9 +62,16 @@ iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal len
 
 all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_class_mean)
-print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].nunique()) # unique values
-print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].min())
-print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].max())
+all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
+print(all_class_unique)
+all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
+print(all_class_min)
+all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
+print(all_class_max)
+
+
+#print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].min())
+#print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].max())
 
 
 
