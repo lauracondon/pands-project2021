@@ -1,6 +1,7 @@
 # outputs a summary of each variable to a single text file, 
 # saves a histogram of each variable to png files 
 # outputs a scatter plot of each pair of variables
+# what else should I do along with these
 # Author: Laura Condon
 
 import numpy as np
@@ -26,10 +27,10 @@ petal_subset = iris[["petal length", "petal width"]]
 #print(sepal_length)
 
 setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
-#print(setosa)
 versicolor = iris.iloc[50:100]
-#print(versicolor)
 virginica = iris.iloc[100:150]
+#print(setosa)
+#print(versicolor)
 #print(virginica)
 
 mean1 = iris["sepal length"].mean()
@@ -37,9 +38,22 @@ mean1 = iris["sepal length"].mean()
 mean2 = iris["sepal width"].mean()
 #print(round(mean2,2))
 
-# what should a summary of each variable include? max, min, median? 
 # how best to display it in text file? 
 # the variables are sepal length, sepal width, petal length, petal height and class
-# http://makemeanalyst.com/basic-statistics-explore-your-data-cases-variables-types-of-variables/
-# https://blogs.helsinki.fi/quantitative-communication/data-gathering/what-is-data/
-# https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html
+# I plan to include the following in variable summary - 1. maximum 2. minimum 3. mode 4. median 5. mean 6. standard deviation
+# for total set? and for each individual class? should I sample - set is already small..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
