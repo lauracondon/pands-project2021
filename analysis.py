@@ -43,7 +43,21 @@ mean2 = iris["sepal width"].mean()
 # I plan to include the following in variable summary - 1. maximum 2. minimum 3. mode 4. median 5. mean 6. standard deviation
 # for total set? and for each individual class? should I sample - set is already small..
 
+#print(iris.loc[0:49, "sepal length"]) # would return rows 1 - 50 in variable sepal length
+#print(iris.loc[0:49, "class"]) # this is inclusive 0:50?
+#print(setosa)
+#print(iris.loc[10:13, ["sepal length", "sepal width", "class"]]) # slice rows, three columns
 
+grouped_iris_class = iris.groupby("class")
+#print (type(grouped_iris_class))
+#print(grouped_iris_class)
+#grouped_iris_class_sepal_length = grouped_iris_class["sepal length"]
+#print(type(grouped_iris_class_sepal_length))
+#print(grouped_iris_class_sepal_length)
+
+#mean_sepal_length = grouped_iris_class_sepal_length.mean() 
+#print(mean_sepal_length)
+# why am I getting two seperate iris-setosa? 
 
 
 
