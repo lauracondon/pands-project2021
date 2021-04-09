@@ -15,27 +15,35 @@ import matplotlib.pyplot as plt
 
 iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal length", "petal width", "class"]) # names assigns column names to the dataset
 
+print("Lowest Value")
 all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
 print(all_class_min)
 
+print("\nHighest Value")
 all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
 print(all_class_max)
 
-all_class_range = all_class_max - all_class_min # range - measures variability
+print("\nRange of Values") # range - measures variability
+all_class_range = all_class_max - all_class_min 
 print(all_class_range)
 
+print("\nMedian Value")
 all_class_median = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].median()
-print(all_class_median) # median
+print(all_class_median) 
 
+print("\nNumber of Unique Values")
 all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
 print(all_class_unique)
 
+print("\nMean")
 all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_class_mean)
 
+print("\nStandard Deviation")
 all_class_std = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].std() 
 print(all_class_std) # standard deviation - measure variability 
 
+print("\nMean Absolute Deviation")
 all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_class_mad) # mean absolute deviation 
 
