@@ -22,3 +22,6 @@ References:
 ## analysis.py ##
 https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/ (accessed 08/04/2021)
 Pandas for Everyone - Daniel Y. Chen
+http://makemeanalyst.com/basic-statistics-explore-your-data-cases-variables-types-of-variables/ (accessed 09/04/2021)
+https://blogs.helsinki.fi/quantitative-communication/data-gathering/what-is-data/ (accessed 09/04/2021)
+https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)
