@@ -14,12 +14,42 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal length", "petal width", "class"]) # names assigns column names to the dataset
-# # print(iris.head()) # prints the first five rows
-# # print(type(ir)) # checks type of the object
-# # print(iris.shape) # tells you how many rows and columns in set
-# # print(iris.columns) # prints names of columns
-# # print(iris.dtypes) # get the datatype of each column
-# # print(iris.info()) # gets information about dataset including memory usage
+
+all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
+print(all_class_min)
+
+all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
+print(all_class_max)
+
+all_class_range = all_class_max - all_class_min # range - measures variability
+print(all_class_range)
+
+all_class_median = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].median()
+print(all_class_median) # median
+
+all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
+print(all_class_unique)
+
+all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
+print(all_class_mean)
+
+all_class_std = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].std() 
+print(all_class_std) # standard deviation - measure variability 
+
+all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
+print(all_class_mad) # mean absolute deviation 
+
+# mode - most frequent value
+#all_class_mode = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].agg(pd.Series.mode)
+#print(all_class_mode) # this doesn't work
+
+
+# print(iris.head()) # prints the first five rows
+# print(type(ir)) # checks type of the object
+# print(iris.shape) # tells you how many rows and columns in set
+# print(iris.columns) # prints names of columns
+# print(iris.dtypes) # get the datatype of each column
+# print(iris.info()) # gets information about dataset including memory usage
 
 # sepal_length = iris[["sepal length"]] # create subset based on columns
 # sepal_width = iris[["sepal width"]]
@@ -27,27 +57,27 @@ iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal len
 # petal_width = iris[["petal width"]]
 # sepal_subset = iris[["sepal length", "sepal width"]] 
 # petal_subset = iris[["petal length", "petal width"]]
-# #print(sepal_subset)
-# #print(petal_subset)
-# #print(sepal_length)
+# print(sepal_subset)
+# print(petal_subset)
+# print(sepal_length)
 
 # setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
-# #print(setosa)
-# #print(versicolor)
-# #print(virginica)
+# print(setosa)
+# print(versicolor)
+# print(virginica)
 
-# #mean1 = iris["sepal length"].mean()
-# #print(round(mean1,2))
-# #mean2 = iris["sepal width"].mean()
-# #print(round(mean2,2))
+# mean1 = iris["sepal length"].mean()
+# print(round(mean1,2))
+# mean2 = iris["sepal width"].mean()
+# print(round(mean2,2))
 
 
-# #print(iris.loc[0:49, "sepal length"]) # would return rows 1 - 50 in variable sepal length
-# #print(iris.loc[0:49, "class"]) # this is inclusive 0:50?
-# #print(setosa)
-# #print(iris.loc[10:13, ["sepal length", "sepal width", "class"]]) # slice rows, three columns
+# print(iris.loc[0:49, "sepal length"]) # would return rows 1 - 50 in variable sepal length
+# print(iris.loc[0:49, "class"]) # this is inclusive 0:50?
+# print(setosa)
+# print(iris.loc[10:13, ["sepal length", "sepal width", "class"]]) # slice rows, three columns
 
 # grouped_iris_class = iris.groupby("class")
 # print (type(grouped_iris_class))
@@ -59,19 +89,12 @@ iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal len
 # mean_sepal_length = grouped_iris_class_sepal_length.mean() 
 # print(mean_sepal_length) 
 
-
-all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
-print(all_class_mean)
-all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
-print(all_class_unique)
-all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
-print(all_class_min)
-all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
-print(all_class_max)
-
-
 #print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].min())
 #print(iris.groupby("class")["sepal length","sepal width","petal length", "petal width"].max())
+
+
+
+
 
 
 
