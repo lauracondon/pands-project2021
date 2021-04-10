@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 
 iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal length", "petal width", "class"]) # names assigns column names to the dataset
 
+print(iris.describe()) # prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max
+
 print("Lowest Value")
 all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
 print(all_class_min)
@@ -45,6 +47,17 @@ print(all_class_mad)
 #all_class_mode = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].agg(pd.Series.mode)
 #print(all_class_mode) # this doesn't work
 
+with open('summary.txt','w') as outfile: # need to look into formatting output better
+    all_class_min.to_string(outfile)
+    all_class_max.to_string(outfile)
+    all_class_median.to_string(outfile)
+    all_class_unique.to_string(outfile)
+    all_class_mean.to_string(outfile)
+    all_class_std.to_string(outfile)
+    all_class_mad.to_string(outfile)
+
+
+
 # different subsets of the dataset
 # sepal_length = iris[["sepal length"]] # create subset based on columns
 # sepal_width = iris[["sepal width"]]
@@ -55,6 +68,13 @@ print(all_class_mad)
 # setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
+
+# print(sepal_length.describe())
+# print(sepal_width.describe())
+# print(petal_length.describe())
+# print(petal_width.describe())
+
+
 
 
 
