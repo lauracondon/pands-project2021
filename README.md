@@ -26,4 +26,6 @@ http://makemeanalyst.com/basic-statistics-explore-your-data-cases-variables-type
 https://blogs.helsinki.fi/quantitative-communication/data-gathering/what-is-data/ (accessed 09/04/2021)
 https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)
 
-outputting dataframe to text file - https://stackoverflow.com/questions/32821995/outputting-pandas-dataframe-to-formatted-text-file
+outputting dataframe to text file - https://stackoverflow.com/questions/32821995/outputting-pandas-dataframe-to-formatted-text-file 
+(accessed 10/04/2021)
+subplots - https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html (accessed 11/04/2021)
