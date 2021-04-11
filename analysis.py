@@ -74,30 +74,45 @@ with open('summary.txt','w') as outfile: # need to look into formatting output
 # print(petal_length.describe())
 # print(petal_width.describe())
 
-# fig = plt.figure()
-# axes1 = fig.add_subplot(2,2,1) #subplot has 2 rows, 2 columns - plot location 1
-# axes2 = fig.add_subplot(2,2,2)
-# axes3 = fig.add_subplot(2,2,3)
-# axes4 = fig.add_subplot(2,2,4)
-# plt.show()
+set_1 = iris[iris["class"] == "Iris-setosa"]
+set_2 = iris[iris["class"] == "Iris-versicolor"]
+set_3 = iris[iris["class"] == "Iris-virginica"]
+
+# create three subplot
+
+fig = plt.figure()
 
 
+axes1 = fig.add_subplot(2,2,1) #subplot has 2 rows, 2 columns - plot location 1
+axes2 = fig.add_subplot(2,2,2)
+axes3 = fig.add_subplot(2,2,3)
+#axes4 = fig.add_subplot(2,2,4)
 
+axes1.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
+axes2.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
+axes3.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
+#axes4.plot((set_1["sepal length"], set_1["sepal width"]), (set_2["sepal length"], set_2["sepal width"]))
 
-dataset_1 = iris[iris["class"] == "Iris-setosa"]
-dataset_2 = iris[iris["class"] == "Iris-versicolor"]
-dataset_3 = iris[iris["class"] == "Iris-virginica"]
+axes1.set_title("iris-setosa")
+axes2.set_title("iris-versicolor")
+axes3.set_title("iris-virginica")
+fig.tight_layout()
+
+plt.show()
+
+# all three scatter plot
+
 plt.rcParams['font.family'] = 'Courier New'
 plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
 plt.grid()
 
-plt.plot(dataset_1["sepal length"], dataset_1["sepal width"], 'o', color = '#006ba4', label='setosa')
-plt.plot(dataset_2["sepal length"], dataset_1["sepal width"], 'o',  color = '#ff800e', label='versicolor')
-plt.plot(dataset_3["sepal length"], dataset_1["sepal width"], 'o',  color = '#595959', label='virginica')
+plt.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
+plt.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
+plt.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
 #plt.show()
 
 plt.rcParams['font.family'] = 'Courier New'
-
+ 
 plt.xlabel('sepal length')
 plt.ylabel('sepal width')
 plt.title('')
@@ -105,7 +120,7 @@ plt.title('')
 # displays a legend
 plt.legend()
 
-# # displays the resulting graph
+# displays the resulting graph
 plt.show()
 
 
