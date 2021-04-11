@@ -47,7 +47,7 @@ print(all_class_mad)
 #all_class_mode = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].agg(pd.Series.mode)
 #print(all_class_mode) # this doesn't work
 
-with open('summary.txt','w') as outfile: # need to look into formatting output better
+with open('summary.txt','w') as outfile: # need to look into formatting output
     all_class_min.to_string(outfile)
     all_class_max.to_string(outfile)
     all_class_median.to_string(outfile)
@@ -74,7 +74,39 @@ with open('summary.txt','w') as outfile: # need to look into formatting output b
 # print(petal_length.describe())
 # print(petal_width.describe())
 
+# fig = plt.figure()
+# axes1 = fig.add_subplot(2,2,1) #subplot has 2 rows, 2 columns - plot location 1
+# axes2 = fig.add_subplot(2,2,2)
+# axes3 = fig.add_subplot(2,2,3)
+# axes4 = fig.add_subplot(2,2,4)
+# plt.show()
 
+
+
+
+dataset_1 = iris[iris["class"] == "Iris-setosa"]
+dataset_2 = iris[iris["class"] == "Iris-versicolor"]
+dataset_3 = iris[iris["class"] == "Iris-virginica"]
+plt.rcParams['font.family'] = 'Courier New'
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
+
+plt.plot(dataset_1["sepal length"], dataset_1["sepal width"], 'o', color = '#006ba4', label='setosa')
+plt.plot(dataset_2["sepal length"], dataset_1["sepal width"], 'o',  color = '#ff800e', label='versicolor')
+plt.plot(dataset_3["sepal length"], dataset_1["sepal width"], 'o',  color = '#595959', label='virginica')
+#plt.show()
+
+plt.rcParams['font.family'] = 'Courier New'
+
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.title('')
+
+# displays a legend
+plt.legend()
+
+# # displays the resulting graph
+plt.show()
 
 
 
