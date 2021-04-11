@@ -43,10 +43,6 @@ print("\nMean Absolute Deviation")
 all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_class_mad) 
 
-# mode - most frequent value
-#all_class_mode = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].agg(pd.Series.mode)
-#print(all_class_mode) # this doesn't work
-
 with open('summary.txt','w') as outfile: # need to look into formatting output
     all_class_min.to_string(outfile)
     all_class_max.to_string(outfile)
@@ -56,6 +52,79 @@ with open('summary.txt','w') as outfile: # need to look into formatting output
     all_class_std.to_string(outfile)
     all_class_mad.to_string(outfile)
 
+
+
+set_1 = iris[iris["class"] == "Iris-setosa"]
+set_2 = iris[iris["class"] == "Iris-versicolor"]
+set_3 = iris[iris["class"] == "Iris-virginica"]
+
+# scatter plot of each class individually - sepal length by sepal width 
+
+fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
+
+ax1.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
+ax2.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
+ax3.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
+
+ax1.set_title("iris-setosa")
+ax2.set_title("iris-versicolor")
+ax3.set_title("iris-virginica")
+plt.suptitle("sepal length x sepal width")
+fig.tight_layout()
+
+plt.show()
+
+# scatter plot of each class individually - petal length by petal width 
+
+fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex = True, sharey = True)
+
+ax1.plot(set_1["petal length"], set_1["petal width"], 'o', color = '#006ba4', label='setosa')
+ax2.plot(set_2["petal length"], set_2["petal width"], 'o',  color = '#ff800e', label='versicolor')
+ax3.plot(set_3["petal length"], set_3["petal width"], 'o',  color = '#595959', label='virginica')
+
+ax1.set_title("iris-setosa")
+ax2.set_title("iris-versicolor")
+ax3.set_title("iris-virginica")
+plt.suptitle("petal length x petal width")
+fig.tight_layout()
+
+plt.show()
+
+# scatter plot of all three together - sepal length by sepal width 
+
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
+
+plt.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
+plt.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
+plt.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
+
+plt.rcParams['font.family'] = 'Courier New'
+ 
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.title('')
+
+plt.legend()
+plt.show()
+
+# scatter plot of all three together - petal length by petal width 
+
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
+
+plt.plot(set_1["petal length"], set_1["petal width"], 'o', color = '#006ba4', label='setosa')
+plt.plot(set_2["petal length"], set_2["petal width"], 'o',  color = '#ff800e', label='versicolor')
+plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = '#595959', label='virginica')
+
+plt.rcParams['font.family'] = 'Courier New'
+ 
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.title('')
+
+plt.legend()
+plt.show()
 
 
 # different subsets of the dataset
@@ -68,78 +137,6 @@ with open('summary.txt','w') as outfile: # need to look into formatting output
 # setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
-
-# print(sepal_length.describe())
-# print(sepal_width.describe())
-# print(petal_length.describe())
-# print(petal_width.describe())
-
-set_1 = iris[iris["class"] == "Iris-setosa"]
-set_2 = iris[iris["class"] == "Iris-versicolor"]
-set_3 = iris[iris["class"] == "Iris-virginica"]
-
-# create three subplots
-
-fig = plt.figure()
-
-
-axes1 = fig.add_subplot(2,2,1) #subplot has 2 rows, 2 columns - plot location 1
-axes2 = fig.add_subplot(2,2,2)
-axes3 = fig.add_subplot(2,2,3)
-#axes4 = fig.add_subplot(2,2,4)
-
-axes1.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
-axes2.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
-axes3.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
-#axes4.plot((set_1["sepal length"], set_1["sepal width"]), (set_2["sepal length"], set_2["sepal width"]))
-
-axes1.set_title("iris-setosa")
-axes2.set_title("iris-versicolor")
-axes3.set_title("iris-virginica")
-plt.suptitle("sepal length x sepal width")
-fig.tight_layout()
-
-plt.show()
-
-fig, axs = plt.subplots(3, sharex=True, sharey=True)
-fig.suptitle('Sharing both axes')
-axs[0].plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
-axs[1].plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
-axs[2].plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
-
-axs[0].set_title("iris-setosa")
-axs[1].set_title("iris-versicolor")
-axs[2].set_title("iris-virginica")
-plt.suptitle("sepal length x sepal width")
-fig.tight_layout()
-
-plt.show()
-
-
-# all three scatter plot
-
-plt.rcParams['font.family'] = 'Courier New'
-plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
-plt.grid()
-
-plt.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
-plt.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
-plt.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
-#plt.show()
-
-plt.rcParams['font.family'] = 'Courier New'
- 
-plt.xlabel('sepal length')
-plt.ylabel('sepal width')
-plt.title('')
-
-# displays a legend
-plt.legend()
-
-# displays the resulting graph
-plt.show()
-
-
 
 
 
