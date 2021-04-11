@@ -78,7 +78,7 @@ set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# create three subplot
+# create three subplots
 
 fig = plt.figure()
 
@@ -96,9 +96,25 @@ axes3.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959',
 axes1.set_title("iris-setosa")
 axes2.set_title("iris-versicolor")
 axes3.set_title("iris-virginica")
+plt.suptitle("sepal length x sepal width")
 fig.tight_layout()
 
 plt.show()
+
+fig, axs = plt.subplots(3, sharex=True, sharey=True)
+fig.suptitle('Sharing both axes')
+axs[0].plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
+axs[1].plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
+axs[2].plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
+
+axs[0].set_title("iris-setosa")
+axs[1].set_title("iris-versicolor")
+axs[2].set_title("iris-virginica")
+plt.suptitle("sepal length x sepal width")
+fig.tight_layout()
+
+plt.show()
+
 
 # all three scatter plot
 
