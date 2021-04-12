@@ -140,7 +140,7 @@ plt.show()
 
 # different subsets of the dataset
 # sepal_length = iris[["sepal length"]] # create subset based on columns
-# sepal_width = iris[["sepal width"]]
+sepal_width = iris[["sepal width"]]
 # petal_length = iris[["petal length"]]
 # petal_width = iris[["petal width"]]
 # sepal_subset = iris[["sepal length", "sepal width"]] 
@@ -149,9 +149,7 @@ setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
 
-hist,ax = plt.subplots()
-ax = sns.distplot(set_1("set 1")) # this doesn't work as it's a dataframe object
-ax.set_title("Total")
+ax = sns.displot(data = iris, x=  "sepal width", hue = "class", kind = kde) 
 plt.show()
 
 
