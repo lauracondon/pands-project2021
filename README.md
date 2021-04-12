@@ -29,3 +29,5 @@ https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summa
 outputting dataframe to text file - https://stackoverflow.com/questions/32821995/outputting-pandas-dataframe-to-formatted-text-file 
 (accessed 10/04/2021)
 subplots - https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html (accessed 11/04/2021)
+https://stackoverflow.com/questions/52095337/plotting-grids-across-the-subplots-python-matplotlib (accessed 12/04/2021)
+https://stackoverflow.com/questions/42372509/how-to-add-a-shared-x-label-and-y-label-to-a-plot-created-with-pandas-plot (accessed 12/04/2021)
