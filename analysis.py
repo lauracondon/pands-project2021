@@ -15,31 +15,31 @@ print("Lowest Value")
 all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
 print(all_class_min)
 
-print("\nHighest Value")
+print("Highest Value")
 all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
 print(all_class_max)
 
-print("\nRange of Values") # range - measures variability
+print("Range of Values") # range - measures variability
 all_class_range = all_class_max - all_class_min 
 print(all_class_range)
 
-print("\nMedian Value")
+print("Median Value")
 all_class_median = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].median()
 print(all_class_median) 
 
-print("\nNumber of Unique Values")
+print("Number of Unique Values")
 all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
 print(all_class_unique)
 
-print("\nMean")
+print("Mean")
 all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_class_mean)
 
-print("\nStandard Deviation") # standard deviation - measure variability 
+print("Standard Deviation") # standard deviation - measure variability 
 all_class_std = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].std() 
 print(all_class_std) 
 
-print("\nMean Absolute Deviation") 
+print("Mean Absolute Deviation") 
 all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_class_mad) 
 
@@ -60,6 +60,8 @@ set_3 = iris[iris["class"] == "Iris-virginica"]
 
 # scatter plot of each class individually - sepal length by sepal width 
 
+plt.rcParams['font.family'] = 'Courier New'
+
 fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
 
 ax1.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
@@ -69,6 +71,9 @@ ax3.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', l
 ax1.set_title("iris-setosa")
 ax2.set_title("iris-versicolor")
 ax3.set_title("iris-virginica")
+ax1.grid(linestyle='dotted', color='gray', alpha=0.7)
+ax2.grid(linestyle='dotted', color='gray', alpha=0.7)
+ax3.grid(linestyle='dotted', color='gray', alpha=0.7)
 plt.suptitle("sepal length x sepal width")
 fig.tight_layout()
 
@@ -85,6 +90,9 @@ ax3.plot(set_3["petal length"], set_3["petal width"], 'o',  color = '#595959', l
 ax1.set_title("iris-setosa")
 ax2.set_title("iris-versicolor")
 ax3.set_title("iris-virginica")
+ax1.grid(linestyle='dotted', color='gray', alpha=0.7)
+ax2.grid(linestyle='dotted', color='gray', alpha=0.7)
+ax3.grid(linestyle='dotted', color='gray', alpha=0.7)
 plt.suptitle("petal length x petal width")
 fig.tight_layout()
 
@@ -92,14 +100,14 @@ plt.show()
 
 # scatter plot of all three together - sepal length by sepal width 
 
+
+
 plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
 plt.grid()
 
 plt.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
 plt.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
 plt.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
-
-plt.rcParams['font.family'] = 'Courier New'
  
 plt.xlabel('sepal length')
 plt.ylabel('sepal width')
@@ -116,8 +124,6 @@ plt.grid()
 plt.plot(set_1["petal length"], set_1["petal width"], 'o', color = '#006ba4', label='setosa')
 plt.plot(set_2["petal length"], set_2["petal width"], 'o',  color = '#ff800e', label='versicolor')
 plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = '#595959', label='virginica')
-
-plt.rcParams['font.family'] = 'Courier New'
  
 plt.xlabel('sepal length')
 plt.ylabel('sepal width')
