@@ -59,7 +59,7 @@ set_3 = iris[iris["class"] == "Iris-virginica"]
 
 # # scatter plot of each class individually - sepal length by sepal width 
 
-plt.rcParams['font.family'] = 'Courier New'
+plt.rcParams['font.family'] = "DejaVu Sans"
 
 fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
 
