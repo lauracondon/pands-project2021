@@ -149,8 +149,24 @@ setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
 
-ax = sns.displot(data = iris, x=  "sepal width", hue = "class", kind = "kde") 
+ax = sns.displot(data = iris, x=  "petal width", hue = "class", kind = "kde") 
+plt.title("Petal Width Density")
 plt.show()
+
+ax = sns.displot(data = iris, x=  "petal length", hue = "class", kind = "kde") 
+plt.title("Petal Length Density")
+plt.show()
+
+ax = sns.displot(data = iris, x=  "sepal width", hue = "class", kind = "kde") 
+plt.title("Sepal Width Density")
+plt.show()
+
+ax = sns.displot(data = iris, x=  "sepal length", hue = "class", kind = "kde") 
+plt.title("Sepal Length Density")
+plt.show()
+
+
+### plt.savefig("name.png")
 
 
 
