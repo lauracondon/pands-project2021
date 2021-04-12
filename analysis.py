@@ -149,7 +149,7 @@ setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
 
-ax = sns.displot(data = iris, x=  "sepal width", hue = "class", kind = kde) 
+ax = sns.displot(data = iris, x=  "sepal width", hue = "class", kind = "kde") 
 plt.show()
 
 
