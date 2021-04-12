@@ -6,6 +6,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 iris = pd.read_csv("iris.data", names=["sepal length", "sepal width", "petal length", "petal width", "class"]) # names assigns column names to the dataset
 
@@ -144,12 +145,14 @@ plt.show()
 # petal_width = iris[["petal width"]]
 # sepal_subset = iris[["sepal length", "sepal width"]] 
 # petal_subset = iris[["petal length", "petal width"]]
-# setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
+setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
 
-
-
+hist,ax = plt.subplots()
+ax = sns.distplot(set_1("set 1")) # this doesn't work as it's a dataframe object
+ax.set_title("Total")
+plt.show()
 
 
 
