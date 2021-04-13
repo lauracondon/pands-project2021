@@ -160,22 +160,22 @@ plt.show()
 ax = sns.histplot(data = iris, x=  "petal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
 plt.title("Petal Width Histogram with Density", size = 15)
 
-plt.savefig("data-visualizations/petal width histogram with density.png") 
+plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
 ax = sns.histplot(data = iris, x=  "petal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
 plt.title("Petal Length Histogram with Density", size = 15)
-plt.savefig("data-visualizations/petal length histogram with density.png") 
+plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
 
 ax = sns.histplot(data = iris, x=  "sepal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
 plt.title("Sepal Width Histogram with Density", size = 15)
-plt.savefig("data-visualizations/sepal width histogram with density.png") 
+plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 
 ax = sns.histplot(data = iris, x=  "sepal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
 plt.title("Sepal Length Histogram with Density", size = 15)
-plt.savefig("data-visualizations/sepal length histogram with density.png") 
+plt.savefig("data-visualizations/histogram - sepal length with density.png") 
 plt.show()
 
 # # different subsets of the dataset
