@@ -59,17 +59,6 @@ set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-
-# basic histogram might remove later and just keep density plots
-set_1.hist(bins=5)
-plt.show()
-set_2.hist(bins=5)
-plt.show()
-set_3.hist(bins=5)
-plt.show()
-iris.hist(bins=10)
-plt.show()
-
 # # scatter plot of each class individually - sepal length by sepal width 
 
 # fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
@@ -77,7 +66,6 @@ plt.show()
 # ax1.plot(set_1["sepal length"], set_1["sepal width"], 'o', color = '#006ba4', label='setosa')
 # ax2.plot(set_2["sepal length"], set_2["sepal width"], 'o',  color = '#ff800e', label='versicolor')
 # ax3.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', label='virginica')
-
 
 # ax1.set_title("iris-setosa")
 # ax2.set_title("iris-versicolor")
