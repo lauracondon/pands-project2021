@@ -157,25 +157,25 @@ set_3 = iris[iris["class"] == "Iris-virginica"]
 
 # density plots of each variable
 
-ax = sns.displot(data = iris, x=  "petal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", bw_adjust=.50) 
+ax = sns.displot(data = iris, x=  "petal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", fill = "true", bw_adjust=.50) 
 plt.title("Petal Width Density", size = 15)
 ax.fig.subplots_adjust(top=.9)
 plt.savefig("data-visualizations/petal width density.png") 
 plt.show()
 
-ax = sns.displot(data = iris, x=  "petal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", bw_adjust=.50) 
+ax = sns.displot(data = iris, x=  "petal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", fill = "true", bw_adjust=.50) 
 plt.title("Petal Length Density", size = 15)
 ax.fig.subplots_adjust(top=.9)
 plt.savefig("data-visualizations/petal length density.png") 
 plt.show()
 
-ax = sns.displot(data = iris, x=  "sepal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", bw_adjust=.50) 
+ax = sns.displot(data = iris, x=  "sepal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", fill = "true", bw_adjust=.50) 
 plt.title("Sepal Width Density", size = 15)
 ax.fig.subplots_adjust(top=.9)
 plt.savefig("data-visualizations/sepal width density.png") 
 plt.show()
 
-ax = sns.displot(data = iris, x=  "sepal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", bw_adjust=.50) 
+ax = sns.displot(data = iris, x=  "sepal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kind = "kde", fill = "true", bw_adjust=.50) 
 plt.title("Sepal Length Density", size = 15)
 ax.fig.subplots_adjust(top=.9)
 plt.savefig("data-visualizations/sepal length density.png") 
