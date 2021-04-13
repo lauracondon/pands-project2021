@@ -20,6 +20,7 @@ References:
 [7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)
 
 ## analysis.py ##
+
 https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/ (accessed 08/04/2021)
 Pandas for Everyone - Daniel Y. Chen
 http://makemeanalyst.com/basic-statistics-explore-your-data-cases-variables-types-of-variables/ (accessed 09/04/2021)
@@ -35,3 +36,5 @@ https://seaborn.pydata.org/generated/seaborn.displot.html?highlight=displot#seab
 https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)
 simple histogram plot - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html (accessed 13/04/2021)
 https://datavizcatalogue.com/blog/chart-selection-guide/ (accessed 13/04/2021)
+https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)
+https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)
