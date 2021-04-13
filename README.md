@@ -32,3 +32,4 @@ subplots - https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subpl
 https://stackoverflow.com/questions/52095337/plotting-grids-across-the-subplots-python-matplotlib (accessed 12/04/2021)
 https://stackoverflow.com/questions/42372509/how-to-add-a-shared-x-label-and-y-label-to-a-plot-created-with-pandas-plot (accessed 12/04/2021)
 https://seaborn.pydata.org/generated/seaborn.displot.html?highlight=displot#seaborn.displot (accessed 12/04/2021)
+simple histogram plot - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html (accessed 13/04/2021)
