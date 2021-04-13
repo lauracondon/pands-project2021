@@ -73,13 +73,21 @@ with open('summary.txt','w') as outfile: # need to look into formatting output
 # histograms
 ####################################################################################################################################
 
+# sets the font style to use for all the following plots
 plt.rcParams['font.family'] = "DejaVu Sans"
 
-ax = sns.histplot(data = iris, x=  "petal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
+# creates a histogram plot with a kernel density estimate of the 'petal width' from the iris dataset
+# it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
+# 'kde = True' - adds a kernel density estimate overlay
+# 'bins' specifies how many bars to display in the histogram
+ax = sns.histplot(data = iris, x = "petal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
+# adds a title and specifies font size
 plt.title("Petal Width Histogram with Density", size = 15)
+# saves the resulting figure to a subfolder 
 plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
+# the same process is repeated for each variable in the dataset 
 ax = sns.histplot(data = iris, x=  "petal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
 plt.title("Petal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
