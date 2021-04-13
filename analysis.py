@@ -53,13 +53,22 @@ print(iris.describe()) # prints summary statistics of the entire dataset - count
 #     all_class_std.to_string(outfile)
 #     all_class_mad.to_string(outfile)
 
+plt.rcParams['font.family'] = "DejaVu Sans"
+
 set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# # scatter plot of each class individually - sepal length by sepal width 
+set_1.hist(bins=5)
+plt.show()
+set_2.hist(bins=5)
+plt.show()
+set_3.hist(bins=5)
+plt.show()
+iris.hist(bins=10)
+plt.show()
 
-# plt.rcParams['font.family'] = "DejaVu Sans"
+# # scatter plot of each class individually - sepal length by sepal width 
 
 fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
 
@@ -181,6 +190,8 @@ plt.show()
 #setosa = iris.iloc[0:50] # create subset based on rows to seperate each class of iris
 # versicolor = iris.iloc[50:100]
 # virginica = iris.iloc[100:150]
+
+
 
 
 
