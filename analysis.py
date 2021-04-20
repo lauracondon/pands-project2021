@@ -75,7 +75,7 @@ with open('summary.txt','w') as outfile: # need to look into formatting output
 
 # sets the font style to use for all the following plots
 plt.rcParams['font.family'] = "DejaVu Sans"
-colors = ["#006ba4", "#ff800e", "#595959"]
+colors = ["#006ba4", "#ff800e", "#595959", "#5f9ed1"]
 sns.set_palette(sns.color_palette(colors))
 
 # creates a histogram plot with a kernel density estimate of the 'petal width' from the iris dataset
