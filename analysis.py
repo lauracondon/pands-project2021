@@ -78,28 +78,38 @@ plt.rcParams['font.family'] = "DejaVu Sans"
 colors = ["#006ba4", "#ff800e", "#595959", "#5f9ed1"]
 sns.set_palette(sns.color_palette(colors))
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
+
 # creates a histogram plot with a kernel density estimate of the 'petal width' from the iris dataset
 # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
 # 'kde = True' - adds a kernel density estimate overlay
 # 'bins' specifies how many bars to display in the histogram
 ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 20) 
+
 # adds a title and specifies font size
 plt.title("Petal Width Histogram with Density", size = 15)
 # saves the resulting figure to a subfolder 
 plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 # the same process is repeated for each variable in the dataset 
 ax = sns.histplot(data = iris, x=  "petal length", hue = "class", kde = True, bins = 20) 
 plt.title("Petal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 ax = sns.histplot(data = iris, x=  "sepal width", hue = "class", kde = True, bins = 20) 
 plt.title("Sepal Width Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 ax = sns.histplot(data = iris, x=  "sepal length", hue = "class", kde = True, bins = 20) 
 plt.title("Sepal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - sepal length with density.png") 
@@ -201,26 +211,38 @@ plt.show()
 # box plot and violin plots
 ####################################################################################################################################
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 sns.boxplot(data = iris)
 plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 sns.violinplot(data = iris)
 plt.savefig("data-visualizations/violinplot - iris.png")
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 sns.violinplot(x= "class", y = "sepal length", data=iris)
 plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 sns.violinplot(x= "class", y = "sepal width", data=iris)
 plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 sns.violinplot(x= "class", y = "petal length", data=iris)
 plt.savefig("data-visualizations/violinplot by petal length - iris.png")
 plt.show()
 
+plt.rc('grid', linestyle='dotted', color='gray', alpha=0.7)
+plt.grid()
 sns.violinplot(x= "class", y = "petal width", data=iris)
 plt.savefig("data-visualizations/violinplot by petal width - iris.png")
 plt.show()
