@@ -75,12 +75,14 @@ with open('summary.txt','w') as outfile: # need to look into formatting output
 
 # sets the font style to use for all the following plots
 plt.rcParams['font.family'] = "DejaVu Sans"
+colors = ["#006ba4", "#ff800e", "#595959"]
+sns.set_palette(sns.color_palette(colors))
 
 # creates a histogram plot with a kernel density estimate of the 'petal width' from the iris dataset
 # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
 # 'kde = True' - adds a kernel density estimate overlay
 # 'bins' specifies how many bars to display in the histogram
-ax = sns.histplot(data = iris, x = "petal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
+ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 20) 
 # adds a title and specifies font size
 plt.title("Petal Width Histogram with Density", size = 15)
 # saves the resulting figure to a subfolder 
@@ -88,17 +90,17 @@ plt.savefig("data-visualizations/histogram - petal width with density.png")
 plt.show()
 
 # the same process is repeated for each variable in the dataset 
-ax = sns.histplot(data = iris, x=  "petal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
+ax = sns.histplot(data = iris, x=  "petal length", hue = "class", kde = True, bins = 20) 
 plt.title("Petal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
 
-ax = sns.histplot(data = iris, x=  "sepal width", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
+ax = sns.histplot(data = iris, x=  "sepal width", hue = "class", kde = True, bins = 20) 
 plt.title("Sepal Width Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 
-ax = sns.histplot(data = iris, x=  "sepal length", hue = "class", palette = ["#006ba4", "#ff800e", "#595959"], kde = True, bins = 20) 
+ax = sns.histplot(data = iris, x=  "sepal length", hue = "class", kde = True, bins = 20) 
 plt.title("Sepal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - sepal length with density.png") 
 plt.show()
