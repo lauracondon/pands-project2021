@@ -127,7 +127,7 @@ ax3.set_title("iris-virginica")
 ax1.grid(linestyle='dotted', color='gray', alpha=0.7)
 ax2.grid(linestyle='dotted', color='gray', alpha=0.7)
 ax3.grid(linestyle='dotted', color='gray', alpha=0.7)
-plt.suptitle("sepal length x sepal width")
+plt.suptitle("Sepal Length x Sepal Width - Individual Scatterplots")
 
 fig.text(0.5,0.009, "sepal length", ha="center", va="center", weight="bold")
 fig.text(0.015,0.5, "sepal width", ha="center", va="center", rotation=90, weight="bold")
@@ -152,7 +152,7 @@ ax3.set_title("iris-virginica")
 ax1.grid(linestyle='dotted', color='gray', alpha=0.7)
 ax2.grid(linestyle='dotted', color='gray', alpha=0.7)
 ax3.grid(linestyle='dotted', color='gray', alpha=0.7)
-plt.suptitle("petal length x petal width")
+plt.suptitle("Petal Length x Petal Width - Individual Scatterplots")
 
 fig.text(0.5,0.009, "sepal length", ha="center", va="center", weight="bold")
 fig.text(0.015,0.5, "sepal width", ha="center", va="center", rotation=90, weight="bold")
@@ -174,7 +174,7 @@ plt.plot(set_3["sepal length"], set_3["sepal width"], 'o',  color = '#595959', l
  
 plt.xlabel('sepal length')
 plt.ylabel('sepal width')
-plt.title('')
+plt.title('Sepal Length x Sepal Width - Scatterplot')
 
 plt.legend()
 plt.savefig("data-visualizations/scatterplot - sepal length by width.png") 
@@ -191,7 +191,7 @@ plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = '#595959', l
 
 plt.xlabel('petal length')
 plt.ylabel('petal width')
-plt.title('')
+plt.title('Petal Length x Petal Width - Scatterplot')
 
 plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal length by width.png")
