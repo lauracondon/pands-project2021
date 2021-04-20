@@ -202,21 +202,27 @@ plt.show()
 ####################################################################################################################################
 
 sns.boxplot(data = iris)
+plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
 
 sns.violinplot(data = iris)
+plt.savefig("data-visualizations/violinplot - iris.png")
 plt.show()
 
 sns.violinplot(x= "class", y = "sepal length", data=iris)
+plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 
 sns.violinplot(x= "class", y = "sepal width", data=iris)
+plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
 plt.show()
 
 sns.violinplot(x= "class", y = "petal length", data=iris)
+plt.savefig("data-visualizations/violinplot by petal length - iris.png")
 plt.show()
 
 sns.violinplot(x= "class", y = "petal width", data=iris)
+plt.savefig("data-visualizations/violinplot by petal width - iris.png")
 plt.show()
 
 
