@@ -87,7 +87,7 @@ plt.grid()
 # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
 # 'kde = True' - adds a kernel density estimate overlay
 # 'bins' specifies how many bars to display in the histogram
-ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 20, element = "step") 
+ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
 # adds a title and specifies font size
 plt.title("Petal Width Histogram with Density", size = 15)
 # saves the resulting figure to a subfolder 
@@ -97,21 +97,21 @@ plt.show()
 # the same process is repeated for each variable in the dataset 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 20, element = "step") 
+ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
 plt.title("Petal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
 
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 20, element = "step") 
+ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
 plt.title("Sepal Width Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 20, element = "step") 
+ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
 plt.title("Sepal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - sepal length with density.png") 
 plt.show()
