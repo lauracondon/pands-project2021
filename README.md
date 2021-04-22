@@ -38,3 +38,11 @@ simple histogram plot - https://pandas.pydata.org/docs/reference/api/pandas.Data
 https://datavizcatalogue.com/blog/chart-selection-guide/ (accessed 13/04/2021)
 https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)
 https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)
+
+# pairplot
+
+http://seaborn.pydata.org/tutorial/aesthetics.html
+https://medium.com/@jaimejcheng/data-exploration-and-visualization-with-seaborn-pair-plots-40e6d3450f6d
+https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166
+https://seaborn.pydata.org/generated/seaborn.pairplot.html (all accessed 22/04/2021)
+https://seaborn.pydata.org/tutorial/axis_grids.html
