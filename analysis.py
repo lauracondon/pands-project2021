@@ -77,27 +77,26 @@ with open("summary.txt","w") as outfile: # need to look into formatting output
 
 sns.set_style("dark")
 plt.rcParams["font.family"] = "DejaVu Sans"
-colors = ["#595959", "#5f9ed1","#ff800e","#006ba4",  ]
+colors = ["#595959", "#5f9ed1", "#ff800e", "#006ba4"]
 sns.set_palette(sns.color_palette(colors))
+
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-
 # creates a histogram plot with a kernel density estimate of the 'petal width' from the iris dataset
 # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
 # 'kde = True' - adds a kernel density estimate overlay
 # 'bins' specifies how many bars to display in the histogram
 ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 20, element = "step") 
-
 # adds a title and specifies font size
 plt.title("Petal Width Histogram with Density", size = 15)
 # saves the resulting figure to a subfolder 
 plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
+# the same process is repeated for each variable in the dataset 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-# the same process is repeated for each variable in the dataset 
 ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 20, element = "step") 
 plt.title("Petal Length Histogram with Density", size = 15)
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
@@ -131,9 +130,9 @@ set_3 = iris[iris["class"] == "Iris-virginica"]
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
 
-plt.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#006ba4", label = "setosa")
-plt.plot(set_2["sepal length"], set_2["sepal width"], "o",  color = "#ff800e", label = "versicolor")
-plt.plot(set_3["sepal length"], set_3["sepal width"], "o",  color = "#595959", label = "virginica")
+plt.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#595959", label = "setosa")
+plt.plot(set_2["sepal length"], set_2["sepal width"], "o",  color = "#5f9ed1", label = "versicolor")
+plt.plot(set_3["sepal length"], set_3["sepal width"], "o",  color = "#ff800e" , label = "virginica")
  
 plt.xlabel("sepal length")
 plt.ylabel("sepal width")
@@ -148,9 +147,9 @@ plt.show()
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
 
-plt.plot(set_1["petal length"], set_1["petal width"], "o", color = "#006ba4", label = "setosa")
-plt.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#ff800e", label = "versicolor")
-plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = '#595959', label = "virginica")
+plt.plot(set_1["petal length"], set_1["petal width"], "o", color = "#595959", label = "setosa")
+plt.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#5f9ed1", label = "versicolor")
+plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = "#ff800e", label = "virginica")
 
 plt.xlabel("petal length")
 plt.ylabel("petal width")
