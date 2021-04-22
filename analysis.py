@@ -74,6 +74,8 @@ with open("summary.txt","w") as outfile: # need to look into formatting output
 ####################################################################################################################################
 
 # sets the font style to use for all the following plots
+
+sns.set_style("dark")
 plt.rcParams["font.family"] = "DejaVu Sans"
 colors = ["#006ba4", "#ff800e", "#595959", "#5f9ed1"]
 sns.set_palette(sns.color_palette(colors))
@@ -210,6 +212,7 @@ set_3 = iris[iris["class"] == "Iris-virginica"]
 ########################################################################################################################
 # pairplot
 ########################################################################################################################
+
 
 sns.pairplot(iris, hue = "class", plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 4)
 plt.savefig("data-visualizations/pairplot.png")
