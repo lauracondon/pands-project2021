@@ -173,13 +173,13 @@ plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
-sns.boxplot(data = iris)
+sns.boxplot(data = iris, palette = "colorblind")
 plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
-sns.violinplot(data = iris)
+sns.violinplot(data = iris, palette = "colorblind")
 plt.savefig("data-visualizations/violinplot - iris.png")
 plt.show()
 
