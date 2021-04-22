@@ -123,55 +123,55 @@ set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# scatter plot of each class individually - sepal length by sepal width 
+# # scatter plot of each class individually - sepal length by sepal width 
 
-fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
+# fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex=True, sharey=True)
 
-ax1.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#006ba4", label = "setosa")
-ax2.plot(set_2["sepal length"], set_2["sepal width"], "o", color = "#ff800e", label = "versicolor")
-ax3.plot(set_3["sepal length"], set_3["sepal width"], "o", color = "#595959", label = "virginica")
+# ax1.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#006ba4", label = "setosa")
+# ax2.plot(set_2["sepal length"], set_2["sepal width"], "o", color = "#ff800e", label = "versicolor")
+# ax3.plot(set_3["sepal length"], set_3["sepal width"], "o", color = "#595959", label = "virginica")
 
-ax1.set_title("iris-setosa")
-ax2.set_title("iris-versicolor")
-ax3.set_title("iris-virginica")
-ax1.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
-ax2.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
-ax3.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.suptitle("Sepal Length x Sepal Width - Individual Scatterplots")
+# ax1.set_title("iris-setosa")
+# ax2.set_title("iris-versicolor")
+# ax3.set_title("iris-virginica")
+# ax1.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
+# ax2.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
+# ax3.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
+# plt.suptitle("Sepal Length x Sepal Width - Individual Scatterplots")
 
-fig.text(0.5,0.009, "sepal length", ha = "center", va = "center", weight = "bold")
-fig.text(0.015,0.5, "sepal width", ha = "center", va = "center", rotation = 90, weight = "bold")
+# fig.text(0.5,0.009, "sepal length", ha = "center", va = "center", weight = "bold")
+# fig.text(0.015,0.5, "sepal width", ha = "center", va = "center", rotation = 90, weight = "bold")
 
-fig.tight_layout()
+# fig.tight_layout()
 
-plt.savefig("data-visualizations/subplots - sepal length by width.png")
+# plt.savefig("data-visualizations/subplots - sepal length by width.png")
 
-plt.show()
+# plt.show()
 
-# scatter plot of each class individually - petal length by petal width 
+# # scatter plot of each class individually - petal length by petal width 
 
-fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex = True, sharey = True)
+# fig, (ax1, ax2, ax3) = plt.subplots(1,3, sharex = True, sharey = True)
 
-ax1.plot(set_1["petal length"], set_1["petal width"], "o", color = "#006ba4", label = "setosa")
-ax2.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#ff800e", label = "versicolor")
-ax3.plot(set_3["petal length"], set_3["petal width"], "o",  color = "#595959", label = "virginica")
+# ax1.plot(set_1["petal length"], set_1["petal width"], "o", color = "#006ba4", label = "setosa")
+# ax2.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#ff800e", label = "versicolor")
+# ax3.plot(set_3["petal length"], set_3["petal width"], "o",  color = "#595959", label = "virginica")
 
-ax1.set_title("iris-setosa")
-ax2.set_title("iris-versicolor")
-ax3.set_title("iris-virginica")
-ax1.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
-ax2.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
-ax3.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.suptitle("Petal Length x Petal Width - Individual Scatterplots")
+# ax1.set_title("iris-setosa")
+# ax2.set_title("iris-versicolor")
+# ax3.set_title("iris-virginica")
+# ax1.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
+# ax2.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
+# ax3.grid(linestyle = "dotted", color = "gray", alpha = 0.7)
+# plt.suptitle("Petal Length x Petal Width - Individual Scatterplots")
 
-fig.text(0.5,0.009, "sepal length", ha = "center", va = "center", weight = "bold")
-fig.text(0.015,0.5, "sepal width", ha = "center", va = "center", rotation = 90, weight = "bold")
+# fig.text(0.5,0.009, "sepal length", ha = "center", va = "center", weight = "bold")
+# fig.text(0.015,0.5, "sepal width", ha = "center", va = "center", rotation = 90, weight = "bold")
 
-fig.tight_layout()
+# fig.tight_layout()
 
-plt.savefig("data-visualizations/subplots - petal length by width.png") 
+# plt.savefig("data-visualizations/subplots - petal length by width.png") 
 
-plt.show()
+# plt.show()
 
 # scatter plot of all three together - sepal length by sepal width 
 
@@ -206,6 +206,15 @@ plt.title("Petal Length x Petal Width - Scatterplot")
 plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal length by width.png")
 plt.show()
+
+########################################################################################################################
+# pairplot
+########################################################################################################################
+
+sns.pairplot(iris, hue = "class")
+plt.savefig("data-visualizations/pairplot.png")
+plt.show()
+
 
 ####################################################################################################################################
 # box plot and violin plots
@@ -246,20 +255,4 @@ plt.grid()
 sns.violinplot(x= "class", y = "petal width", data=iris)
 plt.savefig("data-visualizations/violinplot by petal width - iris.png")
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
