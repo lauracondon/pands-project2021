@@ -70,35 +70,37 @@ with open("summary.txt","w") as outfile: # need to look into formatting output
     all_class_mad.to_string(outfile)
 
 ####################################################################################################################################
-# histograms
+# set style for plots
 ####################################################################################################################################
 
 # sets the font style to use for all the following plots
-
-sns.set_style("dark")
 plt.rcParams["font.family"] = "DejaVu Sans"
-colors = ["#595959", "#5f9ed1", "#ff800e", "#006ba4"]
+
+# create color palette for use with sns plots
+colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.grid()
+# set grid style for all plots
+sns.set_style("dark")
+
+####################################################################################################################################
+# histograms
+####################################################################################################################################
+
 # creates a histogram plot with a kernel density estimate of the 'petal width'
 # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
 # 'kde = True' - adds a kernel density estimate overlay
 # 'bins' specifies how many bars to display in the histogram
-ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
-# adds a title and specifies font size
-plt.title("Petal Width Histogram with Density", size = 15)
 # saves the resulting figure to a subfolder 
-plt.savefig("data-visualizations/histogram - petal width with density.png") 
-plt.show()
+# adds a title and specifies font size
 
 # the same process is repeated for each variable in the dataset 
+
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Petal Length Histogram with Density", size = 15)
-plt.savefig("data-visualizations/histogram - petal length with density.png") 
+ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
+plt.title("Sepal Length Histogram with Density", size = 15)
+plt.savefig("data-visualizations/histogram - sepal length with density.png") 
 plt.show()
 
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
@@ -110,9 +112,16 @@ plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Sepal Length Histogram with Density", size = 15)
-plt.savefig("data-visualizations/histogram - sepal length with density.png") 
+ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
+plt.title("Petal Length Histogram with Density", size = 15)
+plt.savefig("data-visualizations/histogram - petal length with density.png") 
+plt.show()
+
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+plt.grid()
+ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
+plt.title("Petal Width Histogram with Density", size = 15)
+plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
 ####################################################################################################################################
@@ -122,7 +131,6 @@ plt.show()
 set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
-
 
 # scatter plot of sepal length by sepal width 
 
