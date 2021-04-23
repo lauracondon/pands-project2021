@@ -1,4 +1,14 @@
 
+The Fisher Iris data set is a multivariate data set consisting of a total of one hundred 
+and fifty samples of iris flowers. Fifty samples were collected from each of three 
+different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. 
+Four attributes are recorded for each sample - sepal length, sepal width, petal length, 
+petal width - as well as the class idenitifier (the species of iris). All measurements are 
+given in centimeters. 
+
+This text file includes various numerical summaries of the variables in the dataset so 
+that the user can get a sense of the similarities and differences between the three species of iris. 
+
 Overview of All Variables:
 
        sepal length  sepal width  petal length  petal width
@@ -12,7 +22,7 @@ min        4.300000     2.000000      1.000000     0.100000
 max        7.900000     4.400000      6.900000     2.500000
 
 
-Lowest Value
+Lowest Value:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -20,7 +30,7 @@ Iris-setosa               4.3          2.3           1.0          0.1
 Iris-versicolor           4.9          2.0           3.0          1.0
 Iris-virginica            4.9          2.2           4.5          1.4
 
-Highest Value
+Highest Value:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -28,7 +38,7 @@ Iris-setosa               5.8          4.4           1.9          0.6
 Iris-versicolor           7.0          3.4           5.1          1.8
 Iris-virginica            7.9          3.8           6.9          2.5
 
-Range of Values
+Range of Values:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -36,7 +46,7 @@ Iris-setosa               1.5          2.1           0.9          0.5
 Iris-versicolor           2.1          1.4           2.1          0.8
 Iris-virginica            3.0          1.6           2.4          1.1
 
-Median Value
+Median Value:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -44,7 +54,7 @@ Iris-setosa               5.0          3.4          1.50          0.2
 Iris-versicolor           5.9          2.8          4.35          1.3
 Iris-virginica            6.5          3.0          5.55          2.0
 
-Number of Unique Values
+Number of Unique Values:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -52,7 +62,7 @@ Iris-setosa                15           16             9            6
 Iris-versicolor            21           14            19            9
 Iris-virginica             21           13            20           12
 
-Mean
+Mean:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -60,7 +70,7 @@ Iris-setosa             5.006        3.428         1.462        0.246
 Iris-versicolor         5.936        2.770         4.260        1.326
 Iris-virginica          6.588        2.974         5.552        2.026
 
-Standard Deviation
+Standard Deviation:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
@@ -68,7 +78,7 @@ Iris-setosa          0.352490     0.379064      0.173664     0.105386
 Iris-versicolor      0.516171     0.313798      0.469911     0.197753
 Iris-virginica       0.635880     0.322497      0.551895     0.274650
 
-Mean Absolute Deviation
+Mean Absolute Deviation:
 
                  sepal length  sepal width  petal length  petal width
 class                                                                
