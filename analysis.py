@@ -60,165 +60,198 @@ all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal len
 print(all_class_mad) 
 
 # this converts the dataframes into strings and outputs to a text file
-with open("summary.txt","w") as outfile: # need to look into formatting output
-    all_class_min.to_string(outfile) 
-    all_class_max.to_string(outfile)
-    all_class_median.to_string(outfile)
-    all_class_unique.to_string(outfile)
-    all_class_mean.to_string(outfile)
-    all_class_std.to_string(outfile)
-    all_class_mad.to_string(outfile)
+# with open("summary.txt","w") as outfile: # need to look into formatting output
+#     all_class_min.to_string(outfile) 
+#     all_class_max.to_string(outfile)
+#     all_class_median.to_string(outfile)
+#     all_class_unique.to_string(outfile)
+#     all_class_mean.to_string(outfile)
+#     all_class_std.to_string(outfile)
+#     all_class_mad.to_string(outfile)
+
+tfile = open('summary.txt', 'w')
+tfile.write("\n")
+tfile.write("Lowest Value\n")
+tfile.write("\n")
+tfile.write(all_class_min.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Range of Values\n")
+tfile.write(all_class_max.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Median Value\n")
+tfile.write(all_class_median.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Number of Unique Values\n")
+tfile.write(all_class_unique.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Mean\n")
+tfile.write(all_class_mean.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Standard Deviation\n")
+tfile.write(all_class_std.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Mean Absolute Deviation\n")
+tfile.write(all_class_mad.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.close()
 
 ####################################################################################################################################
-# set style for plots
-####################################################################################################################################
+# # set style for plots
+# ####################################################################################################################################
 
-# sets the font style to use for all the following plots
-plt.rcParams["font.family"] = "DejaVu Sans"
+# # sets the font style to use for all the following plots
+# plt.rcParams["font.family"] = "DejaVu Sans"
 
-# create color palette for use with sns plots
-colors = ["#595959", "#5f9ed1", "#ff800e"]
-sns.set_palette(sns.color_palette(colors))
+# # create color palette for use with sns plots
+# colors = ["#595959", "#5f9ed1", "#ff800e"]
+# sns.set_palette(sns.color_palette(colors))
 
-# set grid style for all plots
-sns.set_style("dark")
+# # set grid style for all plots
+# sns.set_style("dark")
 
-####################################################################################################################################
-# histograms
-####################################################################################################################################
+# ####################################################################################################################################
+# # histograms
+# ####################################################################################################################################
 
-# creates a histogram plot with a kernel density estimate of the 'petal width'
-# it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
-# 'kde = True' - adds a kernel density estimate overlay
-# 'bins' specifies how many bars to display in the histogram
-# saves the resulting figure to a subfolder 
-# adds a title and specifies font size
+# # creates a histogram plot with a kernel density estimate of the 'petal width'
+# # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
+# # 'kde = True' - adds a kernel density estimate overlay
+# # 'bins' specifies how many bars to display in the histogram
+# # saves the resulting figure to a subfolder 
+# # adds a title and specifies font size
 
-# the same process is repeated for each variable in the dataset 
+# # the same process is repeated for each variable in the dataset 
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.grid()
-ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Sepal Length Histogram with Kernel Density Estimate", weight = "bold")
-plt.savefig("data-visualizations/histogram - sepal length with density.png") 
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+# plt.grid()
+# ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
+# plt.title("Sepal Length Histogram with Kernel Density Estimate", weight = "bold")
+# plt.savefig("data-visualizations/histogram - sepal length with density.png") 
+# plt.show()
 
-plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
-plt.grid()
-ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
-plt.savefig("data-visualizations/histogram - sepal width with density.png") 
-plt.show()
+# plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
+# plt.grid()
+# ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
+# plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
+# plt.savefig("data-visualizations/histogram - sepal width with density.png") 
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.grid()
-ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Petal Length Histogram with Kernel Density Estimate", weight = "bold")
-plt.savefig("data-visualizations/histogram - petal length with density.png") 
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+# plt.grid()
+# ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
+# plt.title("Petal Length Histogram with Kernel Density Estimate", weight = "bold")
+# plt.savefig("data-visualizations/histogram - petal length with density.png") 
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.grid()
-ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Petal Width Histogram with Kernel Density Estimate", weight = "bold")
-plt.savefig("data-visualizations/histogram - petal width with density.png") 
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+# plt.grid()
+# ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
+# plt.title("Petal Width Histogram with Kernel Density Estimate", weight = "bold")
+# plt.savefig("data-visualizations/histogram - petal width with density.png") 
+# plt.show()
 
-####################################################################################################################################
-# scatter plots
-####################################################################################################################################
+# ####################################################################################################################################
+# # scatter plots
+# ####################################################################################################################################
 
-set_1 = iris[iris["class"] == "Iris-setosa"]
-set_2 = iris[iris["class"] == "Iris-versicolor"]
-set_3 = iris[iris["class"] == "Iris-virginica"]
+# set_1 = iris[iris["class"] == "Iris-setosa"]
+# set_2 = iris[iris["class"] == "Iris-versicolor"]
+# set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# scatter plot of sepal width versus length
+# # scatter plot of sepal width versus length
 
-plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
-plt.grid()
+# plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
+# plt.grid()
 
-plt.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#595959", label = "setosa")
-plt.plot(set_2["sepal length"], set_2["sepal width"], "o",  color = "#5f9ed1", label = "versicolor")
-plt.plot(set_3["sepal length"], set_3["sepal width"], "o",  color = "#ff800e" , label = "virginica")
+# plt.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#595959", label = "setosa")
+# plt.plot(set_2["sepal length"], set_2["sepal width"], "o",  color = "#5f9ed1", label = "versicolor")
+# plt.plot(set_3["sepal length"], set_3["sepal width"], "o",  color = "#ff800e" , label = "virginica")
  
-plt.xlabel("sepal length")
-plt.ylabel("sepal width")
-plt.title("Scatterplot of Sepal Width vs. Sepal Length", weight = "bold")
+# plt.xlabel("sepal length")
+# plt.ylabel("sepal width")
+# plt.title("Scatterplot of Sepal Width vs. Sepal Length", weight = "bold")
 
-plt.legend()
-plt.savefig("data-visualizations/scatterplot - sepal width v length.png") 
-plt.show()
+# plt.legend()
+# plt.savefig("data-visualizations/scatterplot - sepal width v length.png") 
+# plt.show()
 
-# scatter plot of petal width versus petal length
+# # scatter plot of petal width versus petal length
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.grid()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+# plt.grid()
 
-plt.plot(set_1["petal length"], set_1["petal width"], "o", color = "#595959", label = "setosa")
-plt.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#5f9ed1", label = "versicolor")
-plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = "#ff800e", label = "virginica")
+# plt.plot(set_1["petal length"], set_1["petal width"], "o", color = "#595959", label = "setosa")
+# plt.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#5f9ed1", label = "versicolor")
+# plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = "#ff800e", label = "virginica")
 
-plt.xlabel("petal length")
-plt.ylabel("petal width")
-plt.title("Scatterplot of Petal Width vs. Petal Length", weight = "bold")
+# plt.xlabel("petal length")
+# plt.ylabel("petal width")
+# plt.title("Scatterplot of Petal Width vs. Petal Length", weight = "bold")
 
-plt.legend()
-plt.savefig("data-visualizations/scatterplot - petal width v length.png")
-plt.show()
+# plt.legend()
+# plt.savefig("data-visualizations/scatterplot - petal width v length.png")
+# plt.show()
 
-########################################################################################################################
-# pairplot
-########################################################################################################################
+# ########################################################################################################################
+# # pairplot
+# ########################################################################################################################
 
-sns.pairplot(iris, hue = "class", plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 4)
-plt.savefig("data-visualizations/pairplot.png")
-plt.show()
+# sns.pairplot(iris, hue = "class", plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 4)
+# plt.savefig("data-visualizations/pairplot.png")
+# plt.show()
 
-####################################################################################################################################
-# box plot and violin plots
-####################################################################################################################################
+# ####################################################################################################################################
+# # box plot and violin plots
+# ####################################################################################################################################
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
-plt.grid()
-sns.boxplot(data = iris, palette = "colorblind")
-plt.title("Boxplot of Iris Variables", weight = "bold")
-plt.savefig("data-visualizations/boxplot - iris.png")
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+# plt.grid()
+# sns.boxplot(data = iris, palette = "colorblind")
+# plt.title("Boxplot of Iris Variables", weight = "bold")
+# plt.savefig("data-visualizations/boxplot - iris.png")
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
-plt.grid()
-sns.violinplot(data = iris, palette = "colorblind")
-plt.title("Violinplot of Iris Variables", weight = "bold")
-plt.savefig("data-visualizations/violinplot - iris.png")
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+# plt.grid()
+# sns.violinplot(data = iris, palette = "colorblind")
+# plt.title("Violinplot of Iris Variables", weight = "bold")
+# plt.savefig("data-visualizations/violinplot - iris.png")
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
-plt.grid()
-sns.violinplot(x= "class", y = "sepal length", data = iris)
-plt.title("Violinplot of Sepal Length by Class", weight = "bold")
-plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+# plt.grid()
+# sns.violinplot(x= "class", y = "sepal length", data = iris)
+# plt.title("Violinplot of Sepal Length by Class", weight = "bold")
+# plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
-plt.grid()
-sns.violinplot(x= "class", y = "sepal width", data=iris)
-plt.title("Violinplot of Sepal Width by Class", weight = "bold")
-plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+# plt.grid()
+# sns.violinplot(x= "class", y = "sepal width", data=iris)
+# plt.title("Violinplot of Sepal Width by Class", weight = "bold")
+# plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
-plt.grid()
-sns.violinplot(x= "class", y = "petal length", data=iris)
-plt.title("Violinplot of Petal Length by Class", weight = "bold")
-plt.savefig("data-visualizations/violinplot by petal length - iris.png")
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+# plt.grid()
+# sns.violinplot(x= "class", y = "petal length", data=iris)
+# plt.title("Violinplot of Petal Length by Class", weight = "bold")
+# plt.savefig("data-visualizations/violinplot by petal length - iris.png")
+# plt.show()
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
-plt.grid()
-sns.violinplot(x= "class", y = "petal width", data=iris)
-plt.title("Violinplot of Petal Width by Class", weight = "bold")
-plt.savefig("data-visualizations/violinplot by petal width - iris.png")
-plt.show()
+# plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+# plt.grid()
+# sns.violinplot(x= "class", y = "petal width", data=iris)
+# plt.title("Violinplot of Petal Width by Class", weight = "bold")
+# plt.savefig("data-visualizations/violinplot by petal width - iris.png")
+# plt.show()
 
 
 
