@@ -80,10 +80,9 @@ plt.rcParams["font.family"] = "DejaVu Sans"
 colors = ["#595959", "#5f9ed1", "#ff800e", "#006ba4"]
 sns.set_palette(sns.color_palette(colors))
 
-
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-# creates a histogram plot with a kernel density estimate of the 'petal width' from the iris dataset
+# creates a histogram plot with a kernel density estimate of the 'petal width'
 # it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
 # 'kde = True' - adds a kernel density estimate overlay
 # 'bins' specifies how many bars to display in the histogram
@@ -174,36 +173,44 @@ plt.show()
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
 sns.boxplot(data = iris, palette = "colorblind")
+plt.title("Boxplot of Iris Variables", weight = "bold")
 plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
 sns.violinplot(data = iris, palette = "colorblind")
+plt.title("Violinplot of Iris Variables", weight = "bold")
 plt.savefig("data-visualizations/violinplot - iris.png")
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
-sns.violinplot(x= "class", y = "sepal length", data=iris)
+sns.violinplot(x= "class", y = "sepal length", data = iris)
+plt.title("Violinplot of Sepal Length by Class", weight = "bold")
 plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
 sns.violinplot(x= "class", y = "sepal width", data=iris)
+plt.title("Violinplot of Sepal Width by Class", weight = "bold")
 plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
 sns.violinplot(x= "class", y = "petal length", data=iris)
+plt.title("Violinplot of Petal Length by Class", weight = "bold")
 plt.savefig("data-visualizations/violinplot by petal length - iris.png")
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
 sns.violinplot(x= "class", y = "petal width", data=iris)
+plt.title("Violinplot of Petal Width by Class", weight = "bold")
 plt.savefig("data-visualizations/violinplot by petal width - iris.png")
 plt.show()
+
+
 
