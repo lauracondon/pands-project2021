@@ -99,28 +99,28 @@ sns.set_style("dark")
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Sepal Length Histogram with Density", size = 15)
+plt.title("Sepal Length Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - sepal length with density.png") 
 plt.show()
 
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Sepal Width Histogram with Density", size = 15)
+plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Petal Length Histogram with Density", size = 15)
+plt.title("Petal Length Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Petal Width Histogram with Density", size = 15)
+plt.title("Petal Width Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
@@ -132,7 +132,7 @@ set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# scatter plot of sepal length by sepal width 
+# scatter plot of sepal width versus length
 
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
@@ -143,15 +143,15 @@ plt.plot(set_3["sepal length"], set_3["sepal width"], "o",  color = "#ff800e" , 
  
 plt.xlabel("sepal length")
 plt.ylabel("sepal width")
-plt.title("Sepal Length x Sepal Width - Scatterplot")
+plt.title("Scatterplot of Sepal Width vs. Sepal Length", weight = "bold")
 
 plt.legend()
-plt.savefig("data-visualizations/scatterplot - sepal length by width.png") 
+plt.savefig("data-visualizations/scatterplot - sepal width v length.png") 
 plt.show()
 
-# scatter plot of petal length by petal width 
+# scatter plot of petal width versus petal length
 
-plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 
 plt.plot(set_1["petal length"], set_1["petal width"], "o", color = "#595959", label = "setosa")
@@ -160,10 +160,10 @@ plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = "#ff800e", l
 
 plt.xlabel("petal length")
 plt.ylabel("petal width")
-plt.title("Petal Length x Petal Width - Scatterplot")
+plt.title("Scatterplot of Petal Width vs. Petal Length", weight = "bold")
 
 plt.legend()
-plt.savefig("data-visualizations/scatterplot - petal length by width.png")
+plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show()
 
 ########################################################################################################################
