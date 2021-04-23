@@ -17,7 +17,9 @@ iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal l
 ###################################################################################################################################
 
 # prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max
-print(iris.describe()) 
+print("Summary Statistics of Iris Dataset")
+describe = iris.describe()
+print(describe) 
 
 # the following segments of code all perform different calculations on the dataset
 # the dataset is divided based off the three classes it contains
@@ -59,26 +61,28 @@ print("Mean Absolute Deviation")
 all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_class_mad) 
 
-# this converts the dataframes into strings and outputs to a text file
-# with open("summary.txt","w") as outfile: # need to look into formatting output
-#     all_class_min.to_string(outfile) 
-#     all_class_max.to_string(outfile)
-#     all_class_median.to_string(outfile)
-#     all_class_unique.to_string(outfile)
-#     all_class_mean.to_string(outfile)
-#     all_class_std.to_string(outfile)
-#     all_class_mad.to_string(outfile)
-
+# outputs the above summaries to a text file 
 tfile = open('summary.txt', 'w')
+tfile.write("\n")
+tfile.write("Overview of All Variables:\n")
+tfile.write("\n")
+tfile.write(describe.to_string())
+tfile.write("\n")
+tfile.write("\n")
 tfile.write("\n")
 tfile.write("Lowest Value\n")
 tfile.write("\n")
 tfile.write(all_class_min.to_string())
 tfile.write("\n")
 tfile.write("\n")
-tfile.write("Range of Values\n")
+tfile.write("Highest Value\n")
 tfile.write("\n")
 tfile.write(all_class_max.to_string())
+tfile.write("\n")
+tfile.write("\n")
+tfile.write("Range of Values\n")
+tfile.write("\n")
+tfile.write(all_class_range.to_string())
 tfile.write("\n")
 tfile.write("\n")
 tfile.write("Median Value\n")
@@ -92,6 +96,7 @@ tfile.write(all_class_unique.to_string())
 tfile.write("\n")
 tfile.write("\n")
 tfile.write("Mean\n")
+tfile.write("\n")
 tfile.write(all_class_mean.to_string())
 tfile.write("\n")
 tfile.write("\n")
