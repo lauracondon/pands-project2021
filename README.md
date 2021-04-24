@@ -1,5 +1,19 @@
+# Table of Contents
+
+
+
 # Introduction
 
+This github repository contains my final project for the 2021 Programming and Scripting module for GMIT's HDip in Science in Computing (Data Analytics).
+
+Along with this README which will explain the project in detail, this repository contains the following: 
+
+    - data-visualizations - this folder contains all png files outputted by analysis.py.
+    - analysis.py - this Python file contains all the code used to analyse the iris dataset.
+    - iris.data - the version of the Fisher iris dataset used for this project [1]. 
+    - summary.txt - this text file contains various numerical summaries of the variables in the     iris dataset as outputted by analysis.py. 
+
+[1] bezdekIris.data from the University of California at Irvine's machine learning repository. Note: this is the corrected version of the dataset and not the version with two errors. 
 
 # The Fisher Iris Data Set - A Summary
 
