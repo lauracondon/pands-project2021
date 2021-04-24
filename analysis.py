@@ -8,7 +8,7 @@
 # Author: Laura Condon
 
 #######################################################################################################################
-# modules, libaries, dataset
+# Modules, Libraries, Dataset
 #######################################################################################################################
 
 # import modules and libraries needed
@@ -19,6 +19,20 @@ import seaborn as sns
 
 # import the data set and assign names to each column in it 
 iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "class"]) 
+
+###################################################################################################################################
+# Set Style of Plots
+####################################################################################################################################
+
+# sets the font style to use for all plots
+plt.rcParams["font.family"] = "DejaVu Sans"
+
+# creates color palette for use with sns plots
+colors = ["#595959", "#5f9ed1", "#ff800e"]
+sns.set_palette(sns.color_palette(colors))
+
+# sets background grid style for all plots
+sns.set_style("dark")
 
 ###########################################################################################################################
 # 1. Summary Information on the Dataset
@@ -115,22 +129,8 @@ tfile.write(all_class_mad.to_string())
 tfile.write("\n\n")
 tfile.close()
 
-###################################################################################################################################
-# set style for plots
 ####################################################################################################################################
-
-# sets the font style to use for all plots
-plt.rcParams["font.family"] = "DejaVu Sans"
-
-# create color palette for use with sns plots
-colors = ["#595959", "#5f9ed1", "#ff800e"]
-sns.set_palette(sns.color_palette(colors))
-
-# set grid style for all plots
-sns.set_style("dark")
-
-####################################################################################################################################
-# histograms
+# 2. Histograms with Kernel Density Estimate
 ####################################################################################################################################
 
 # creates a histogram plot with a kernel density estimate of the 'petal width'
