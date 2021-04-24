@@ -133,22 +133,26 @@ tfile.close()
 # 2. Histograms with Kernel Density Estimate
 ####################################################################################################################################
 
-# creates a histogram plot with a kernel density estimate of the 'petal width'
-# it assigns colour to each class in the dataset ('hue =') and it uses 'palette' to specify what colour
-# 'kde = True' - adds a kernel density estimate overlay
-# 'bins' specifies how many bars to display in the histogram
-# saves the resulting figure to a subfolder 
-# adds a title and specifies font size
+# adds a grid behind the histogram and specifies the style of it
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+plt.grid()
+# creates a histogram plot of the sepal length from the iris dataset 
+ax = sns.histplot(data = iris, x = "sepal length", 
+                         hue = "class", # assigns a colour to each class based on earlier sns palette
+                         kde = True, # adds a kernel density estimate overlay
+                         bins = 25, # specifies how many bars to display in the histogram
+                         element = "step") # specifies style of histogram bars
+
+# adds a title in bold font
+plt.title("Sepal Length Histogram with Kernel Density Estimate", weight = "bold")
+# saves the resulting plot as a png file to designated subfolder 
+plt.savefig("data-visualizations/histogram - sepal length with density.png") 
+# displays the resulting plot in a pop up window to the user
+plt.show()
 
 # the same process is repeated for each variable in the dataset 
 
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-plt.grid()
-ax = sns.histplot(data = iris, x = "sepal length", hue = "class", kde = True, bins = 25, element = "step") 
-plt.title("Sepal Length Histogram with Kernel Density Estimate", weight = "bold")
-plt.savefig("data-visualizations/histogram - sepal length with density.png") 
-plt.show()
-
+# histogram of sepal width
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
@@ -156,6 +160,7 @@ plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 
+# histogram of petal length
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
@@ -163,6 +168,7 @@ plt.title("Petal Length Histogram with Kernel Density Estimate", weight = "bold"
 plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
 
+# histogram of petal width
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
