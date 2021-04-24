@@ -1,4 +1,5 @@
 # Table of Contents
+
 1. Introduction
 2. History and Contents of the Fisher Iris Data Set
 3. How to run analysis.py
@@ -32,7 +33,6 @@ Use of this dataset is not without issue, however, and there are errors that wer
 
 # Software and Libraries Used
 
-
 # Code Explanation
 
 # Why Python? 
@@ -45,7 +45,7 @@ Use of this dataset is not without issue, however, and there are errors that wer
 
 [1] bezdekIris.data from the University of California at Irvine's machine learning repository. Note: this is the corrected version of the dataset and not the version with two errors. 
 
-# History and Contents of the Fisher Iris Data Set
+## History and Contents of the Fisher Iris Data Set
 
 [1] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)
 [2] https://www.biodiversitylibrary.org/page/16048445#page/470/mode/1up (accessed 25/03/2021)
@@ -55,7 +55,7 @@ Use of this dataset is not without issue, however, and there are errors that wer
 [6] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)
 [7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)
 
-# How to run analysis.py
+## How to run analysis.py
 
 ## Software and Libraries Used
 
