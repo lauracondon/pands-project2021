@@ -69,18 +69,25 @@ Python comes with a range of ready to use inbuilt commands but it also allows fo
 ```
 iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "class"]) 
 ```
-Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that various subdivisions, calculations and data visualizations can be performed on it. Using 'names =', names are assigned to each of the five columns in the dataset in order to make them easy to work with in the code. 
+Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that various subdivisions, calculations and data visualizations can be performed on it [4]. Using 'names =', names are assigned to each of the five columns in the dataset in order to make them easy to work with in the code [5].
 
-2. Set default style 
+**Step 2 - Set default style**
 
 
 ```
-plt.rcParams["font.family"] = "DejaVu Sans"
 colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 sns.set_style("dark")
 
 ```
+
+
+Here different style attributes are assigned to the plots to be created. A custom colour palette is created for the seaborn plots [6]. The colours chosen are taken from tableau's color blind 10 palette [7]. 
+
+Seaborn also comes with numerous inbuilt colour palettes including pastel, dark and their own variation on colorblind which can be assigned using set_palette [8]. 
+
+Set style is used here to add a dark background to all plots in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
+
 
 3. Summary of Dataset
 
@@ -211,6 +218,12 @@ plt.show()
 [1] https://pandas.pydata.org/ (accessed 25/04/2021)
 [2] https://matplotlib.org/ (accessed 25/04/2021)
 [3] https://seaborn.pydata.org/introduction.html (accessed 25/04/2021)
+[4] https://towardsdatascience.com/an-overview-of-importing-data-in-python-ac6aa46e0889 (accessed 08/04/2021)
+[5] https://www.kite.com/python/answers how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python (accessed 08/04/2021)
+[6] https://towardsdatascience.com/how-to-use-your-own-color-palettes-with-seaborn-a45bf5175146(accessed 20/04/2021)
+[7] Tableau Public. *Color Palettes with RGB Values* https://public.tableau.com/profile/chris.gerrard#!/vizhome/TableauColors/ColorPaletteswithRGBValues (accessed 20/03/2021)
+[8] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 20/04/2021)
+[9] http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)
 
 ### Dataset Analysis
 
