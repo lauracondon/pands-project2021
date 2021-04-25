@@ -27,7 +27,7 @@ iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal l
 # sets the font style to use for all plots
 plt.rcParams["font.family"] = "DejaVu Sans"
 
-# creates color palette for use with sns plots
+# creates default color palette for use with sns plots
 colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 
@@ -133,7 +133,7 @@ tfile.close()
 # 2. Histograms with Kernel Density Estimate
 ####################################################################################################################################
 
-# adds a grid behind the histogram and specifies the style of it
+# adds background grid and specifies its linestyle
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 # creates a histogram plot of the sepal length from the iris dataset 
@@ -185,8 +185,7 @@ set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# scatter plot of sepal width vs. length
-# adds background grid and specifies style
+# adds background grid and specifies its linestyle
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
 # using the sets, plots the sepal width vs. length for each class
@@ -233,7 +232,7 @@ plt.show()
 # and a kernel density estimate (KDE) for each individual variable
 # displays all as subplots in one figure 
 sns.pairplot(iris, 
-            hue = "class", # specifies colour based off class
+            hue = "class", # specifies colour based off varaible class 
             markers = [".", ".", "."], # sets marker style as a small circle
             plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, # sets style, incl. opacity, for markers
             height = 2) # sets height of each subplot
@@ -276,7 +275,7 @@ plt.show()
 # no palette is mentioned so it uses the default set 'colors' palette
 
 # violinplot of sepal length
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 sns.violinplot(x = "class", y = "sepal length", data = iris)
 plt.title("Violinplot of Sepal Length by Class", weight = "bold")
@@ -284,7 +283,7 @@ plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 
 # violinplot of sepal width
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 sns.violinplot(x = "class", y = "sepal width", data = iris)
 plt.title("Violinplot of Sepal Width by Class", weight = "bold")
@@ -292,7 +291,7 @@ plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
 plt.show()
 
 # violinplot of petal length
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 sns.violinplot(x = "class", y = "petal length", data = iris)
 plt.title("Violinplot of Petal Length by Class", weight = "bold")
@@ -300,7 +299,7 @@ plt.savefig("data-visualizations/violinplot by petal length - iris.png")
 plt.show()
 
 # violinplot of petal width
-plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 sns.violinplot(x= "class", y = "petal width", data = iris)
 plt.title("Violinplot of Petal Width by Class", weight = "bold")
