@@ -83,7 +83,7 @@ print("\nMean Absolute Deviation")
 all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_class_mad) 
 
-# saves the above dataframes to a text file 
+# saves the above dataframes to a text file with added introduction
 tfile = open('summary.txt', 'w')
 tfile.write("\n")
 tfile.write("The Fisher Iris data set is a multivariate data set consisting of a total of one hundred \nand fifty samples of iris flowers. ")
@@ -180,35 +180,42 @@ plt.show()
 # 3. Scatter Plots
 ####################################################################################################################################
 
+# divides the dataset into three 'sets' based off the class/species of iris
 set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 
-# scatter plot of sepal width versus length
-
+# scatter plot of sepal width vs. length
+# adds background grid and specifies style
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
-
-plt.plot(set_1["sepal length"], set_1["sepal width"], "o", color = "#595959", label = "setosa")
-plt.plot(set_2["sepal length"], set_2["sepal width"], "o",  color = "#5f9ed1", label = "versicolor")
-plt.plot(set_3["sepal length"], set_3["sepal width"], "o",  color = "#ff800e" , label = "virginica")
- 
+# using the sets, plots the sepal width vs. length for each class
+plt.plot(set_1["sepal length"], set_1["sepal width"], 
+                                            ".", # sets marker style as a small circle
+                                            color = "#595959", # sets marker colour
+                                            label = "setosa") # associate name with marker
+# the process is repeated for each set
+plt.plot(set_2["sepal length"], set_2["sepal width"], ".",  color = "#5f9ed1", label = "versicolor")
+plt.plot(set_3["sepal length"], set_3["sepal width"], ".",  color = "#ff800e" , label = "virginica")
+# adds relevant label to x and y axis
 plt.xlabel("sepal length")
 plt.ylabel("sepal width")
+# add bold title to figure
 plt.title("Scatterplot of Sepal Width vs. Sepal Length", weight = "bold")
-
+# displays a legend - names are taken from label 
 plt.legend()
+# saves resulting plot to designated subfolder
 plt.savefig("data-visualizations/scatterplot - sepal width v length.png") 
+# displays plot to user in pop up window
 plt.show()
 
-# scatter plot of petal width versus petal length
-
+# the process is repeated for a scatter plot of the petal width vs. length
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 
-plt.plot(set_1["petal length"], set_1["petal width"], "o", color = "#595959", label = "setosa")
-plt.plot(set_2["petal length"], set_2["petal width"], "o",  color = "#5f9ed1", label = "versicolor")
-plt.plot(set_3["petal length"], set_3["petal width"], 'o',  color = "#ff800e", label = "virginica")
+plt.plot(set_1["petal length"], set_1["petal width"], ".", color = "#595959", label = "setosa")
+plt.plot(set_2["petal length"], set_2["petal width"], ".",  color = "#5f9ed1", label = "versicolor")
+plt.plot(set_3["petal length"], set_3["petal width"], '.',  color = "#ff800e", label = "virginica")
 
 plt.xlabel("petal length")
 plt.ylabel("petal width")
