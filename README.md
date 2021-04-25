@@ -3,10 +3,9 @@
 1. Introduction
 2. History and Contents of the Fisher Iris Data Set
 3. How to run analysis.py
-4. Software and Libraries Used
-5. Code Explanation
-6. Why Python? 
-7. References 
+4. Code Explanation
+5. Why Python? 
+6. References 
 
 # Introduction
 
@@ -31,11 +30,71 @@ Use of this dataset is not without issue, however, and there are errors that wer
 
 # How to run analysis.py
 
-# Software and Libraries Used
+If you would like to run analysis.py on your own Windows machine, you will need to have the following installed: 
+
+1. Anaconda (https://www.anaconda.com/products/individual) - a Python distribution platform that comes preinstalled with the basic libaries you need for data science and machine learning. 
+2. Visual Studio Code (https://code.visualstudio.com/)- a desktop code editor 
+
+To run simply:
+1. Clone the repository to your machine by following the steps in Gitgub's guide (https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download Git Bash. (https://git-scm.com/downloads)
+
+OR 
+
+download the repository as a zip file by clicking the green 'Code' button.  
+
+2. Open the resulting folder in Visual Studio Code.
+3. Navigate to analysis.py within the folder and click run. 
+
+Alternatively you can also run Python directly from the Windows Command Line, and skip downloading Visual Studio Code, by navigating to the folder where you saved the repository and entering python analysis.py. 
 
 # Code Explanation
 
+1. Import required modules and libraries
+- numpy
+- pandas 
+- matplotlib
+- seaborn 
+
+2. Set default style 
+
+3. Summary of Dataset
+
+4. Histogram with KDE
+
+5. Scatter Plots
+
+6. Pairplot
+
+7. Boxplot and Violinplots 
+
 # Why Python? 
+
+- free 
+- online community + resources
+- level of customization 
+- sns - quick, easy
+- lots of choice of type of plots etc. - can do complex analysis with it - work with complex datasets 
+- easily save outputs in other formats you can view, share
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # References 
 
