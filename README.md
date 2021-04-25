@@ -89,18 +89,20 @@ Seaborn also comes with numerous inbuilt colour palettes including pastel, dark 
 Set style is used here to add a dark background to all plots in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
 
 
-3. Summary of Dataset
+**Step 3 - Summarise the Dataset**
 
 ```
 describe = iris.describe()
 
 ```
+Pandas comes with a number of handy commands that can perform complex calculations on datasets with ease. Here '.describe()' is used to perform summary calculations on all numeric variables [10]. 
 
 ```
-all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
+all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
+print(all_class_mean)
 
 ```
-
+By grouping the variables, calculations can be performed on each class [11]. In this case, the mean value of each attribute for each species of iris is returned. This is a good way to get a sense of what the key differences between them are. There are a wide range of common calculations used in data analysis that can be easily perfomed using this method as demonstrated in analysis.py [12].
 
 ```
 tfile = open('summary.txt', 'w')
@@ -111,8 +113,11 @@ tfile.write("\n")
 tfile.write(describe.to_string())
 
 ```
+In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using write. The various calculations performed above, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using 'to.string()' before they can be written to a text file [13]. New line ('\n') is used to improve the readability of the outputted text file.
 
-4. Histogram with KDE
+The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten. This is helpful as if you were to edit the dataset by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
+
+**Step 4 - Histogram with Kernel Density Estimate**
 
 ```
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
