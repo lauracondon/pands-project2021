@@ -97,7 +97,7 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 ' set_2 = iris[iris["class"] == "Iris-versicolor"]
 ' set_3 = iris[iris["class"] == "Iris-virginica"]
 
-''' plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+``` plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 
 plt.plot(set_1["petal length"], set_1["petal width"], ".", color = "#595959", label = "setosa")
@@ -110,7 +110,7 @@ plt.title("Scatterplot of Petal Width vs. Petal Length", weight = "bold")
 
 plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
-plt.show() '''
+plt.show() ```
 
 
 6. Pairplot
