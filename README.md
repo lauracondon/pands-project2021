@@ -52,7 +52,7 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
-1. Import required libraries and the iris dataset
+**Step 1 - Import required libraries and the iris dataset**
 
 ```
 import pandas as pd
@@ -206,9 +206,11 @@ plt.show()
 [6] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)
 [7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)
 
-### How to run analysis.py
-
 ### Code Explanation
+
+[1] https://pandas.pydata.org/ (accessed 25/04/2021)
+[2] https://matplotlib.org/ (accessed 25/04/2021)
+[3] https://seaborn.pydata.org/introduction.html (accessed 25/04/2021)
 
 ### Dataset Analysis
 
