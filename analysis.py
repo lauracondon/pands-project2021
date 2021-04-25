@@ -39,7 +39,7 @@ sns.set_style("dark")
 ###########################################################################################################################
 
 # prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max
-print("Summary Statistics of Iris Dataset")
+print("Summary Statistics of Iris Dataset\n")
 describe = iris.describe()
 print(describe) 
 
@@ -49,37 +49,37 @@ print(describe)
 # a new DataFrame containing the resulting calculation is created and outputted to the user 
 
 # this segment displays the lowest value of each class of variable 
-print("Lowest Value")
+print("\nLowest Value")
 all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
 print(all_class_min)
 
-print("Highest Value")
+print("\nHighest Value")
 all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
 print(all_class_max)
 
 # finding the range is useful as it helps measure variability in the dataset
-print("Range of Values") 
+print("\nRange of Values") 
 all_class_range = all_class_max - all_class_min 
 print(all_class_range)
 
-print("Median Value")
+print("\nMedian Value")
 all_class_median = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].median()
 print(all_class_median) 
 
-print("Number of Unique Values")
+print("\nNumber of Unique Values")
 all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
 print(all_class_unique)
 
-print("Mean")
+print("\nMean")
 all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_class_mean)
 
 # standard deviation is another way of showing variability in the dataset
-print("Standard Deviation") 
+print("\nStandard Deviation") 
 all_class_std = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].std() 
 print(all_class_std) 
 
-print("Mean Absolute Deviation") 
+print("\nMean Absolute Deviation") 
 all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_class_mad) 
 
@@ -177,7 +177,7 @@ plt.savefig("data-visualizations/histogram - petal width with density.png")
 plt.show()
 
 ####################################################################################################################################
-# scatter plots
+# 3. Scatter Plots
 ####################################################################################################################################
 
 set_1 = iris[iris["class"] == "Iris-setosa"]
