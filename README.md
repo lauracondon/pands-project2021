@@ -52,10 +52,13 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 1. Import required modules and libraries
 
-> import numpy as np
-> import pandas as pd
-> import matplotlib.pyplot as plt
-> import seaborn as sns
+```
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+```
 
 - numpy
 - pandas 
@@ -64,26 +67,41 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 2. Set default style 
 
-> plt.rcParams["font.family"] = "DejaVu Sans"
-> colors = ["#595959", "#5f9ed1", "#ff800e"]
-> sns.set_palette(sns.color_palette(colors))
-> sns.set_style("dark")
+
+```
+plt.rcParams["font.family"] = "DejaVu Sans"
+colors = ["#595959", "#5f9ed1", "#ff800e"]
+sns.set_palette(sns.color_palette(colors))
+sns.set_style("dark")
+
+```
 
 3. Summary of Dataset
 
-> describe = iris.describe()
+```
+describe = iris.describe()
 
-> all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
+```
 
-> tfile = open('summary.txt', 'w')
-> tfile.write("\n")
-> [...]
-> tfile.write("\n\nOverview of All Variables:\n")
-> tfile.write("\n")
-> tfile.write(describe.to_string())
+```
+all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
+
+```
+
+
+```
+tfile = open('summary.txt', 'w')
+tfile.write("\n")
+[...]
+tfile.write("\n\nOverview of All Variables:\n")
+tfile.write("\n")
+tfile.write(describe.to_string())
+
+```
 
 4. Histogram with KDE
 
+```
 > plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
 > plt.grid()
 > ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
@@ -91,11 +109,16 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 > plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 > plt.show()
 
+```
+
 5. Scatter Plots
 
-' set_1 = iris[iris["class"] == "Iris-setosa"]
-' set_2 = iris[iris["class"] == "Iris-versicolor"]
-' set_3 = iris[iris["class"] == "Iris-virginica"]
+```
+set_1 = iris[iris["class"] == "Iris-setosa"]
+set_2 = iris[iris["class"] == "Iris-versicolor"]
+set_3 = iris[iris["class"] == "Iris-virginica"]
+
+```
 
 ``` 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -117,25 +140,36 @@ plt.show()
 
 6. Pairplot
 
->sns.pairplot(iris, hue = "class", markers = [".", ".", "."], plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 2) 
-> plt.savefig("data-visualizations/pairplot.png")
-> plt.show()
+
+```
+sns.pairplot(iris, hue = "class", markers = [".", ".", "."], plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 2) 
+plt.savefig("data-visualizations/pairplot.png")
+plt.show()
+
+```
 
 7. Boxplot and Violinplots 
 
-> plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-> plt.grid()
-> sns.boxplot(data = iris, palette = "colorblind")
-> plt.title("Boxplot of Iris Variables", weight = "bold")
-> plt.savefig("data-visualizations/boxplot - iris.png")
-> plt.show()
 
-> plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
-> plt.grid()
-> sns.violinplot(x = "class", y = "sepal length", data = iris)
-> plt.title("Violinplot of Sepal Length by Class", weight = "bold")
-> plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
-> plt.show()
+```
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+plt.grid()
+sns.boxplot(data = iris, palette = "colorblind")
+plt.title("Boxplot of Iris Variables", weight = "bold")
+plt.savefig("data-visualizations/boxplot - iris.png")
+plt.show()
+
+```
+
+```
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+plt.grid()
+sns.violinplot(x = "class", y = "sepal length", data = iris)
+plt.title("Violinplot of Sepal Length by Class", weight = "bold")
+plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
+plt.show()
+
+```
 
 # 5. Dataset Analysis
 
