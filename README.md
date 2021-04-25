@@ -1,13 +1,14 @@
 # Table of Contents
 
 1. Introduction
-2. History and Contents of the Fisher Iris Data Set
-3. How to run analysis.py
+2. Summary of the Fisher Iris Data Set
+3. How to Run analysis.py
 4. Code Explanation
-5. Why Python? 
-6. References 
+5. Dataset Analysis 
+6. Why Use Python? 
+7. References 
 
-# Introduction
+# 1. Introduction
 
 This github repository contains my final project for the 2021 Programming and Scripting module for GMIT's HDip in Science in Computing (Data Analytics).
 
@@ -18,7 +19,7 @@ Along with this README which will explain the project in detail, this repository
 - iris.data - the version of the Fisher Iris dataset used for this project [1]. 
 - summary.txt - this text file contains various numerical summaries of the variables in the     iris dataset as outputted by analysis.py. 
 
-# History and Contents of the Fisher Iris Data Set
+# 2. Summary of the Fisher Iris Data Set
 
 The Fisher Iris data set is a multivariate data set consisting of a total of one hundred and fifty samples of iris flowers. Fifty samples were collected from each of three different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. Four attributes are recorded for each sample - sepal length, sepal width, petal length, petal width - as well as the class identifier (the species of the iris). All measurements are given in centimeters [1]. 
 
@@ -28,15 +29,15 @@ Since its publication, Fisher's iris dataset has become tremendously popular for
 
 Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al [6].  These errors are now acknowledged by the UCI on their website [7]. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals [8]. That argument is best left to them but it is an interesting aside to a near ubiquitous dataset. 
 
-# How to run analysis.py
+# 3. How to Run analysis.py
 
 If you would like to run analysis.py on your own Windows machine, you will need to have the following installed: 
 
-1. Anaconda (https://www.anaconda.com/products/individual) - a Python distribution platform that comes preinstalled with the basic libaries you need for data science and machine learning. 
-2. Visual Studio Code (https://code.visualstudio.com/)- a desktop code editor 
+1. [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution platform that comes preinstalled with the basic libaries you need for data science and machine learning. 
+2. [Visual Studio Code](https://code.visualstudio.com/)- a desktop code editor 
 
 To run simply:
-1. Clone the repository to your machine by following the steps in Gitgub's guide (https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download Git Bash. (https://git-scm.com/downloads)
+1. Clone the repository to your machine by following the steps in Gitgub's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download [Git Bash](https://git-scm.com/downloads).
 
 OR 
 
@@ -47,9 +48,15 @@ download the repository as a zip file by clicking the green 'Code' button.
 
 Alternatively you can also run Python directly from the Windows Command Line, and skip downloading Visual Studio Code, by navigating to the folder where you saved the repository and entering python analysis.py. 
 
-# Code Explanation
+# 4. Code Explanation
 
 1. Import required modules and libraries
+
+> import numpy as np
+> import pandas as pd
+> import matplotlib.pyplot as plt
+> import seaborn as sns
+
 - numpy
 - pandas 
 - matplotlib
@@ -57,17 +64,77 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 2. Set default style 
 
+> plt.rcParams["font.family"] = "DejaVu Sans"
+> colors = ["#595959", "#5f9ed1", "#ff800e"]
+> sns.set_palette(sns.color_palette(colors))
+> sns.set_style("dark")
+
 3. Summary of Dataset
+
+> describe = iris.describe()
+
+> all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
+
+> tfile = open('summary.txt', 'w')
+> tfile.write("\n")
+> [...]
+> tfile.write("\n\nOverview of All Variables:\n")
+> tfile.write("\n")
+> tfile.write(describe.to_string())
 
 4. Histogram with KDE
 
+> plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
+> plt.grid()
+> ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
+> plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
+> plt.savefig("data-visualizations/histogram - sepal width with density.png") 
+> plt.show()
+
 5. Scatter Plots
+
+> set_1 = iris[iris["class"] == "Iris-setosa"]
+> set_2 = iris[iris["class"] == "Iris-versicolor"]
+> set_3 = iris[iris["class"] == "Iris-virginica"]
+
+> plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+> plt.grid()
+> plt.plot(set_1["petal length"], set_1["petal width"], ".", color = "#595959", label = "setosa")
+> plt.plot(set_2["petal length"], set_2["petal width"], ".",  color = "#5f9ed1", label = "versicolor")
+> plt.plot(set_3["petal length"], set_3["petal width"], ".",  color = "#ff800e", label = "virginica")
+> plt.xlabel("petal length")
+> plt.ylabel("petal width")
+> plt.title("Scatterplot of Petal Width vs. Petal Length", weight = "bold")
+> plt.legend()
+> plt.savefig("data-visualizations/scatterplot - petal width v length.png")
+> plt.show()
+
 
 6. Pairplot
 
+>sns.pairplot(iris, hue = "class", markers = [".", ".", "."], plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 2) 
+> plt.savefig("data-visualizations/pairplot.png")
+> plt.show()
+
 7. Boxplot and Violinplots 
 
-# Why Python? 
+> plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+> plt.grid()
+> sns.boxplot(data = iris, palette = "colorblind")
+> plt.title("Boxplot of Iris Variables", weight = "bold")
+> plt.savefig("data-visualizations/boxplot - iris.png")
+> plt.show()
+
+> plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
+> plt.grid()
+> sns.violinplot(x = "class", y = "sepal length", data = iris)
+> plt.title("Violinplot of Sepal Length by Class", weight = "bold")
+> plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
+> plt.show()
+
+# 5. Dataset Analysis
+
+# 6. Why Use Python? 
 
 - free 
 - online community + resources
@@ -76,35 +143,15 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 - lots of choice of type of plots etc. - can do complex analysis with it - work with complex datasets 
 - easily save outputs in other formats you can view, share
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# References 
+# 7. References 
 
 ** note - fix referencing formatting ** 
 
-## Introduction 
+### Introduction 
 
 [1] bezdekIris.data from the University of California at Irvine's machine learning repository. Note: this is the corrected version of the dataset and not the version with two errors. 
 
-## History and Contents of the Fisher Iris Data Set
+### Summary of the Fisher Iris Data Set
 
 [1] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)
 [2] https://www.biodiversitylibrary.org/page/16048445#page/470/mode/1up (accessed 25/03/2021)
@@ -114,20 +161,16 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 [6] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)
 [7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)
 
-## How to run analysis.py
+### How to run analysis.py
 
-## Software and Libraries Used
+### Code Explanation
 
-## Code Explanation
+### Dataset Analysis
 
-## Why Python? 
+## Why Use Python? 
 
 ## References 
-
-
 ## analysis.py ##
-
-
 https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/ (accessed 08/04/2021)
 Pandas for Everyone - Daniel Y. Chen
 http://makemeanalyst.com/basic-statistics-explore-your-data-cases-variables-types-of-variables/ (accessed 09/04/2021)
