@@ -39,9 +39,9 @@ If you would like to run analysis.py on your own Windows machine, you will need 
 To run simply:
 1. Clone the repository to your machine by following the steps in Gitgub's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download [Git Bash](https://git-scm.com/downloads).
 
-OR 
+    OR 
 
-download the repository as a zip file by clicking the green 'Code' button.  
+    download the repository as a zip file by clicking the green 'Code' button.  
 
 2. Open the resulting folder in Visual Studio Code.
 3. Navigate to analysis.py within the folder and click run. 
@@ -50,20 +50,26 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 # 4. Code Explanation
 
-1. Import required modules and libraries
+In this section, you’ll find a step by step breakdown of the code used in analysis.py.
+
+1. Import required libraries and the iris dataset
 
 ```
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 ```
+Python comes with a range of ready to use inbuilt commands but it also allows for the importation of libraries in order to increase its capabilities. The following modules and libraries are used in analysis.py:
 
-- numpy
-- pandas 
-- matplotlib
-- seaborn 
+- [pandas](https://pandas.pydata.org/) - a Python library used for data analysis and manipulation. It prides itself on being "fast, powerful, flexible and easy to use" [1]. In analysis.py pandas is used to import the iris dataset and to create the numeric summaries outputted to summary.txt. 
+- [Matplotlib](https://matplotlib.org/) - a Python library used to create data visualizations. According to its slogan it "makes easy things easy and hard things possible" [2]. In analysis.py matplotlib is used to create and save scatterplots and is used to perform various actions on seaborn plots including adding titles and saving to png. 
+- [seaborn](https://seaborn.pydata.org/index.html) - a Python library used to create data visualizations. It is based on Matploblib but its more streamlined approach allows you to "focus on what the different elements of your plots mean, rather than on the details of how to draw them" [3]. In analysis.py it is used to create histograms, boxplots, violinplots and to plot pairs of variables using pairplot.
+
+```
+iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "class"]) 
+```
+Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that various subdivisions, calculations and data visualizations can be performed on it. Using 'names =', names are assigned to each of the five columns in the dataset in order to make them easy to work with in the code. 
 
 2. Set default style 
 
@@ -102,12 +108,12 @@ tfile.write(describe.to_string())
 4. Histogram with KDE
 
 ```
-> plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
-> plt.grid()
-> ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
-> plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
-> plt.savefig("data-visualizations/histogram - sepal width with density.png") 
-> plt.show()
+plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
+plt.grid()
+ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
+plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
+plt.savefig("data-visualizations/histogram - sepal width with density.png") 
+plt.show()
 
 ```
 
