@@ -215,36 +215,36 @@ plt.show()
 
 ### Summary of the Fisher Iris Data Set
 
-[1] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)
-[2] https://www.biodiversitylibrary.org/page/16048445#page/470/mode/1up (accessed 25/03/2021)
-[3] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735315/ (accessed 25/03/2021)
-[4] https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)
-[5] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)
-[6] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)
-[7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)
+[1] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)\
+[2] https://www.biodiversitylibrary.org/page/16048445#page/470/mode/1up (accessed 25/03/2021)\
+[3] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735315/ (accessed 25/03/2021)\
+[4] https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)\
+[5] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)\
+[6] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)\
+[7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\
 
 ### Code Explanation
 
-[1] https://pandas.pydata.org/ (accessed 25/04/2021)
-[2] https://matplotlib.org/ (accessed 25/04/2021)
-[3] https://seaborn.pydata.org/introduction.html (accessed 25/04/2021)
-[4] https://towardsdatascience.com/an-overview-of-importing-data-in-python-ac6aa46e0889 (accessed 08/04/2021)
-[5] https://www.kite.com/python/answers how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python (accessed 08/04/2021)
-[6] https://towardsdatascience.com/how-to-use-your-own-color-palettes-with-seaborn-a45bf5175146(accessed 20/04/2021)
-[7] Tableau Public. *Color Palettes with RGB Values* https://public.tableau.com/profile/chris.gerrard#!/vizhome/TableauColors/ColorPaletteswithRGBValues (accessed 20/03/2021)
-[8] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 20/04/2021)
-[9] http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)
-[10] https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/ (accessed 23/03/2021)
-[11] Pandas for Everyone - Section 1.4 (09/04/2021)
-[12] https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)
-[13] https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html (09/04/2021)
-[14] https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file (accessed 10/04/2021)
-[15] https://realpython.com/read-write-files-python/#reading-and-writing-opened-files (accessed 10/04/2021)
-[16] https://seaborn.pydata.org/generated/seaborn.histplot.html (accessed 13/04/2021)
-[17] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)
-[18] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)
-[19] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)
-[20] https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)
+[1] https://pandas.pydata.org/ (accessed 25/04/2021)\
+[2] https://matplotlib.org/ (accessed 25/04/2021)\
+[3] https://seaborn.pydata.org/introduction.html (accessed 25/04/2021)\
+[4] https://towardsdatascience.com/an-overview-of-importing-data-in-python-ac6aa46e0889 (accessed 08/04/2021)\
+[5] https://www.kite.com/python/answers how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python (accessed 08/04/2021)\
+[6] https://towardsdatascience.com/how-to-use-your-own-color-palettes-with-seaborn-a45bf5175146(accessed 20/04/2021)\
+[7] Tableau Public. *Color Palettes with RGB Values* https://public.tableau.com/profile/chris.gerrard#!/vizhome/TableauColors/ColorPaletteswithRGBValues (accessed 20/03/2021)\
+[8] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 20/04/2021)\
+[9] http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)\
+[10] https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/ (accessed 23/03/2021)\
+[11] Pandas for Everyone - Section 1.4 (09/04/2021)\
+[12] https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)\
+[13] https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html (09/04/2021)\
+[14] https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file (accessed 10/04/2021)\
+[15] https://realpython.com/read-write-files-python/#reading-and-writing-opened-files (accessed 10/04/2021)\
+[16] https://seaborn.pydata.org/generated/seaborn.histplot.html (accessed 13/04/2021)\
+[17] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
+[18] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)\
+[19] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
+[20] https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)\
 
 ### Dataset Analysis
 
