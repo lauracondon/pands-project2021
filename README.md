@@ -249,12 +249,17 @@ What can we conclude:
 
 # 6. Why Use Python? 
 
-- free 
-- online community + resources
-- level of customization 
-- sns - quick, easy
-- lots of choice of type of plots etc. - can do complex analysis with it - work with complex datasets 
-- easily save outputs in other formats you can view, share
+With some many tools readibly available for data analysis and visualisation, what benefit does Python have over others?
+
+One major plus of Python is that it is completely free to use, unlike software such as MiniTab. Python also has an active community surrounding it, meaning there are plenty of free resources and guides available online. 
+
+Python is capable of performing complex calculations quickly and of working with datasets of all sizes. 
+
+There is a huge variety of graphs that can be generated with Python using matplotlib and seaborn. There is also a high level of customization available. You can make your graphs as complex or as easy as you'd like them to be. Seaborn in particular requires very little code to generate complex graphs. 
+
+It is easy to link Python to Github so you can share and backup your work online. It is also easy to save your generated graphs and text summaries in different file formats. This way they can be shared and used outside of Python. 
+
+The data analysis demonstrated in analysis.py is just a small fraction of what Python is capable of. There are plenty of other open source libraries available, such as NumPy, Scikit-learn and StatsModels, that can be used to work with data in Python.
 
 # 7. References 
 
@@ -318,6 +323,4 @@ What can we conclude:
 ### Dataset Analysis
 
 [1] Pandas for Everyone - Section 3.1/n
-
-## Why Use Python? 
 
