@@ -186,6 +186,10 @@ Nonetheless pairplot is an extremely handy tool to generate multiple subplots ea
 
 **Step 7 - Boxplot and Violinplots**
 
+Box plots and violin plots are both used to show the distribution of quantitative data. Boxplots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the below figure: 
+
+Violin plots are hybrids of a box plot and a kernel density plot [33] and are read as follows: 
+
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
@@ -195,6 +199,7 @@ plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
 ```
 
+As with pairplot, boxplot is easy to use. Here we are generating an overall box plot of each variable and not subdividing by class. An inbuilt sns palette, colorblind, is used to visually distinguish it from the other graphs which do feature division by class [34]. A violin plot of the same is also created. Comparing the two handily shows the differences between the two types of plot. 
 
 
 ```
@@ -205,6 +210,8 @@ plt.title("Violinplot of Sepal Length by Class", weight = "bold")
 plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 ```
+
+Following this, individual violin plots of each numeric variable divided by class are created [35]. It is easy to see from them where the key differences in the iris dataset lie and that is the real strength of this type of plot. 
 
 # 5. Dataset Analysis
 
