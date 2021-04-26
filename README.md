@@ -78,7 +78,6 @@ Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that vario
 colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 sns.set_style("dark")
-
 ```
 
 
@@ -93,14 +92,11 @@ Set style is used here to add a dark background to all plots in order to provide
 
 ```
 describe = iris.describe()
-
 ```
 Pandas comes with a number of handy commands that can perform complex calculations on datasets with ease. Here '.describe()' is used to perform summary calculations on all numeric variables [10]. 
-
 ```
 all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_class_mean)
-
 ```
 By grouping the variables, calculations can be performed on each class [11]. In this case, the mean value of each attribute for each species of iris is returned. This is a good way to get a sense of what the key differences between them are. There are a wide range of common calculations used in data analysis that can be easily perfomed using this method as demonstrated in analysis.py [12].
 
@@ -111,7 +107,6 @@ tfile.write("\n")
 tfile.write("\n\nOverview of All Variables:\n")
 tfile.write("\n")
 tfile.write(describe.to_string())
-
 ```
 In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using write. The various calculations performed above, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using 'to.string()' before they can be written to a text file [13]. New line ('\n') is used to improve the readability of the outputted text file.
 
@@ -126,17 +121,24 @@ ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bin
 plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
-
 ```
 
-5. Scatter Plots
+Using seaborn, histograms for each of the four numeric variables are created. Histograms are a common way to represent... 
+
+These histograms are multivariate as each of the three classes of iris are represented on the same plot - as a result of using 'hue ='. 
+
+A kernel density estimate (kde) is added overlapping the histogram. Seaborn provides an easy way to combine these two different types of plot in one by simply including kde = True. As there is quite a bit of overlap in some of our figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that they overlap more cleanly.. Gridlines are also added to try increase the readibility. 
+
+The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
+
+**Step 5 - Scatterplots**
 
 ```
 set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
-
 ```
+Scatterplots are.... Before we can create scatterplots using the dataset, it first needs to be divided into sets based off each class of iris. This is because..
 
 ``` 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -154,20 +156,25 @@ plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show() 
 ```
+We need to specify to individually specify what classes we want included in our scatterplot. Within this code, different styles can be assigned to each. There are -- different types of marker style that can be used including +... Here "." is used for each as its smaller size means there is less overlap of markers. The colour is specified, in line with the colours used for the seaborn palette. 
 
+These scatterplots are plotted entirely with matplotlib. While seaborn will automatically generate axis labels and a legend based off the input, in matplotlib there presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
 
-6. Pairplot
+**Step 6 - Pairplot**
 
 
 ```
 sns.pairplot(iris, hue = "class", markers = [".", ".", "."], plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 2) 
 plt.savefig("data-visualizations/pairplot.png")
 plt.show()
-
 ```
+Pairplot is an excellent way to easily generate a variety of plots from the dataset. In this pairplot, a figure containing -- is generated. 
 
-7. Boxplot and Violinplots 
+All that needs to be included to use pairplot is the name of the dataset and the hue specifier but here additional code is included to specify the style of the output in order to improve readability and ensure consistency with the other plots. USing markers and plot_kws the style of the marker is set. Alpha refers to their opacity, 's' to and 'edgecolour' adds a black outline to each marker. The height of each plot is specified. As there are a lot of plots within the same figure, they do become compressed as a result. There is also many different axes sizes within the same figure which makes it harder to read at a glance. Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily. There are a lot of variations you can do with it, including ---
 
+It will take slightly longer to run than other plots as well. For a small dataset like the Fisher iris one this isn't too much of an issue. When working with larger sets, less rows could be included in the output to give a snapshot overview instead of the whole or the dataset could be further divided instead by year perhaps.. thus helping to speed up the operation of pairplot..
+
+*Step 7 - Boxplot and Violinplots*
 
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -176,8 +183,9 @@ sns.boxplot(data = iris, palette = "colorblind")
 plt.title("Boxplot of Iris Variables", weight = "bold")
 plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
-
 ```
+
+
 
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -186,7 +194,6 @@ sns.violinplot(x = "class", y = "sepal length", data = iris)
 plt.title("Violinplot of Sepal Length by Class", weight = "bold")
 plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
-
 ```
 
 # 5. Dataset Analysis
