@@ -1,10 +1,10 @@
 # displays and saves the following: 
 # 1. summary information on the dataset to a single text file, 
 # 2. histograms with kernel density estimate of each variable to png files 
-# 3. scatter plot of petal and sepal pairs to png files
+# 3. scatterplots of petal and sepal pairs to png files
 # 4. pairplot of the entire dataset to png file
 # 5. boxplot and violinplot of the entire dataset to png files
-# 6. violinplots of each variable grouped by iris class to png files
+# 6. violinplots of each variable grouped by iris species to png files
 # Author: Laura Condon
 
 #######################################################################################################################
@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # import the data set and assign names to each column in it 
-iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "class"]) 
+iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "species"]) 
 
 ###################################################################################################################################
 # Set Style of Plots
@@ -40,44 +40,44 @@ describe = iris.describe()
 print(describe) 
 
 # the following sections of code all perform different calculations on the dataset
-# the dataset is divided/grouped based off the three classes it contains
+# the dataset is divided/grouped based off the three species it contains
 # then different calculations are performed on each variable
 # a new DataFrame containing the resulting calculation is created and outputted to the user 
 
 # this segment displays the lowest value of each class of variable 
 print("\nLowest Value")
-all_class_min = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].min()
-print(all_class_min)
+all_species_min = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].min()
+print(all_species_min)
 
 print("\nHighest Value")
-all_class_max = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].max()
-print(all_class_max)
+all_species_max = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].max()
+print(all_species_max)
 
 # finding the range is useful as it helps measure variability in the dataset
 print("\nRange of Values") 
-all_class_range = all_class_max - all_class_min 
-print(all_class_range)
+all_species_range = all_species_max - all_species_min 
+print(all_species_range)
 
 print("\nMedian Value")
-all_class_median = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].median()
-print(all_class_median) 
+all_species_median = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].median()
+print(all_species_median) 
 
 print("\nNumber of Unique Values")
-all_class_unique = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
-print(all_class_unique)
+all_species_unique = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].nunique()
+print(all_species_unique)
 
 print("\nMean")
-all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
-print(all_class_mean)
+all_species_mean = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
+print(all_species_mean)
 
 # standard deviation is another way of showing variability in the dataset
 print("\nStandard Deviation") 
-all_class_std = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].std() 
-print(all_class_std) 
+all_species_std = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].std() 
+print(all_species_std) 
 
 print("\nMean Absolute Deviation") 
-all_class_mad = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
-print(all_class_mad) 
+all_species_mad = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
+print(all_species_mad) 
 
 # saves the above dataframes to a text file with added introduction
 tfile = open('summary.txt', 'w')
@@ -93,35 +93,35 @@ tfile.write(describe.to_string())
 tfile.write("\n\n\n")
 tfile.write("Lowest Value:\n")
 tfile.write("\n")
-tfile.write(all_class_min.to_string())
+tfile.write(all_species_min.to_string())
 tfile.write("\n\n")
 tfile.write("Highest Value:\n")
 tfile.write("\n")
-tfile.write(all_class_max.to_string())
+tfile.write(all_species_max.to_string())
 tfile.write("\n\n")
 tfile.write("Range of Values:\n")
 tfile.write("\n")
-tfile.write(all_class_range.to_string())
+tfile.write(all_species_range.to_string())
 tfile.write("\n\n")
 tfile.write("Median Value:\n")
 tfile.write("\n")
-tfile.write(all_class_median.to_string())
+tfile.write(all_species_median.to_string())
 tfile.write("\n\n")
 tfile.write("Number of Unique Values:\n")
 tfile.write("\n")
-tfile.write(all_class_unique.to_string())
+tfile.write(all_species_unique.to_string())
 tfile.write("\n\n")
 tfile.write("Mean:\n")
 tfile.write("\n")
-tfile.write(all_class_mean.to_string())
+tfile.write(all_species_mean.to_string())
 tfile.write("\n\n")
 tfile.write("Standard Deviation:\n")
 tfile.write("\n")
-tfile.write(all_class_std.to_string())
+tfile.write(all_species_std.to_string())
 tfile.write("\n\n")
 tfile.write("Mean Absolute Deviation:\n")
 tfile.write("\n")
-tfile.write(all_class_mad.to_string())
+tfile.write(all_species_mad.to_string())
 tfile.write("\n\n")
 tfile.close()
 
@@ -134,7 +134,7 @@ plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 # creates a histogram plot of the sepal length from the iris dataset 
 ax = sns.histplot(data = iris, x = "sepal length", 
-                         hue = "class", # assigns a colour to each class based on earlier sns palette
+                         hue = "species", # assigns a colour to each species based on earlier sns palette
                          kde = True, # adds a kernel density estimate overlay
                          bins = 25, # specifies how many bars to display in the histogram
                          element = "step") # specifies style of histogram bars
@@ -151,7 +151,7 @@ plt.show()
 # histogram of sepal width
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
+ax = sns.histplot(data = iris, x = "sepal width", hue = "species", kde = True, bins = 25, element = "step") 
 plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
 # plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
@@ -159,7 +159,7 @@ plt.show()
 # histogram of petal length
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "petal length", hue = "class", kde = True, bins = 25, element = "step") 
+ax = sns.histplot(data = iris, x = "petal length", hue = "species", kde = True, bins = 25, element = "step") 
 plt.title("Petal Length Histogram with Kernel Density Estimate", weight = "bold")
 # plt.savefig("data-visualizations/histogram - petal length with density.png") 
 plt.show()
@@ -167,7 +167,7 @@ plt.show()
 # histogram of petal width
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "petal width", hue = "class", kde = True, bins = 25, element = "step") 
+ax = sns.histplot(data = iris, x = "petal width", hue = "species", kde = True, bins = 25, element = "step") 
 plt.title("Petal Width Histogram with Kernel Density Estimate", weight = "bold")
 # plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
@@ -176,15 +176,15 @@ plt.show()
 # 3. Scatter Plots
 ####################################################################################################################################
 
-# divides the dataset into three 'sets' based off the class/species of iris
-set_1 = iris[iris["class"] == "Iris-setosa"]
-set_2 = iris[iris["class"] == "Iris-versicolor"]
-set_3 = iris[iris["class"] == "Iris-virginica"]
+# divides the dataset into three 'sets' based off the species of iris
+set_1 = iris[iris["species"] == "Iris-setosa"]
+set_2 = iris[iris["species"] == "Iris-versicolor"]
+set_3 = iris[iris["species"] == "Iris-virginica"]
 
 # adds background grid and specifies its linestyle
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
-# using the sets, plots the sepal width vs. length for each class
+# using the sets, plots the sepal width vs. length for each species
 plt.plot(set_1["sepal length"], set_1["sepal width"], 
                                             ".", # sets marker style as a small circle
                                             color = "#595959", # sets marker colour
@@ -228,7 +228,7 @@ plt.show()
 # and a kernel density estimate (KDE) for each individual variable
 # displays all as subplots in one figure 
 sns.pairplot(iris, 
-            hue = "class", # specifies colour based off varaible class 
+            hue = "species", # specifies colour based off species of iris
             markers = [".", ".", "."], # sets marker style as a small circle
             plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, # sets style, incl. opacity, for markers
             height = 2) # sets height of each subplot
@@ -267,38 +267,38 @@ plt.show()
 ####################################################################################################################################
 
 # the below code works the same as the above but instead of using the entire dataset,
-# individual variables are chosen and plotted by class
+# individual variables are chosen and plotted by species
 # no palette is mentioned so it uses the default set 'colors' palette
 
 # violinplot of sepal length
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-sns.violinplot(x = "class", y = "sepal length", data = iris)
-plt.title("Violinplot of Sepal Length by Class", weight = "bold")
+sns.violinplot(x = "species", y = "sepal length", data = iris)
+plt.title("Violinplot of Sepal Length by species", weight = "bold")
 # plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 
 # violinplot of sepal width
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-sns.violinplot(x = "class", y = "sepal width", data = iris)
-plt.title("Violinplot of Sepal Width by Class", weight = "bold")
+sns.violinplot(x = "species", y = "sepal width", data = iris)
+plt.title("Violinplot of Sepal Width by species", weight = "bold")
 # plt.savefig("data-visualizations/violinplot by sepal width - iris.png")
 plt.show()
 
 # violinplot of petal length
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-sns.violinplot(x = "class", y = "petal length", data = iris)
-plt.title("Violinplot of Petal Length by Class", weight = "bold")
+sns.violinplot(x = "species", y = "petal length", data = iris)
+plt.title("Violinplot of Petal Length by species", weight = "bold")
 # plt.savefig("data-visualizations/violinplot by petal length - iris.png")
 plt.show()
 
 # violinplot of petal width
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-sns.violinplot(x= "class", y = "petal width", data = iris)
-plt.title("Violinplot of Petal Width by Class", weight = "bold")
+sns.violinplot(x= "species", y = "petal width", data = iris)
+plt.title("Violinplot of Petal Width by species", weight = "bold")
 # plt.savefig("data-visualizations/violinplot by petal width - iris.png")
 plt.show()
 
