@@ -25,9 +25,9 @@ The Fisher Iris data set is a multivariate data set consisting of a total of one
 
 R.A. Fisher first published this dataset in the article 'The Use of Multiple Measurements in Taxonomic Problems' in 1936. In it, Fisher uses the dataset to create a linear discriminant model in order to classify the three different species of iris. Anderson also published an article in 1936, entitled 'The Species Problem in Iris' in which he uses the information from the dataset, in combination with additional research, to hypothesize that iris versicolor is an amphidiploid hybrid of iris setosa and iris virginica [2]. This hypothesis was confirmed by Yoong Lim et. al in 2007 in the article 'Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor' [3]. 
 
-Since its publication, Fisher's iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 7,422 times [5].  
+Since its publication, Fisher's iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity [5]. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today [6]. 
 
-Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al [6].  These errors are now acknowledged by the UCI on their website [7]. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals [8]. That argument is best left to them but it is an interesting aside to a near ubiquitous dataset. 
+Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al [7]. These errors are now acknowledged by the UCI on their website [8]. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals [9]. That argument is best left to them but it is an interesting aside to a near ubiquitous dataset. 
 
 # 3. How to Run analysis.py
 
@@ -215,6 +215,7 @@ Following this, individual violin plots of each numeric variable divided by clas
 
 # 5. Dataset Analysis
 
+
 # 6. Why Use Python? 
 
 - free 
@@ -238,9 +239,11 @@ Following this, individual violin plots of each numeric variable divided by clas
 [2] https://www.biodiversitylibrary.org/page/16048445#page/470/mode/1up (accessed 25/03/2021)\
 [3] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735315/ (accessed 25/03/2021)\
 [4] https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)\
-[5] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)\
-[6] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)\
-[7] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\
+[5] https://app.dimensions.ai/details/publication/pub.1036660865 (accessed 26/04/2021)\
+[6] https://www.altair.com/knowledge-studio/ (accessed 26/04/2021)\
+[7] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)\
+[8] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\
+[9] https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)\
 
 ### Code Explanation
 
