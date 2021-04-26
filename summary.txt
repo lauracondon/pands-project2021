@@ -3,7 +3,7 @@ The Fisher Iris data set is a multivariate data set consisting of a total of one
 and fifty samples of iris flowers. Fifty samples were collected from each of three 
 different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. 
 Four attributes are recorded for each sample - sepal length, sepal width, petal length, 
-petal width - as well as the species idenitifier (the species of iris). All measurements are 
+petal width - as well as the class idenitifier (the species of iris). All measurements are 
 given in centimeters. 
 
 This text file includes various numerical summaries of the variables in the dataset so 
