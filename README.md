@@ -275,6 +275,11 @@ Following this, individual violin plots of each numeric variable divided by clas
 [29] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
 [30] https://medium.com/@jaimejcheng/data-exploration-and-visualization-with-seaborn-pair-plots-40e6d3450f6d (accessed 22/04/2021)\
 [31] https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 22/04/2021)\
+[32] https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/box-plot-review (accessed 26/04/2021)\
+[33] https://mode.com/blog/violin-plot-examples/ (accessed 26/04/2021)\
+[34] https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)\
+[35] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 22/04/2021)
+[36] https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)\
 
 ### Dataset Analysis
 
