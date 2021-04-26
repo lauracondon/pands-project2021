@@ -215,6 +215,37 @@ Following this, individual violin plots of each numeric variable divided by clas
 
 # 5. Dataset Analysis
 
+What conclusions can be drawn from the dataset based off the output of analysis.py? 
+
+Looking first at summary.txt, the following stands out: 
+
+1.The petals of iris setosa are notably shorter. Its petal length has a lowest value of 1.0 and a highest value of 1.9. Its petal width has a lowest value of 0.1 and a highest value of 0.6.  
+
+2.The petals of iris setosa also show the least amount of variance. They have a low number of unique values and the standard deviation in petal length and width is low. 
+
+3.There is little obvious difference between the sepals of each species. 
+
+Summary statistics on their own can be deceiving, as famously demonstrated by Anscombe’s quartet [1]. When data is visualized, patterns can emerge that may otherwise have gone unnoticed. 
+
+Looking at the histograms, scatterplots and pair plots the following can be said:
+ 
+Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger. 
+
+While there is a lot more overlap in regards to sepal length and width, the sepals of iris setosa tend to be both shorter and wider that those of the other iris species. 
+
+From the box plot and violin plots: 
+
+It’s clear that sepal width has the lowest range of values across all species. Whereas petal length has the largest range of possible values.
+
+Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
+
+What can we conclude: 
+
+Petals are overall the most useful of the dataset’s recorded attributes for determining iris species. 
+
+Iris setosa has the smallest petals both in terms of length and width, and wider sepals than iris versicolor and iris virginica.
+
+The sepal length and width of iris virginica and iris versicolor overlap a lot, so they are not useful attributes to distinguish them by. Iris virginica has the longest and widest petals of all species, so this could be used to distinguish them from the others. 
 
 # 6. Why Use Python? 
 
@@ -286,4 +317,7 @@ Following this, individual violin plots of each numeric variable divided by clas
 
 ### Dataset Analysis
 
+[1] Pandas for Everyone - Section 3.1/n
+
 ## Why Use Python? 
+
