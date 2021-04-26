@@ -52,16 +52,16 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
-Jump to
-Step 1 - Import required libraries and the iris dataset
-Step 2 - Set Default Style
-Step 3 - Summarise the Dataset
-Step 4 - Histogram with Kernel Density Estimate
-Step 5 - Scatterplots
-Step 6 - Pairplot
-Step 7 - Boxplot and Violinplot
+Jump to:
+[Step 1 - Import Required Libraries and the Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-1---import-required-libraries-and-the-iris-dataset)
+[Step 2 - Set Default Style](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-2---set-default-style)
+[Step 3 - Summarise the Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-3---summarise-the-dataset)
+[Step 4 - Histogram with Kernel Density Estimate](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-4---histogram-with-kernel-density-estimate)
+[Step 5 - Scatterplots](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-5---scatterplots)
+[Step 6 - Pairplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-6---pairplot)
+[Step 7 - Boxplot and Violinplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-7---boxplot-and-violinplot)
 
-### **Step 1 - Import required libraries and the iris dataset**
+### **Step 1 - Import Required Libraries and the Iris Dataset**
 
 ```
 import pandas as pd
