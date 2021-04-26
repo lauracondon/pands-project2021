@@ -58,7 +58,6 @@ In this section, you’ll find a step by step breakdown of the code used in anal
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 ```
 Python comes with a range of ready to use inbuilt commands but it also allows for the importation of libraries in order to increase its capabilities. The following modules and libraries are used in analysis.py:
 
@@ -81,11 +80,11 @@ sns.set_style("dark")
 ```
 
 
-Here different style attributes are assigned to the plots to be created. A custom colour palette is created for the seaborn plots [6]. The colours chosen are taken from tableau's color blind 10 palette [7]. 
+Here different style attributes are assigned to the graphs to be created. A custom colour palette is created for the seaborn graphs [6]. The colours chosen are taken from tableau's color blind 10 palette [7]. 
 
 Seaborn also comes with numerous inbuilt colour palettes including pastel, dark and their own variation on colorblind which can be assigned using set_palette [8]. 
 
-Set style is used here to add a dark background to all plots in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
+Set style is used here to add a dark background to all graphs in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
 
 
 **Step 3 - Summarise the Dataset**
@@ -98,7 +97,9 @@ Pandas comes with a number of handy commands that can perform complex calculatio
 all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_class_mean)
 ```
-By grouping the variables, calculations can be performed on each class [11]. In this case, the mean value of each attribute for each species of iris is returned. This is a good way to get a sense of what the key differences between them are. There are a wide range of common calculations used in data analysis that can be easily perfomed using this method as demonstrated in analysis.py [12].
+By grouping the variables, calculations can be performed on each class [11]. In this case, the mean value of each attribute for each species of iris is returned. This is a good way to get a sense of what the key differences between them are. 
+
+There are a wide range of common calculations used in data analysis that can be easily perfomed using this method as demonstrated in analysis.py [12]. 
 
 ```
 tfile = open('summary.txt', 'w')
@@ -123,11 +124,11 @@ plt.savefig("data-visualizations/histogram - sepal width with density.png")
 plt.show()
 ```
 
-Using seaborn, histograms for each of the four numeric variables are created. Histograms are a common way to represent... 
+Using seaborn, histograms for each of the four numeric variables are created. Histograms are a common way to visualize distributions in data. 
 
-These histograms are multivariate as each of the three classes of iris are represented on the same plot - as a result of using 'hue ='. 
+These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using ' hue = "class"' each class is assigned a different colour - taken from the colour palette applied earlier. 
 
-A kernel density estimate (kde) is added overlapping the histogram. Seaborn provides an easy way to combine these two different types of plot in one by simply including kde = True. As there is quite a bit of overlap in some of our figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that they overlap more cleanly.. Gridlines are also added to try increase the readibility. 
+A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity. Gridlines are also added to try to increase the readibility. 
 
 The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
 
