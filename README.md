@@ -72,20 +72,17 @@ Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that vario
 
 **Step 2 - Set default style**
 
-
 ```
 colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 sns.set_style("dark")
 ```
 
-
 Here different style attributes are assigned to the graphs to be created. A custom colour palette is created for the seaborn graphs [6]. The colours chosen are taken from tableau's color blind 10 palette [7]. 
 
 Seaborn also comes with numerous inbuilt colour palettes including pastel, dark and their own variation on colorblind which can be assigned using set_palette [8]. 
 
 Set style is used here to add a dark background to all graphs in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
-
 
 **Step 3 - Summarise the Dataset**
 
@@ -99,7 +96,7 @@ print(all_class_mean)
 ```
 By grouping the variables, calculations can be performed on each class [11]. In this case, the mean value of each attribute for each species of iris is returned. This is a good way to get a sense of what the key differences between them are. 
 
-There are a wide range of common calculations used in data analysis that can be easily perfomed using this method as demonstrated in analysis.py [12]. 
+There are a wide range of common calculations used in data analysis [12] that can be easily perfomed using this method as demonstrated in analysis.py [13]. 
 
 ```
 tfile = open('summary.txt', 'w')
@@ -109,9 +106,9 @@ tfile.write("\n\nOverview of All Variables:\n")
 tfile.write("\n")
 tfile.write(describe.to_string())
 ```
-In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using write. The various calculations performed above, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using 'to.string()' before they can be written to a text file [13]. New line ('\n') is used to improve the readability of the outputted text file.
+In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using write. The various calculations performed above, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using 'to.string()' before they can be written to a text file [14]. New line ('\n') is used to improve the readability of the outputted text file.
 
-The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten. This is helpful as if you were to edit the dataset by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
+The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten [15]. This is helpful as if you were to edit the dataset by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
 
 **Step 4 - Histogram with Kernel Density Estimate**
 
@@ -124,13 +121,13 @@ plt.savefig("data-visualizations/histogram - sepal width with density.png")
 plt.show()
 ```
 
-Using seaborn, histograms for each of the four numeric variables are created. Histograms are a common way to visualize distributions in data. 
+Using seaborn, histograms for each of the four numeric variables are created [16]. Histograms are a common way to visualize distributions in data. 
 
-These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using ' hue = "class"' each class is assigned a different colour - taken from the colour palette applied earlier. 
+These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using ' hue = "class"' each class is assigned a different colour - taken from the colour palette applied earlier [17]. 
 
-A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity. Gridlines are also added to try to increase the readibility. 
+A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable [18]. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity [19]. Gridlines are also added to try to increase the readibility. 
 
-The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
+The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing [20]. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
 
 **Step 5 - Scatterplots**
 
@@ -237,35 +234,18 @@ plt.show()
 [7] Tableau Public. *Color Palettes with RGB Values* https://public.tableau.com/profile/chris.gerrard#!/vizhome/TableauColors/ColorPaletteswithRGBValues (accessed 20/03/2021)
 [8] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 20/04/2021)
 [9] http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)
+[10] https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/ (accessed 23/03/2021)
+[11] Pandas for Everyone - Section 1.4 (09/04/2021)
+[12] https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)
+[13] https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html (09/04/2021)
+[14] https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file (accessed 10/04/2021)
+[15] https://realpython.com/read-write-files-python/#reading-and-writing-opened-files (accessed 10/04/2021)
+[16] https://seaborn.pydata.org/generated/seaborn.histplot.html (accessed 13/04/2021)
+[17] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)
+[18] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)
+[19] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)
+[20] https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)
 
 ### Dataset Analysis
 
 ## Why Use Python? 
-
-## References 
-## analysis.py ##
-https://www.geeksforgeeks.org/add-column-names-to-dataframe-in-pandas/ (accessed 08/04/2021)
-Pandas for Everyone - Daniel Y. Chen
-http://makemeanalyst.com/basic-statistics-explore-your-data-cases-variables-types-of-variables/ (accessed 09/04/2021)
-https://blogs.helsinki.fi/quantitative-communication/data-gathering/what-is-data/ (accessed 09/04/2021)
-https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)
-
-outputting dataframe to text file - https://stackoverflow.com/questions/32821995/outputting-pandas-dataframe-to-formatted-text-file 
-(accessed 10/04/2021)
-subplots - https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html (accessed 11/04/2021)
-https://stackoverflow.com/questions/52095337/plotting-grids-across-the-subplots-python-matplotlib (accessed 12/04/2021)
-https://stackoverflow.com/questions/42372509/how-to-add-a-shared-x-label-and-y-label-to-a-plot-created-with-pandas-plot (accessed 12/04/2021)
-https://seaborn.pydata.org/generated/seaborn.displot.html?highlight=displot#seaborn.displot (accessed 12/04/2021)
-https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)
-simple histogram plot - https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.hist.html (accessed 13/04/2021)
-https://datavizcatalogue.com/blog/chart-selection-guide/ (accessed 13/04/2021)
-https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)
-https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)
-
-# pairplot
-
-http://seaborn.pydata.org/tutorial/aesthetics.html
-https://medium.com/@jaimejcheng/data-exploration-and-visualization-with-seaborn-pair-plots-40e6d3450f6d
-https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166
-https://seaborn.pydata.org/generated/seaborn.pairplot.html (all accessed 22/04/2021)
-https://seaborn.pydata.org/tutorial/axis_grids.html
