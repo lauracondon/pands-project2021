@@ -1,12 +1,12 @@
 # Table of Contents
 
-1. Introduction
-2. Summary of the Fisher Iris Data Set
-3. How to Run analysis.py
-4. Code Explanation
-5. Dataset Analysis 
-6. Why Use Python? 
-7. References 
+1. [Introduction](https://github.com/lauracondon/pands-project2021/blob/main/README.md#1-introduction)
+2. [Summary of the Fisher Iris Data Set](https://github.com/lauracondon/pands-project2021/blob/main/README.md#2-summary-of-the-fisher-iris-data-set)
+3. [How to Run analysis.py](https://github.com/lauracondon/pands-project2021/blob/main/README.md#3-how-to-run-analysispy)
+4. [Code Explanation](https://github.com/lauracondon/pands-project2021/blob/main/README.md#4-code-explanation)
+5. [Dataset Analysis](https://github.com/lauracondon/pands-project2021/blob/main/README.md#5-dataset-analysis)
+6. [Why Use Python?](https://github.com/lauracondon/pands-project2021/blob/main/README.md#6-why-use-python)
+7. [References](https://github.com/lauracondon/pands-project2021/blob/main/README.md#7-references)
 
 # 1. Introduction
 
@@ -52,8 +52,16 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
+Jump to
+Step 1 - Import required libraries and the iris dataset
+Step 2 - Set Default Style
+Step 3 - Summarise the Dataset
+Step 4 - Histogram with Kernel Density Estimate
+Step 5 - Scatterplots
+Step 6 - Pairplot
+Step 7 - Boxplot and Violinplot
 
-**Step 1 - Import required libraries and the iris dataset**
+### **Step 1 - Import required libraries and the iris dataset**
 
 ```
 import pandas as pd
@@ -72,7 +80,7 @@ iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal l
 Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that various subdivisions, calculations and data visualizations can be performed on it [4]. Using 'names =', names are assigned to each of the five columns in the dataset in order to make them easy to work with in the code [5].
 
 
-**Step 2 - Set default style**
+### **Step 2 - Set Default Style**
 
 ```
 colors = ["#595959", "#5f9ed1", "#ff800e"]
@@ -87,7 +95,7 @@ Seaborn also comes with numerous inbuilt colour palettes including pastel, dark 
 Set style is used here to add a dark background to all graphs in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
 
 
-**Step 3 - Summarise the Dataset**
+### **Step 3 - Summarise the Dataset**
 
 ```
 describe = iris.describe()
@@ -114,7 +122,7 @@ In order to save the calculations so they can be easily viewed later, they are o
 The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten [15]. This is helpful as if you were to edit the dataset by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
 
 
-**Step 4 - Histogram with Kernel Density Estimate**
+### **Step 4 - Histogram with Kernel Density Estimate**
 
 ```
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
@@ -134,7 +142,7 @@ A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a s
 The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing [20]. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
 
 
-**Step 5 - Scatterplots**
+### **Step 5 - Scatterplots**
 
 ```
 set_1 = iris[iris["class"] == "Iris-setosa"]
@@ -166,7 +174,7 @@ Matplotlib also comes with an inbuilt function plt.scatter to create scatterplot
 These scatterplots are plotted entirely with matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
 
 
-**Step 6 - Pairplot**
+### **Step 6 - Pairplot**
 
 
 ```
@@ -184,7 +192,7 @@ As there are a lot of plots within the same figure, the output is more compresse
 
 Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily and can provide a good indication of what more indepth forms of analysis may be worth doing on the dataset [30]. In addition to scatterplots and KDE, pairplot can be used to output univariate and bivariate histograms in different styles [31]. 
 
-**Step 7 - Boxplot and Violinplots**
+### **Step 7 - Boxplot and Violinplot**
 
 Box plots and violin plots are both used to show the distribution of quantitative data. Boxplots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the below figure: 
 
