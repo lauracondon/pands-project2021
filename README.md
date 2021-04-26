@@ -174,11 +174,15 @@ sns.pairplot(iris, hue = "class", markers = [".", ".", "."], plot_kws = {"alpha"
 plt.savefig("data-visualizations/pairplot.png")
 plt.show()
 ```
-Pairplot is an excellent way to easily generate a variety of plots from the dataset. In this pairplot, a figure containing -- is generated. 
+Pairplot is an excellent way to easily generate a variety of plots from a dataset. Here pairplot is used to generate a figure containing scatter plots of every combo of the iris dataset's variables and a KDE for each individual variable.
 
-All that needs to be included to use pairplot is the name of the dataset and the hue specifier but here additional code is included to specify the style of the output in order to improve readability and ensure consistency with the other plots. USing markers and plot_kws the style of the marker is set. Alpha refers to their opacity, 's' to and 'edgecolour' adds a black outline to each marker. The height of each plot is specified. As there are a lot of plots within the same figure, they do become compressed as a result. There is also many different axes sizes within the same figure which makes it harder to read at a glance. Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily. There are a lot of variations you can do with it, including ---
+All that needs to be included to use the pairplot function is the name of the dataset and, if you wish to have different colours for each categorical variable, a hue specifier [26]. With just one line, a complex set of plots can be greated. 
 
-It will take slightly longer to run than other plots as well. For a small dataset like the Fisher iris one this isn't too much of an issue. When working with larger sets, less rows could be included in the output to give a snapshot overview instead of the whole or the dataset could be further divided instead by year perhaps.. thus helping to speed up the operation of pairplot..
+Here additional code is included to specify the output's style, both in order to improve readability and to ensure consistency with the other plots. Using markers [27] and plot_kws the style of the marker for the scatterplots is set. Alpha refers to their transparency, 's' to size and 'edgecolour: k' adds a black outline to each marker [28]. The height of the plots is also specified. 
+
+As there are a lot of plots within the same figure, the output is more compressed as a result. There are also many different axes sizes contained within the same figure, which can make it harder to read at a glance. Additionally, pairplot will take longer to run than other plotting functions. This is not a issue for the current dataset but could present problems when working with larger sets. In order to lessen this, fewer rows from the dataset could be included to give more of a snapshot overview or to only plot a certain range of the data for instance certain years [29].
+
+Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily and can provide a good indication of what more indepth forms of analysis may be worth doing on the dataset [30]. In addition to scatterplots and KDE, pairplot can be used to output univariate and bivariate histograms in different styles [31]. 
 
 **Step 7 - Boxplot and Violinplots**
 
