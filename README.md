@@ -262,6 +262,12 @@ plt.show()
 [23] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
 [24] https://matplotlib.org/stable/api/markers_api.html (accessed 25/04/2021)\
 [25] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
+[26] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
+[27] https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 25/04/2021)\
+[28] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
+[29] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
+[30] https://medium.com/@jaimejcheng/data-exploration-and-visualization-with-seaborn-pair-plots-40e6d3450f6d (accessed 22/04/2021)\
+[31] https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 22/04/2021)\
 
 ### Dataset Analysis
 
