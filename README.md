@@ -136,7 +136,7 @@ set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 ```
-Scatterplots are.... Before we can create scatterplots using the dataset, it first needs to be divided into sets based off each class of iris. This is because..
+Scatterplots are used to visualize the relationship between two variables thus allowing us to determine if there are correlations between them [21]. In a scatterplot, each value in the dataset is represented by a marker. Before creating scatterplots, the dataset is divided into subsets (set_1, set_2, set_3) according to each class of iris [22].
 
 ``` 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -154,9 +154,11 @@ plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show() 
 ```
-We need to specify to individually specify what classes we want included in our scatterplot. Within this code, different styles can be assigned to each. There are -- different types of marker style that can be used including +... Here "." is used for each as its smaller size means there is less overlap of markers. The colour is specified, in line with the colours used for the seaborn palette. 
+The plt.plot function from matplotlib is used to create the scatterplots [23]. Each set or class to be included in the plot is listed individually. Different styles can then be applied to each. There are many different marker styles that can be used with matplotlib including diamonds, triangles and stars [24] Here point "." is used for all markers as its smaller size mean they overlap less. The colour is specified for each, in line with the colours used in the seaborn palette. 
 
-These scatterplots are plotted entirely with matplotlib. While seaborn will automatically generate axis labels and a legend based off the input, in matplotlib there presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
+Matplotlib also comes with an inbuilt function plt.scatter to create scatterplots with. This function allows the properties of each individual point (size, face colour, edge colour etc.) to be specified. For small datasets like Fisher's iris dataset there is not much difference in the efficiency of each function, but for large datasets, plt.plot can be noticeably more efficient and is this preferable [25].
+
+These scatterplots are plotted entirely with matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
 
 **Step 6 - Pairplot**
 
@@ -245,6 +247,11 @@ plt.show()
 [18] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)\
 [19] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
 [20] https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)\
+[21] https://visme.co/blog/scatter-plot/ (accessed 26/04/2021)\
+[22] Pandas for Everyone - Section 3.2 (09/04/2021)\
+[23] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
+[24] https://matplotlib.org/stable/api/markers_api.html (accessed 25/04/2021)\
+[25] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
 
 ### Dataset Analysis
 
