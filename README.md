@@ -39,7 +39,7 @@ If you would like to run analysis.py on your own Windows machine, you will need 
 To run simply:
 1. Clone the repository to your machine by following the steps in Gitgub's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download [Git Bash](https://git-scm.com/downloads).
 
-    OR 
+    **OR**
 
     download the repository as a zip file by clicking the green 'Code' button.  
 
@@ -51,6 +51,7 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 # 4. Code Explanation
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
+
 
 **Step 1 - Import required libraries and the iris dataset**
 
@@ -70,6 +71,7 @@ iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal l
 ```
 Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that various subdivisions, calculations and data visualizations can be performed on it [4]. Using 'names =', names are assigned to each of the five columns in the dataset in order to make them easy to work with in the code [5].
 
+
 **Step 2 - Set default style**
 
 ```
@@ -83,6 +85,7 @@ Here different style attributes are assigned to the graphs to be created. A cust
 Seaborn also comes with numerous inbuilt colour palettes including pastel, dark and their own variation on colorblind which can be assigned using set_palette [8]. 
 
 Set style is used here to add a dark background to all graphs in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
+
 
 **Step 3 - Summarise the Dataset**
 
@@ -110,6 +113,7 @@ In order to save the calculations so they can be easily viewed later, they are o
 
 The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten [15]. This is helpful as if you were to edit the dataset by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
 
+
 **Step 4 - Histogram with Kernel Density Estimate**
 
 ```
@@ -128,6 +132,7 @@ These histograms are multivariate as each of the three classes of iris are repre
 A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable [18]. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity [19]. Gridlines are also added to try to increase the readibility. 
 
 The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing [20]. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
+
 
 **Step 5 - Scatterplots**
 
@@ -160,6 +165,7 @@ Matplotlib also comes with an inbuilt function plt.scatter to create scatterplot
 
 These scatterplots are plotted entirely with matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
 
+
 **Step 6 - Pairplot**
 
 
@@ -174,7 +180,7 @@ All that needs to be included to use pairplot is the name of the dataset and the
 
 It will take slightly longer to run than other plots as well. For a small dataset like the Fisher iris one this isn't too much of an issue. When working with larger sets, less rows could be included in the output to give a snapshot overview instead of the whole or the dataset could be further divided instead by year perhaps.. thus helping to speed up the operation of pairplot..
 
-*Step 7 - Boxplot and Violinplots*
+**Step 7 - Boxplot and Violinplots**
 
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
