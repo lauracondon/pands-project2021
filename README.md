@@ -196,7 +196,11 @@ Nonetheless pairplot is an extremely handy tool to generate multiple subplots ea
 
 Box plots and violin plots are both used to show the distribution of quantitative data. Box plots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the figure below: 
 
+![Box Plot](/README-images/boxplot-diagram.png)
+
 Violin plots are hybrids of a box plot and a kernel density plot [33] and are read as follows: 
+
+![Violin Plot](/README-images/violinplot-diagram.png)
 
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
