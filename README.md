@@ -14,40 +14,41 @@ This github repository contains my final project for the 2021 Programming and Sc
 
 Along with this README which will explain the project in detail, this repository contains the following: 
 
+- README-images - this folder contains images embedded in this README. 
 - data-visualizations - this folder contains all png files outputted by analysis.py.
 - analysis.py - this Python file contains all the code used to analyse the iris dataset.
-- iris.data - the version of the Fisher Iris dataset used for this project [1]. 
-- summary.txt - this text file contains various numerical summaries of the variables in the     iris dataset as outputted by analysis.py. 
+- iris.data - the version of the Fisher Iris dataset used for this project **[1]**. 
+- summary.txt - this text file contains numerical summaries of the variables in the iris dataset as outputted by analysis.py. 
 
 # 2. Summary of the Fisher Iris Data Set
 
-The Fisher Iris data set is a multivariate data set consisting of a total of one hundred and fifty samples of iris flowers. Fifty samples were collected from each of three different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. Four attributes are recorded for each sample - sepal length, sepal width, petal length, petal width - as well as the class identifier (the species of the iris). All measurements are given in centimeters [1]. 
+The Fisher Iris data set is a multivariate data set consisting of a total of one hundred and fifty samples of iris flowers. Fifty samples were collected from each of three different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. Four attributes are recorded for each sample - sepal length, sepal width, petal length, petal width - as well as the class identifier (the species of the iris). All measurements are given in centimeters **[1]**. 
 
-R.A. Fisher first published this dataset in the article 'The Use of Multiple Measurements in Taxonomic Problems' in 1936. In it, Fisher uses the dataset to create a linear discriminant model in order to classify the three different species of iris. Anderson also published an article in 1936, entitled 'The Species Problem in Iris' in which he uses the information from the dataset, in combination with additional research, to hypothesize that iris versicolor is an amphidiploid hybrid of iris setosa and iris virginica [2]. This hypothesis was confirmed by Yoong Lim et. al in 2007 in the article 'Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor' [3]. 
+R.A. Fisher first published this dataset in the article 'The Use of Multiple Measurements in Taxonomic Problems' in 1936. In it, Fisher uses the dataset to create a linear discriminant model in order to classify the three different species of iris. Edgar Anderson also published an article in 1936, entitled 'The Species Problem in Iris' in which he uses the information from the dataset, in combination with additional research, to hypothesize that iris versicolor is an amphidiploid hybrid of iris setosa and iris virginica **[2]**. This hypothesis was confirmed by Yoong Lim et. al in 2007 in the article 'Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor' **[3]**. 
 
 ![Iris Species](/README-images/species-of-iris.PNG)
 
 <p align="center">
-    <i>Petals and Sepals of the Three Iris Species</i> [4]. 
+    <i>Petals and Sepals of the Three Iris Species</i> **[4]**. 
 </p>
 
-Since its publication, Fisher's iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity [5]. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today [6]. 
+Since its publication, Fisher's Iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity **[5]**. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today **[6]**. 
 
-Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al [7]. These errors are now acknowledged by the UCI on their website [8]. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals [9]. That argument is best left to them but it is an interesting aside to a near ubiquitous dataset. 
+Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al **[7]**. These errors are now acknowledged by the UCI on their website **[8]**. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals **[9]**. While that argument is best left to them but it is an interesting aside to a near ubiquitous dataset. 
 
 # 3. How to Run analysis.py
 
 If you would like to run analysis.py on your own Windows machine, you will need to have the following installed: 
 
-1. [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution platform that comes preinstalled with the basic libaries you need for data science and machine learning. 
-2. [Visual Studio Code](https://code.visualstudio.com/)- a desktop code editor 
+1. [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution platform that comes preinstalled with the basic libraries you need for data science and machine learning. 
+2. [Visual Studio Code](https://code.visualstudio.com/)- a desktop code editor.
 
 To run simply:
-1. Clone the repository to your machine by following the steps in Github's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download [Git Bash](https://git-scm.com/downloads).
+1. Clone the repository to your machine by following the steps in Github's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). You will need to download [Git Bash](https://git-scm.com/downloads) in order to do this.
 
     **OR**
 
-    download the repository as a zip file by clicking the green 'Code' button.  
+    download the repository as a zip file by clicking the green 'Code' button at the top of this page. 
 
 2. Open the resulting folder in Visual Studio Code.
 3. Navigate to analysis.py within the folder and click run. 
@@ -58,7 +59,7 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
-Jump to:\
+Jump to:\\
 [Step 1 - Import Required Libraries and the Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-1---import-required-libraries-and-the-iris-dataset)\
 [Step 2 - Set Default Style](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-2---set-default-style)\
 [Step 3 - Summarise the Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-3---summarise-the-dataset)\
@@ -74,16 +75,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
-Python comes with a range of ready to use inbuilt commands but it also allows for the importation of libraries in order to increase its capabilities. The following modules and libraries are used in analysis.py:
+Python comes with a range of inbuilt commands but it also allows you to import libraries and modules in order to increase its capabilities. The following libraries are used in analysis.py:
 
-- [pandas](https://pandas.pydata.org/) - a Python library used for data analysis and manipulation. It prides itself on being "fast, powerful, flexible and easy to use" [1]. In analysis.py pandas is used to import the iris dataset and to create the numeric summaries outputted to summary.txt. 
-- [Matplotlib](https://matplotlib.org/) - a Python library used to create data visualizations. According to its slogan it "makes easy things easy and hard things possible" [2]. In analysis.py matplotlib is used to create and save scatter plots and is used to perform various actions on seaborn plots including adding titles and saving to png. 
-- [seaborn](https://seaborn.pydata.org/index.html) - a Python library used to create data visualizations. It is based on Matploblib but its more streamlined approach allows you to "focus on what the different elements of your plots mean, rather than on the details of how to draw them" [3]. In analysis.py it is used to create histograms, box plots, violin plots and to plot pairs of variables using pairplot.
+- [pandas](https://pandas.pydata.org/) - a Python library used for data analysis and manipulation. It prides itself on being "fast, powerful, flexible and easy to use" **[1]**. In analysis.py pandas is used to import the iris dataset and to create the numeric summaries that are outputted to summary.txt. 
+- [Matplotlib](https://matplotlib.org/) - a Python library used to create data visualizations. According to its slogan it "makes easy things easy and hard things possible" **[2]**. In analysis.py, Matplotlib is used to create and save scatter plots and to perform various actions on seaborn graphs including adding titles and saving to png. 
+- [seaborn](https://seaborn.pydata.org/index.html) - a Python library used to create data visualizations. It is based on Matploblib but its more streamlined approach allows you to "focus on what the different elements of your plots mean, rather than on the details of how to draw them" **[3]**. In analysis.py it is used to create histograms, box plots, violin plots and pair plots.
 
 ```
-iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "class"]) 
+iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "species"]) 
 ```
-Fisher's Iris dataset is read into the analysis.py as a DataFrame, so that various subdivisions, calculations and data visualizations can be performed on it [4]. Using 'names =', names are assigned to each of the five columns in the dataset in order to make them easy to work with in the code [5].
+Fisher's Iris dataset is read into analysis.py as a DataFrame so that various subdivisions, calculations and data visualizations can be done with it **[4]**. Using *names =* names are assigned to each of the five columns in the dataset, in order to make them easy to work with in the code **[5]**.
 
 
 ### **Step 2 - Set Default Style**
@@ -94,11 +95,11 @@ sns.set_palette(sns.color_palette(colors))
 sns.set_style("dark")
 ```
 
-Here different style attributes are assigned to the graphs to be created. A custom colour palette is created for the seaborn graphs [6]. The colours chosen are taken from tableau's color blind 10 palette [7]. 
+Here different style attributes are specified for the to be created graphs. A custom colour palette is created for the seaborn graphs **[6]**. The colours chosen for it are taken from Tableau's colorblind 10 palette **[7]**. 
 
-Seaborn also comes with numerous inbuilt colour palettes including pastel, dark and their own variation on colorblind which can be assigned using set_palette [8]. 
+Seaborn also comes with inbuilt colour palettes which can be assigned using *set_palette*. They include pastel, dark and their own variation on colorblind **[8]**. 
 
-Set style is used here to add a dark background to all graphs in order to provide increased contrast with the markers, histograms etc [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
+A dark background is added to all graphs using *set_style("dark")*. This is done to provide increased contrast with the markers, histograms etc to be plotted. [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
 
 
 ### **Step 3 - Summarise the Dataset**
@@ -106,14 +107,21 @@ Set style is used here to add a dark background to all graphs in order to provid
 ```
 describe = iris.describe()
 ```
-Pandas comes with a number of handy commands that can perform complex calculations on datasets with ease. Here '.describe()' is used to perform summary calculations on all numeric variables [10]. 
-```
-all_class_mean = iris.groupby(["class"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
-print(all_class_mean)
-```
-By grouping the variables, calculations can be performed on each class [11]. In this case, the mean value of each attribute for each species of iris is returned. This is a good way to get a sense of what the key differences between them are. 
+Pandas comes with a number of handy commands that can easily perform complex calculations on datasets. Here *.describe()* is used to perform summary calculations on all numeric variables in the dataset **[10]**. 
 
-There are a wide range of common calculations used in data analysis [12] that can be easily perfomed using this method as demonstrated in analysis.py [13]. 
+
+#### image of output ####
+
+
+```
+all_class_mean = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
+print(all_species_mean)
+```
+By using *iris.groupby* calculations can be divided according to iris species **[11]**. The above code returns the mean value of each attribute for each species. This is a good way to get a sense of what the key differences between them are. 
+
+#### image of output ####
+
+There are a wide range of common calculations used in data analysis **[12]** that can be easily perfomed using this method as demonstrated in analysis.py **[13]**. 
 
 ```
 tfile = open('summary.txt', 'w')
@@ -123,9 +131,9 @@ tfile.write("\n\nOverview of All Variables:\n")
 tfile.write("\n")
 tfile.write(describe.to_string())
 ```
-In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using write. The various calculations performed above, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using 'to.string()' before they can be written to a text file [14]. New line ('\n') is used to improve the readability of the outputted text file.
+In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using *tfile.write*. The various calculations performed in the code, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using *to.string()* before they can be written to a text file [14]. New line *\n* is used to improve the readability of the outputted text file.
 
-The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten [15]. This is helpful as if you were to edit the dataset by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
+The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten [15]. This is helpful as if you were to edit the dataset, by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
 
 
 ### **Step 4 - Histogram with Kernel Density Estimate**
