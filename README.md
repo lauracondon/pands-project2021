@@ -126,7 +126,7 @@ print(all_species_mean)
 By using '*iris.groupby*' calculations can be divided according to iris species **[11]**. The above code returns the mean value of each attribute for each species. This is a good way to get a sense of what the key differences between them are:
 
 <p align="center">
-  <img src="/README-images/mean.PNG" alt="output of groupby mean">
+  <img src="/README-images/mean.PNG" alt="output of groupby mean" width="600">
 </p>
 
 There is a wide range of common calculations used in data analysis **[12]** that can be easily perfomed using this method as demonstrated in analysis.py **[13]**. 
@@ -285,21 +285,23 @@ Looking first at summary.txt, the following stands out:
 - The petals of iris setosa are notably shorter. Its petals have a minimum length of 1.0 cm and a maximum length of 1.9 cm. Its petals have a minimum width of 0.1 cm and a maximum width of 0.6 cm.  
 
 <p align="center">
-  <img src="/README-images/minimum.PNG" alt="output of group by min">
+  <img src="/README-images/minimum.PNG" alt="output of group by min" width="600">
 </p>
 
+
 <p align="center">
-  <img src="/README-images/maximum.PNG" alt="output of group by max">
+  <img src="/README-images/maximum.PNG" alt="output of group by max" width="600">
 </p>
 
 - The petals of iris setosa also show the least amount of variance. They have a low number of unique values and the standard deviation in petal length and width is low. 
 
 <p align="center">
-  <img src="/README-images/unique-values.PNG" alt="output of group by nunqiue">
+  <img src="/README-images/unique-values.PNG" alt="output of group by nunqiue" width="600">
 </p>
 
+
 <p align="center">
-  <img src="/README-images/standard-deviation.PNG" alt="output of group by std">
+  <img src="/README-images/standard-deviation.PNG" alt="output of group by std" width="600">
 </p>
 
 - There is little obvious difference between the sepals of each species. 
