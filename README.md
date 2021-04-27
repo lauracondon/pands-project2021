@@ -22,14 +22,14 @@ Along with this README which will explain the project in detail, this repository
 
 # 2. Summary of the Fisher Iris Data Set
 
-The Fisher Iris data set is a multivariate data set consisting of a total of one hundred and fifty samples of iris flowers. Fifty samples were collected from each of three different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. Four attributes are recorded for each sample - sepal length, sepal width, petal length, petal width - as well as the class identifier (the species of the iris). All measurements are given in centimeters **[1]**. 
+The Fisher Iris data set is a multivariate data set consisting of a total of one hundred and fifty samples of iris flowers. Fifty samples were collected from each of three different species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. Four attributes are recorded for each sample - sepal length, sepal width, petal length, petal width - as well as the class identifier (the species of iris). All measurements are given in centimeters **[1]**. 
 
 R.A. Fisher first published this dataset in the article 'The Use of Multiple Measurements in Taxonomic Problems' in 1936. In it, Fisher uses the dataset to create a linear discriminant model in order to classify the three different species of iris. Edgar Anderson also published an article in 1936, entitled 'The Species Problem in Iris' in which he uses the information from the dataset, in combination with additional research, to hypothesize that iris versicolor is an amphidiploid hybrid of iris setosa and iris virginica **[2]**. This hypothesis was confirmed by Yoong Lim et. al in 2007 in the article 'Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor' **[3]**. 
 
 ![Iris Species](/README-images/species-of-iris.PNG)
 
 <p align="center">
-    <i>Petals and Sepals of the Three Iris Species</i> **[4]**. 
+    <i>Petals and Sepals of the Three Iris Species</i> <b>[4]</b>. 
 </p>
 
 Since its publication, Fisher's Iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity **[5]**. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today **[6]**. 
@@ -41,7 +41,7 @@ Use of this dataset is not without issue, however, and there are errors that wer
 If you would like to run analysis.py on your own Windows machine, you will need to have the following installed: 
 
 1. [Anaconda](https://www.anaconda.com/products/individual) - a Python distribution platform that comes preinstalled with the basic libraries you need for data science and machine learning. 
-2. [Visual Studio Code](https://code.visualstudio.com/)- a desktop code editor.
+2. [Visual Studio Code](https://code.visualstudio.com/) - a desktop code editor.
 
 To run simply:
 1. Clone the repository to your machine by following the steps in Github's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). You will need to download [Git Bash](https://git-scm.com/downloads) in order to do this.
@@ -59,7 +59,7 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
-Jump to:\
+Jump to:
 
 [Step 1 - Import Required Libraries and the Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-1---import-required-libraries-and-the-iris-dataset)\
 [Step 2 - Set Default Style](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-2---set-default-style)\
@@ -111,16 +111,20 @@ describe = iris.describe()
 Pandas comes with a number of handy commands that can easily perform complex calculations on datasets. Here *.describe()* is used to perform summary calculations on all numeric variables in the dataset **[10]**. 
 
 
-### image of output ###
+<p align="center">
+  <img src="/README-images/describe.PNG" alt="output iris.describe">
+</p>
 
 
 ```
-all_class_mean = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
+all_species_mean = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].mean() 
 print(all_species_mean)
 ```
 By using *iris.groupby* calculations can be divided according to iris species **[11]**. The above code returns the mean value of each attribute for each species. This is a good way to get a sense of what the key differences between them are. 
 
-### image of output ###
+<p align="center">
+  <img src="/README-images/mean.PNG" alt="output of groupby mean">
+</p>
 
 There are a wide range of common calculations used in data analysis **[12]** that can be easily perfomed using this method as demonstrated in analysis.py **[13]**. 
 
@@ -152,7 +156,7 @@ plt.show()
 
 Using seaborn, histograms for each of the four numeric variables are created **[16]**. Histograms are a common way to visualize distributions in data. 
 
-These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using *hue = "species"* each species is assigned a different colour in the outputted graph - as assigned earlier using *sns.set_palette* **[17]**. 
+These histograms are multivariate as each of the three species of iris are represented on the same graph. Using *hue = "species"* each species is assigned a different colour in the outputted graph - as assigned earlier using *sns.set_palette* **[17]**. 
 
 A kernel density estimate (KDE) is added overlapping each histogram. A KDE is a smooth curve estimate of the density of a variable **[18]**. Seaborn provides an easy way to combine the two in one figure by simply including *kde = True*. As there is quite a bit of overlap in some of the graphs, efforts have been made to make the data easier to read by increasing the number of bins in each histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity **[19]**. Grid lines are also added to try to increase the readability. 
 
@@ -267,13 +271,23 @@ What conclusions can be drawn from the dataset based off the output of analysis.
 
 Looking first at summary.txt, the following stands out: 
 
-### image of output ###
+<p align="center">
+  <img src="/README-images/minimum.PNG" alt="output of group by min">
+</p>
 
-### image of output ###
+<p align="center">
+  <img src="/README-images/maximum.PNG" alt="output of group by max">
+</p>
 
 - The petals of iris setosa are notably shorter. Its petals have a minimum length of 1.0 cm and a maximum length of 1.9 cm. Its petals have a minimum width of 0.1 cm and a maximum width of 0.6 cm.  
 
-### image of output ###
+<p align="center">
+  <img src="/README-images/unique-values.PNG" alt="output of group by nunqiue">
+</p>
+
+<p align="center">
+  <img src="/README-images/standard-deviation.PNG" alt="output of group by std">
+</p>
 
 - The petals of iris setosa also show the least amount of variance. They have a low number of unique values and the standard deviation in petal length and width is low. 
 
