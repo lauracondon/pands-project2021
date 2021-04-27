@@ -34,7 +34,7 @@ R.A. Fisher first published this dataset in the article 'The Use of Multiple Mea
 
 Since its publication, Fisher's Iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity **[5]**. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today **[6]**. 
 
-Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al **[7]**. These errors are now acknowledged by the UCI on their website **[8]**. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals **[9]**. While that argument is best left to them but it is an interesting aside to a near ubiquitous dataset. 
+Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al **[7]**. These errors are now acknowledged by the UCI on their website **[8]**. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals **[9]**. While that argument is best left to them, it is an interesting aside to a near ubiquitous dataset. 
 
 # 3. How to Run analysis.py
 
@@ -59,7 +59,8 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
-Jump to:\\
+Jump to:\
+
 [Step 1 - Import Required Libraries and the Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-1---import-required-libraries-and-the-iris-dataset)\
 [Step 2 - Set Default Style](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-2---set-default-style)\
 [Step 3 - Summarise the Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-3---summarise-the-dataset)\
@@ -99,7 +100,7 @@ Here different style attributes are specified for the to be created graphs. A cu
 
 Seaborn also comes with inbuilt colour palettes which can be assigned using *set_palette*. They include pastel, dark and their own variation on colorblind **[8]**. 
 
-A dark background is added to all graphs using *set_style("dark")*. This is done to provide increased contrast with the markers, histograms etc to be plotted. [9]. Other preconfigured options include white, whitegrid, darkgrid and ticks.
+A dark background is added to all graphs using *set_style("dark")*. This is done to provide increased contrast with the markers, histograms etc to be plotted **[9]**. Other preconfigured options include white, whitegrid, darkgrid and ticks.
 
 
 ### **Step 3 - Summarise the Dataset**
@@ -110,7 +111,7 @@ describe = iris.describe()
 Pandas comes with a number of handy commands that can easily perform complex calculations on datasets. Here *.describe()* is used to perform summary calculations on all numeric variables in the dataset **[10]**. 
 
 
-#### image of output ####
+### image of output ###
 
 
 ```
@@ -119,7 +120,7 @@ print(all_species_mean)
 ```
 By using *iris.groupby* calculations can be divided according to iris species **[11]**. The above code returns the mean value of each attribute for each species. This is a good way to get a sense of what the key differences between them are. 
 
-#### image of output ####
+### image of output ###
 
 There are a wide range of common calculations used in data analysis **[12]** that can be easily perfomed using this method as demonstrated in analysis.py **[13]**. 
 
@@ -131,9 +132,9 @@ tfile.write("\n\nOverview of All Variables:\n")
 tfile.write("\n")
 tfile.write(describe.to_string())
 ```
-In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using *tfile.write*. The various calculations performed in the code, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using *to.string()* before they can be written to a text file [14]. New line *\n* is used to improve the readability of the outputted text file.
+In order to save the calculations so they can be easily viewed later, they are outputted to a designated text file using *tfile.write*. The various calculations performed in the code, all create a new DataFrame containing the result. As they are a DataFrame they must be converted to a string using *to.string()* before they can be written to a text file **[14]**. New line - *\n* - is used to improve the readability of the outputted text file.
 
-The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten [15]. This is helpful as if you were to edit the dataset, by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
+The file is opened in write mode, rather than append, so that each time the program is run the text file is overwritten **[15]**. This is helpful as if you were to edit the dataset, by for example adding new rows, the summary data file would change accordingly when analysis.py is next run. 
 
 
 ### **Step 4 - Histogram with Kernel Density Estimate**
@@ -141,29 +142,30 @@ The file is opened in write mode, rather than append, so that each time the prog
 ```
 plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
 plt.grid()
-ax = sns.histplot(data = iris, x = "sepal width", hue = "class", kde = True, bins = 25, element = "step") 
+ax = sns.histplot(data = iris, x = "sepal width", hue = "species", kde = True, bins = 25, element = "step") 
 plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - sepal width with density.png") 
 plt.show()
 ```
 
-Using seaborn, histograms for each of the four numeric variables are created [16]. Histograms are a common way to visualize distributions in data. 
+### image of output ###
 
-These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using ' hue = "class"' each class is assigned a different colour - taken from the colour palette applied earlier [17]. 
+Using seaborn, histograms for each of the four numeric variables are created **[16]**. Histograms are a common way to visualize distributions in data. 
 
-A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable [18]. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity [19]. Grid lines are also added to try to increase the readability. 
+These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using *hue = "species"* each species is assigned a different colour in the outputted graph - as assigned earlier using *sns.set_palette* **[17]**. 
 
-The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing [20]. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
+A kernel density estimate (KDE) is added overlapping each histogram. A KDE is a smooth curve estimate of the density of a variable **[18]**. Seaborn provides an easy way to combine the two in one figure by simply including *kde = True*. As there is quite a bit of overlap in some of the graphs, efforts have been made to make the data easier to read by increasing the number of bins in each histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity **[19]**. Grid lines are also added to try to increase the readability. 
 
+The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing **[20]**. As with the summary text file, if the information in iris.data was changed  the outputted figures would be overwritten the next time analysis.py was run.
 
 ### **Step 5 - Scatter plots**
 
 ```
-set_1 = iris[iris["class"] == "Iris-setosa"]
-set_2 = iris[iris["class"] == "Iris-versicolor"]
-set_3 = iris[iris["class"] == "Iris-virginica"]
+set_1 = iris[iris["species"] == "Iris-setosa"]
+set_2 = iris[iris["species"] == "Iris-versicolor"]
+set_3 = iris[iris["species"] == "Iris-virginica"]
 ```
-Scatter plots are used to visualize the relationship between two variables thus allowing us to determine if there are correlations between them [21]. In a scatter plot, each value in the dataset is represented by a marker. Before creating scatter plots, the dataset is divided into subsets (set_1, set_2, set_3) according to each class of iris [22].
+Scatter plots are used to visualize the relationship between two variables thus allowing you to determine the correlation between them **[21]**. In a scatter plot each value in the dataset is represented by a marker. Before creating scatter plots, the dataset is divided into subsets (set_1, set_2, set_3) according to each species of iris **[22]**.
 
 ``` 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -181,40 +183,46 @@ plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show() 
 ```
-The plt.plot function from matplotlib is used to create the scatter plots [23]. Each set or class to be included in the plot is listed individually. Different styles can then be applied to each. There are many different marker styles that can be used with matplotlib including diamonds, triangles and stars [24] Here point "." is used for all markers as its smaller size mean they overlap less. The colour is specified for each, in line with the colours used in the seaborn palette. 
+### image of output ###
 
-Matplotlib also comes with an inbuilt function plt.scatter to create scatter plots with. This function allows the properties of each individual point (size, face colour, edge colour etc.) to be specified. For small datasets like Fisher's iris dataset there is not much difference in the efficiency of each function, but for large datasets, plt.plot can be noticeably more efficient and is this preferable [25].
+The *plt.plot* function from Matplotlib is used to create the scatter plots **[23]**. Each set to be included in the plot is listed individually. Different styles can then be applied to each. There are many different marker styles that can be used with Matplotlib, including diamonds, triangles and stars **[24]**. Here point - *"."* - is used for all markers as its smaller size means they overlap less. The colour is specified for each species, in line with the colours used in the seaborn palette. 
 
-These scatter plots are plotted entirely with matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
+Matplotlib also comes with an inbuilt function *plt.scatter* to create scatter plots with. This function allows the properties of each individual point (size, face colour, edge colour etc.) to be specified. For small datasets like Fisher's Iris dataset there is not much difference in the efficiency of each function, but for large datasets, *plt.plot* can be noticeably more efficient and is thus preferable *[25]*.
+
+These scatter plots are plotted entirely with Matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in Matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
 
 
 ### **Step 6 - Pairplot**
 
 
 ```
-sns.pairplot(iris, hue = "class", markers = [".", ".", "."], plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 2) 
+sns.pairplot(iris, hue = "species", markers = [".", ".", "."], plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, height = 2) 
 plt.savefig("data-visualizations/pairplot.png")
 plt.show()
 ```
-Pairplot is an excellent way to easily generate a variety of plots from a dataset. Here pairplot is used to generate a figure containing scatter plots of every combo of the iris dataset's variables and a KDE for each individual variable.
+### image of output ###
 
-All that needs to be included to use the pairplot function is the name of the dataset and, if you wish to have different colours for each categorical variable, a hue specifier [26]. With just one line, a complex set of plots can be created. 
+Pairplot is an excellent way to easily generate a variety of plots from a dataset. Here pairplot is used to generate a figure containing scatter plots of different combinations of the iris dataset's variables and a KDE for each individual variable.
 
-Here additional code is included to specify the output's style, both in order to improve readability and to ensure consistency with the other plots. Using markers [27] and plot_kws the style of the marker for the scatter plots is set. Alpha refers to their transparency, 's' to size and 'edgecolour: k' adds a black outline to each marker [28]. The height of the plots is also specified. 
+All that needs to be included to use the pairplot function is the name of the dataset and, if you wish to have different colours for each categorical variable, a hue specifier **[26]**. With just one line of code, a complex set of plots can be created. 
 
-As there are a lot of plots within the same figure, the output is more compressed as a result. There are also many different axes sizes contained within the same figure, which can make it harder to read at a glance. Additionally, pairplot will take longer to run than other plotting functions. This is not a issue for the current dataset but could present problems when working with larger sets. In order to lessen this, fewer rows from the dataset could be included to give more of a snapshot overview or to only plot a certain range of the data for instance certain years [29].
+Here additional code is included to specify the style of the plots generated, both in order to improve readability and to ensure consistency with the other graphs created. Using markers **[27]** and plot_kws the style of the marker for the scatter plots is set. Alpha refers to their transparency, *"s"* to size and *"edgecolour": "k"* adds a black outline to each marker **[28]**. The height of the plots is also specified. 
 
-Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily and can provide a good indication of what more indepth forms of analysis may be worth doing on the dataset [30]. In addition to scatter plots and KDE, pairplot can be used to output univariate and bivariate histograms in different styles [31]. 
+As there are a lot of subplots within the same figure, the output is more compressed as a result. There are also many different axes sizes used for each plot, which can make it harder to read at a glance. 
+
+Additionally, pairplot will take longer to run than other plotting functions. This is not a issue for the current dataset but could present problems when working with larger sets. In order to lessen this, fewer rows from the dataset could be included to give more of a snapshot overview or to only plot a certain range of the data - select years for instance **[29]**.
+
+Nonetheless, despite these drawbacks, pairplot is an extremely handy tool to generate multiple subplots easily and its output can help indicate areas where more indepth analysis may be worth pursuing **[30]**. In addition to scatter plots and KDEs, pairplot can be used to output univariate and bivariate histograms in different styles **[31]**. 
 
 ### **Step 7 - Boxplot and Violinplot**
 
-Box plots and violin plots are both used to show the distribution of quantitative data. Box plots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the figure below: 
+Box plots and violin plots are both used to show the distribution of quantitative data. Box plots show the minimum, first quartile, median, third quartile, and maximum of a set of data **[32]** as indicated in the figure below: 
 
 <p align="center">
   <img src="/README-images/boxplot-diagram.png" alt="Box Plot">
 </p>
 
-Violin plots are hybrids of a box plot and a kernel density plot [33] and are read as follows: 
+Violin plots are hybrids of a box plot and a kernel density plot **[33]** and are read as follows: 
 
 <p align="center">
   <img src="/README-images/violinplot-diagram.png" alt="Violin Plot">
@@ -229,19 +237,29 @@ plt.savefig("data-visualizations/boxplot - iris.png")
 plt.show()
 ```
 
-As with pairplot, boxplot is easy to use. Here we are generating an overall box plot of each variable and not subdividing by class. An inbuilt sns palette, colorblind, is used to visually distinguish it from the other graphs which do feature division by class [34]. A violin plot of the same is also created. Comparing the two handily shows the differences between the two types of plot. 
+As with pairplot, boxplot is easy to use. Here an overall box plot of each variable is generated. It is not divided by iris species. 
+
+
+### image of output ###
+
+
+An inbuilt sns palette, colorblind, is used to visually distinguish it from the other graphs which do feature division by species **[34]**. A violin plot of the same is also created. Comparing the two handily shows the differences between the two types of plot. 
+
+## image of output ###
 
 
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-sns.violinplot(x = "class", y = "sepal length", data = iris)
-plt.title("Violinplot of Sepal Length by Class", weight = "bold")
+sns.violinplot(x = "species", y = "sepal length", data = iris)
+plt.title("Violinplot of Sepal Length by Species", weight = "bold")
 plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 ```
 
-Following this, individual violin plots of each numeric variable divided by class are created [35]. It is easy to see from them where the key differences in the iris dataset lie and that is the real strength of this type of plot. 
+### image of output ###
+
+Following this, individual violin plots of each numeric variable divided by species are created [35]. It is easy to see from them where the key differences in the iris dataset lie and that is the real strength of this type of plot. 
 
 # 5. Dataset Analysis
 
@@ -249,7 +267,13 @@ What conclusions can be drawn from the dataset based off the output of analysis.
 
 Looking first at summary.txt, the following stands out: 
 
-- The petals of iris setosa are notably shorter. Its petal length has a lowest value of 1.0 and a highest value of 1.9. Its petal width has a lowest value of 0.1 and a highest value of 0.6.  
+### image of output ###
+
+### image of output ###
+
+- The petals of iris setosa are notably shorter. Its petals have a minimum length of 1.0 cm and a maximum length of 1.9 cm. Its petals have a minimum width of 0.1 cm and a maximum width of 0.6 cm.  
+
+### image of output ###
 
 - The petals of iris setosa also show the least amount of variance. They have a low number of unique values and the standard deviation in petal length and width is low. 
 
@@ -259,15 +283,24 @@ Summary statistics on their own can be deceiving, as famously demonstrated by An
 
 Looking at the histograms, scatter plots and pair plots the following can be said:
  
-- Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger. 
+- Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger.
+
+### image of output ###
 
 - While there is a lot more overlap in regards to sepal length and width, the sepals of iris setosa tend to be both shorter and wider that those of the other iris species. 
+
+
+### image of output ###
 
 From the box plot and violin plots: 
 
 - It’s clear that sepal width has the lowest range of values across all species. Whereas petal length has the largest range of possible values.
 
+### image of output ###
+
 - Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
+
+### image of output ###
 
 What can we conclude: 
 
@@ -279,13 +312,13 @@ What can we conclude:
 
 # 6. Why Use Python? 
 
-With some many tools readily available for data analysis and visualization, what benefit does Python have over others?
+With so many tools readily available for data analysis and visualization, what benefit does Python have over others?
 
 One major plus of Python is that it is completely free to use, unlike software such as MiniTab. Python also has an active community surrounding it, meaning there are plenty of free resources and guides available online. 
 
 Python is capable of performing complex calculations quickly and of working with datasets of all sizes. 
 
-There is a huge variety of graphs that can be generated with Python using matplotlib and seaborn. There is also a high level of customization available. You can make your graphs as complex or as easy as you'd like them to be. Seaborn in particular requires very little code to generate complex graphs. 
+There is a huge variety of graphs that can be generated with Python using just matplotlib and seaborn. There is also a high level of customization available. You can make your graphs as complex or as easy as you'd like them to be. Seaborn in particular requires very little code to generate complex graphs. 
 
 It is easy to link Python to Github so you can share and backup your work online. It is also easy to save your generated graphs and text summaries in different file formats. This way they can be shared and used outside of Python. 
 
