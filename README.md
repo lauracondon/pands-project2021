@@ -280,6 +280,8 @@ What conclusions can be drawn from the dataset based off the output of analysis.
 
 Looking first at summary.txt, the following stands out: 
 
+- The petals of iris setosa are notably shorter. Its petals have a minimum length of 1.0 cm and a maximum length of 1.9 cm. Its petals have a minimum width of 0.1 cm and a maximum width of 0.6 cm.  
+
 <p align="center">
   <img src="/README-images/minimum.PNG" alt="output of group by min">
 </p>
@@ -288,7 +290,7 @@ Looking first at summary.txt, the following stands out:
   <img src="/README-images/maximum.PNG" alt="output of group by max">
 </p>
 
-- The petals of iris setosa are notably shorter. Its petals have a minimum length of 1.0 cm and a maximum length of 1.9 cm. Its petals have a minimum width of 0.1 cm and a maximum width of 0.6 cm.  
+- The petals of iris setosa also show the least amount of variance. They have a low number of unique values and the standard deviation in petal length and width is low. 
 
 <p align="center">
   <img src="/README-images/unique-values.PNG" alt="output of group by nunqiue">
@@ -298,32 +300,40 @@ Looking first at summary.txt, the following stands out:
   <img src="/README-images/standard-deviation.PNG" alt="output of group by std">
 </p>
 
-- The petals of iris setosa also show the least amount of variance. They have a low number of unique values and the standard deviation in petal length and width is low. 
-
 - There is little obvious difference between the sepals of each species. 
 
-Summary statistics on their own can be deceiving, as famously demonstrated by Anscombe’s quartet [1]. When data is visualized, patterns can emerge that may otherwise have gone unnoticed. 
+Summary statistics on their own can be deceiving, as famously demonstrated by Anscombe’s quartet **[1]**. When data is visualized, patterns can emerge that may otherwise have gone unnoticed. 
 
 Looking at the histograms, scatter plots and pair plots the following can be said:
  
 - Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger.
 
-### image of output ###
+<p float="left">
+  <img src= "/data-visualizations/histogram - petal width with density.png" width="150" />
+  <img src="/data-visualizations/histogram - petal length with density.png" width="150" /> 
+</p>
+
 
 - While there is a lot more overlap in regards to sepal length and width, the sepals of iris setosa tend to be both shorter and wider that those of the other iris species. 
 
-
-### image of output ###
+<p align="center">
+  <img src="/data-visualizations/scatterplot - sepal width v length.png" alt="scatterplot - sepal width v length">
+</p>
 
 From the box plot and violin plots: 
 
 - It’s clear that sepal width has the lowest range of values across all species. Whereas petal length has the largest range of possible values.
 
-### image of output ###
+<p float="left">
+  <img src= "/data-visualizations/boxplot - iris.png" width="150" />
+  <img src="/data-visualizations/boxplot - violinplot.png" width="150" /> 
+</p>
 
 - Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
 
-### image of output ###
+<p align="center">
+  <img src="/data-visualizations/violinplot by sepal width - iris.png" alt="violinplot by sepal width">
+</p>
 
 What can we conclude: 
 
