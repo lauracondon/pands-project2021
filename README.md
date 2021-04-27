@@ -37,7 +37,7 @@ If you would like to run analysis.py on your own Windows machine, you will need 
 2. [Visual Studio Code](https://code.visualstudio.com/)- a desktop code editor 
 
 To run simply:
-1. Clone the repository to your machine by following the steps in Gitgub's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download [Git Bash](https://git-scm.com/downloads).
+1. Clone the repository to your machine by following the steps in Github's [guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). Note that you will also need to download [Git Bash](https://git-scm.com/downloads).
 
     **OR**
 
@@ -52,14 +52,14 @@ Alternatively you can also run Python directly from the Windows Command Line, an
 
 In this section, you’ll find a step by step breakdown of the code used in analysis.py.
 
-Jump to:
+Jump to:\
 [Step 1 - Import Required Libraries and the Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-1---import-required-libraries-and-the-iris-dataset)\
 [Step 2 - Set Default Style](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-2---set-default-style)\
 [Step 3 - Summarise the Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-3---summarise-the-dataset)\
 [Step 4 - Histogram with Kernel Density Estimate](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-4---histogram-with-kernel-density-estimate)\
-[Step 5 - Scatterplots](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-5---scatterplots)
+[Step 5 - Scatterplots](https://github.com/lauracondon/\pands-project2021/blob/main/README.md#step-5---scatterplots)\
 [Step 6 - Pairplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-6---pairplot)\
-[Step 7 - Boxplot and Violinplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-7---boxplot-and-violinplot)\
+[Step 7 - Boxplot and Violinplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-7---boxplot-and-violinplot)
 
 ### **Step 1 - Import Required Libraries and the Iris Dataset**
 
@@ -71,8 +71,8 @@ import seaborn as sns
 Python comes with a range of ready to use inbuilt commands but it also allows for the importation of libraries in order to increase its capabilities. The following modules and libraries are used in analysis.py:
 
 - [pandas](https://pandas.pydata.org/) - a Python library used for data analysis and manipulation. It prides itself on being "fast, powerful, flexible and easy to use" [1]. In analysis.py pandas is used to import the iris dataset and to create the numeric summaries outputted to summary.txt. 
-- [Matplotlib](https://matplotlib.org/) - a Python library used to create data visualizations. According to its slogan it "makes easy things easy and hard things possible" [2]. In analysis.py matplotlib is used to create and save scatterplots and is used to perform various actions on seaborn plots including adding titles and saving to png. 
-- [seaborn](https://seaborn.pydata.org/index.html) - a Python library used to create data visualizations. It is based on Matploblib but its more streamlined approach allows you to "focus on what the different elements of your plots mean, rather than on the details of how to draw them" [3]. In analysis.py it is used to create histograms, boxplots, violinplots and to plot pairs of variables using pairplot.
+- [Matplotlib](https://matplotlib.org/) - a Python library used to create data visualizations. According to its slogan it "makes easy things easy and hard things possible" [2]. In analysis.py matplotlib is used to create and save scatter plots and is used to perform various actions on seaborn plots including adding titles and saving to png. 
+- [seaborn](https://seaborn.pydata.org/index.html) - a Python library used to create data visualizations. It is based on Matploblib but its more streamlined approach allows you to "focus on what the different elements of your plots mean, rather than on the details of how to draw them" [3]. In analysis.py it is used to create histograms, box plots, violin plots and to plot pairs of variables using pairplot.
 
 ```
 iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "class"]) 
@@ -137,19 +137,19 @@ Using seaborn, histograms for each of the four numeric variables are created [16
 
 These histograms are multivariate as each of the three classes of iris are represented on the same graph. Using ' hue = "class"' each class is assigned a different colour - taken from the colour palette applied earlier [17]. 
 
-A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable [18]. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity [19]. Gridlines are also added to try to increase the readibility. 
+A kernel density estimate (KDE) is added overlapping the histogram. A KDE is a smooth curve estimate of the density of a variable [18]. Seaborn provides an easy way to combine the two in one figure by simply including 'kde = True'. As there is quite a bit of overlap in some of the figures, efforts have been made to make the data easier to read by increasing the number of bins in the histogram and by setting the element to step so that bars overlap as one 'block' with decreased opacity [19]. Grid lines are also added to try to increase the readability. 
 
 The resulting histograms are both displayed to the user one at a time in a pop up window and saved to the designated folder 'data-visualizations' for later viewing [20]. As with the summary text file, if the data was changed in the iris.data file the next time analysis.py was run the figures would be overwritten with the new output.
 
 
-### **Step 5 - Scatterplots**
+### **Step 5 - Scatter plots**
 
 ```
 set_1 = iris[iris["class"] == "Iris-setosa"]
 set_2 = iris[iris["class"] == "Iris-versicolor"]
 set_3 = iris[iris["class"] == "Iris-virginica"]
 ```
-Scatterplots are used to visualize the relationship between two variables thus allowing us to determine if there are correlations between them [21]. In a scatterplot, each value in the dataset is represented by a marker. Before creating scatterplots, the dataset is divided into subsets (set_1, set_2, set_3) according to each class of iris [22].
+Scatter plots are used to visualize the relationship between two variables thus allowing us to determine if there are correlations between them [21]. In a scatter plot, each value in the dataset is represented by a marker. Before creating scatter plots, the dataset is divided into subsets (set_1, set_2, set_3) according to each class of iris [22].
 
 ``` 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -167,11 +167,11 @@ plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show() 
 ```
-The plt.plot function from matplotlib is used to create the scatterplots [23]. Each set or class to be included in the plot is listed individually. Different styles can then be applied to each. There are many different marker styles that can be used with matplotlib including diamonds, triangles and stars [24] Here point "." is used for all markers as its smaller size mean they overlap less. The colour is specified for each, in line with the colours used in the seaborn palette. 
+The plt.plot function from matplotlib is used to create the scatter plots [23]. Each set or class to be included in the plot is listed individually. Different styles can then be applied to each. There are many different marker styles that can be used with matplotlib including diamonds, triangles and stars [24] Here point "." is used for all markers as its smaller size mean they overlap less. The colour is specified for each, in line with the colours used in the seaborn palette. 
 
-Matplotlib also comes with an inbuilt function plt.scatter to create scatterplots with. This function allows the properties of each individual point (size, face colour, edge colour etc.) to be specified. For small datasets like Fisher's iris dataset there is not much difference in the efficiency of each function, but for large datasets, plt.plot can be noticeably more efficient and is this preferable [25].
+Matplotlib also comes with an inbuilt function plt.scatter to create scatter plots with. This function allows the properties of each individual point (size, face colour, edge colour etc.) to be specified. For small datasets like Fisher's iris dataset there is not much difference in the efficiency of each function, but for large datasets, plt.plot can be noticeably more efficient and is this preferable [25].
 
-These scatterplots are plotted entirely with matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
+These scatter plots are plotted entirely with matplotlib. While seaborn will automatically generate axes labels and a legend based off the input, in matplotlib their presence has to be specified. While this increases the amount of code required, the upside is that it makes these attributes easily editable, removable and understandable.
 
 
 ### **Step 6 - Pairplot**
@@ -184,17 +184,17 @@ plt.show()
 ```
 Pairplot is an excellent way to easily generate a variety of plots from a dataset. Here pairplot is used to generate a figure containing scatter plots of every combo of the iris dataset's variables and a KDE for each individual variable.
 
-All that needs to be included to use the pairplot function is the name of the dataset and, if you wish to have different colours for each categorical variable, a hue specifier [26]. With just one line, a complex set of plots can be greated. 
+All that needs to be included to use the pairplot function is the name of the dataset and, if you wish to have different colours for each categorical variable, a hue specifier [26]. With just one line, a complex set of plots can be created. 
 
-Here additional code is included to specify the output's style, both in order to improve readability and to ensure consistency with the other plots. Using markers [27] and plot_kws the style of the marker for the scatterplots is set. Alpha refers to their transparency, 's' to size and 'edgecolour: k' adds a black outline to each marker [28]. The height of the plots is also specified. 
+Here additional code is included to specify the output's style, both in order to improve readability and to ensure consistency with the other plots. Using markers [27] and plot_kws the style of the marker for the scatter plots is set. Alpha refers to their transparency, 's' to size and 'edgecolour: k' adds a black outline to each marker [28]. The height of the plots is also specified. 
 
 As there are a lot of plots within the same figure, the output is more compressed as a result. There are also many different axes sizes contained within the same figure, which can make it harder to read at a glance. Additionally, pairplot will take longer to run than other plotting functions. This is not a issue for the current dataset but could present problems when working with larger sets. In order to lessen this, fewer rows from the dataset could be included to give more of a snapshot overview or to only plot a certain range of the data for instance certain years [29].
 
-Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily and can provide a good indication of what more indepth forms of analysis may be worth doing on the dataset [30]. In addition to scatterplots and KDE, pairplot can be used to output univariate and bivariate histograms in different styles [31]. 
+Nonetheless pairplot is an extremely handy tool to generate multiple subplots easily and can provide a good indication of what more indepth forms of analysis may be worth doing on the dataset [30]. In addition to scatter plots and KDE, pairplot can be used to output univariate and bivariate histograms in different styles [31]. 
 
 ### **Step 7 - Boxplot and Violinplot**
 
-Box plots and violin plots are both used to show the distribution of quantitative data. Boxplots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the below figure: 
+Box plots and violin plots are both used to show the distribution of quantitative data. Box plots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the figure below: 
 
 Violin plots are hybrids of a box plot and a kernel density plot [33] and are read as follows: 
 
@@ -235,7 +235,7 @@ Looking first at summary.txt, the following stands out:
 
 Summary statistics on their own can be deceiving, as famously demonstrated by Anscombe’s quartet [1]. When data is visualized, patterns can emerge that may otherwise have gone unnoticed. 
 
-Looking at the histograms, scatterplots and pair plots the following can be said:
+Looking at the histograms, scatter plots and pair plots the following can be said:
  
 - Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger. 
 
@@ -257,7 +257,7 @@ What can we conclude:
 
 # 6. Why Use Python? 
 
-With some many tools readibly available for data analysis and visualisation, what benefit does Python have over others?
+With some many tools readily available for data analysis and visualization, what benefit does Python have over others?
 
 One major plus of Python is that it is completely free to use, unlike software such as MiniTab. Python also has an active community surrounding it, meaning there are plenty of free resources and guides available online. 
 
