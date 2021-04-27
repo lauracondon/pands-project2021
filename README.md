@@ -32,7 +32,7 @@ R.A. Fisher first published this dataset in the article 'The Use of Multiple Mea
     <i>Petals and Sepals of the Three Iris Species</i> <b>[4]</b>. 
 </p>
 
-Since its publication, Fisher's Iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity **[5]**. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today **[6]**. 
+Since its publication, Fisher's Iris dataset has become tremendously popular for use in machine learning and statistics. According to Dimensions, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity **[5]**. Dimensions also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today **[6]**. 
 
 Use of this dataset is not without issue, however, and there are errors that were incorporated into its reproduced versions which went unnoticed for many years. Notably, the version uploaded to the University of California at Irvine's machine learning repository contains two errors, as first noted by Besdek et. al **[7]**. These errors are now acknowledged by the UCI on their website **[8]**. Additionally some biologists have argued that iris flowers don't actually have sepals at all and instead have tepals **[9]**. While that argument is best left to them, it is an interesting aside to a near ubiquitous dataset. 
 
@@ -364,64 +364,63 @@ The data analysis demonstrated in analysis.py is just a small fraction of what P
 
 # 7. References 
 
-** note - fix referencing formatting ** 
-
 ### Introduction 
 
-[1] bezdekIris.data from the University of California at Irvine's machine learning repository. Note: this is the corrected version of the dataset and not the version with two errors. 
+**[1]** UCI Machine Learning Repository. *Iris Data Set* https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\ 
+
+Note: bezdekIris.data was downloaded and used for this project, which is the corrected version of Fisher's Iris dataset. 
 
 ### Summary of the Fisher Iris Data Set
 
-[1] https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)\
-[2] https://www.biodiversitylibrary.org/page/16048445#page/470/mode/1up (accessed 25/03/2021)\
-[3] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735315/ (accessed 25/03/2021)\
-[4] https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5 (accessed 25/03/2021)\
-[5] https://app.dimensions.ai/details/publication/pub.1036660865 (accessed 26/04/2021)\
-[6] https://www.altair.com/knowledge-studio/ (accessed 26/04/2021)\
-[7] https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)\
-[8] https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\
-[9] https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)\
+**[1]** R.A. Fisher. *The Use of Multiple Measurements in Taxonomic Problems* https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)\
+**[2]** E. Anderson. *The Species Problem in Iris* https://www.biodiversitylibrary.org/page/16048445#page/468/mode/1up (accessed 25/03/2021)\
+**[3]** Yoong Lim et. al. *Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor* https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735315/ (accessed 25/03/2021)\
+**[4]** Towards Data Science - Yong Cui. *The Iris Dataset — A Little Bit of History and Biology* https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5 (accessed 25/03/2021)\
+**[5]** Dimensions. *Publication Citations for 'The Species Problem in Iris'* https://app.dimensions.ai/details/publication/pub.1036660865 (accessed 26/04/2021)\
+**[6]** Altair. *Knowledge Studio* https://www.altair.com/knowledge-studio/ (accessed 26/04/2021)\
+**[7]** Bezdek et. al. *Will the Real Iris Data Please Stand Up?* https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)\
+**[8]** UCI Machine Learning Repository. *Iris Data Set* https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\
+**[9]** Kozak & Lotocka. *What should we know about the famous Iris data?* https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)\
 
 ### Code Explanation
 
-[1] https://pandas.pydata.org/ (accessed 25/04/2021)\
-[2] https://matplotlib.org/ (accessed 25/04/2021)\
-[3] https://seaborn.pydata.org/introduction.html (accessed 25/04/2021)\
-[4] https://towardsdatascience.com/an-overview-of-importing-data-in-python-ac6aa46e0889 (accessed 08/04/2021)\
-[5] https://www.kite.com/python/answers how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python (accessed 08/04/2021)\
-[6] https://towardsdatascience.com/how-to-use-your-own-color-palettes-with-seaborn-a45bf5175146(accessed 20/04/2021)\
-[7] Tableau Public. *Color Palettes with RGB Values* https://public.tableau.com/profile/chris.gerrard#!/vizhome/TableauColors/ColorPaletteswithRGBValues (accessed 20/03/2021)\
-[8] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 20/04/2021)\
-[9] http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)\
-[10] https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/ (accessed 23/03/2021)\
-[11] Pandas for Everyone - Section 1.4 (09/04/2021)\
-[12] https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)\
-[13] https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html (09/04/2021)\
-[14] https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file (accessed 10/04/2021)\
-[15] https://realpython.com/read-write-files-python/#reading-and-writing-opened-files (accessed 10/04/2021)\
-[16] https://seaborn.pydata.org/generated/seaborn.histplot.html (accessed 13/04/2021)\
-[17] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
-[18] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)\
-[19] https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
-[20] https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)\
-[21] https://visme.co/blog/scatter-plot/ (accessed 26/04/2021)\
-[22] Pandas for Everyone - Section 3.2 (09/04/2021)\
-[23] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
-[24] https://matplotlib.org/stable/api/markers_api.html (accessed 25/04/2021)\
-[25] Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
-[26] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
-[27] https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 25/04/2021)\
-[28] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
-[29] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
-[30] https://medium.com/@jaimejcheng/data-exploration-and-visualization-with-seaborn-pair-plots-40e6d3450f6d (accessed 22/04/2021)\
-[31] https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 22/04/2021)\
-[32] https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/box-plot-review (accessed 26/04/2021)\
-[33] https://mode.com/blog/violin-plot-examples/ (accessed 26/04/2021)\
-[34] https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)\
-[35] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 22/04/2021)
-[36] https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)\
+**[1]** pandas. *Python Data Analysis Library* https://pandas.pydata.org/ (accessed 25/04/2021)\
+**[2]** Matplotlib. *Matplotlib: Visualization with Python* https://matplotlib.org/ (accessed 25/04/2021)\
+**[3]** seaborn. *An introduction to seaborn* https://seaborn.pydata.org/introduction.html (accessed 25/04/2021)\
+**[4]** Towards Data Science - Jun. *An Overview Of Importing Data In Python* https://towardsdatascience.com/an-overview-of-importing-data-in-python-ac6aa46e0889 (accessed 08/04/2021)\
+**[5]** Kite. *How to set column names when importing a CSV into a Pandas DataFrame in Python* https://www.kite.com/python/answers/how-to-set-column-names-when-importing-a-csv-into-a-pandas-dataframe-in-python (accessed 08/04/2021)\
+**[6]** Towards Data Science - Carolina Bento. *How to use your own color palettes with Seaborn* https://towardsdatascience.com/how-to-use-your-own-color-palettes-with-seaborn-a45bf5175146(accessed 20/04/2021)\
+**[7]** Tableau Public. *Color Palettes with RGB Values* https://public.tableau.com/profile/chris.gerrard#!/vizhome/TableauColors/ColorPaletteswithRGBValues (accessed 20/03/2021)\
+**[8]** seaborn. *Choosing color palettes* https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 20/04/2021)\
+**[9]** seaborn. *Controlling figure aesthetics* http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)\
+**[10]** Geeks for Geeks. *Python | Pandas Dataframe.describe() method* https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/ (accessed 23/03/2021)\
+**[11]** Daniel Y. Chen. *Pandas for Everyone - 1.4 Grouped and Aggregated Calculations* (2018, Addison-Wesley)\
+**[12]** Boston University. *Summarizing Data - Descriptive Statistics* https://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_summarizingdata/bs704_summarizingdata_print.html (accessed 09/04/2021)\
+**[13]** pandas. *Group By* https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html (09/04/2021)\
+**[14]** Stack Overflow. *write a Pandas dataframe to a .txt file* https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file (accessed 10/04/2021)\
+**[15]** Real Python. *Reading and Writing Files in Python (Guide)* https://realpython.com/read-write-files-python/#reading-and-writing-opened-files (accessed 10/04/2021)\
+**[16]** seaborn. *seaborn.histplot* https://seaborn.pydata.org/generated/seaborn.histplot.html (accessed 13/04/2021)\
+**[17]** seaborn. *Visualizing distributions of data* https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
+**[18]** Jake VanderPlas. *Python Data Science Handbook - In-Depth: Kernel Density Estimation* https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)\
+**[19]** seaborn. *Visualizing distributions of data* https://seaborn.pydata.org/tutorial/distributions.html (accessed 13/04/2021)\
+**[20]** Stack Overflow. *Save matplotlib file to a directory* https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)\
+**[21]** Visme - Chloe West. *What Is a Scatter Plot and When To Use One* https://visme.co/blog/scatter-plot/ (accessed 26/04/2021)\
+**[22]** Daniel Y. Chen. *Pandas for Everyone - 3.2 Matplotlib* (2018, Addison-Wesley)\
+**[23]** Jake VanderPlas. *Python Data Science Handbook - Simple Scatter Plots* https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
+**[24]** Matplotlib. *matplotlib.markers* https://matplotlib.org/stable/api/markers_api.html (accessed 25/04/2021)\
+**[25]** Jake VanderPlas. *Python Data Science Handbook - Simple Scatter Plots* https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)\
+**[26]** Towards Data Science - Will Koehrsen. *Visualizing Data with Pairs Plots in Python* https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
+**[27]** seaborn. *seaborn.pairplot* https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 25/04/2021)\
+**[28]** Towards Data Science - Will Koehrsen. *Visualizing Data with Pairs Plots in Python* https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
+**[29]** Towards Data Science - Will Koehrsen. *Visualizing Data with Pairs Plots in Python* https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)\
+**[30]** Medium - Jaime Cheng. *Data Exploration and Visualization with Seaborn Pair Plots* https://medium.com/@jaimejcheng/data-exploration-and-visualization-with-seaborn-pair-plots-40e6d3450f6d (accessed 22/04/2021)\
+**[31]** seaborn. *seaborn.pairplot* https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 22/04/2021)\
+**[32]** Khan Academy. *Box plot review* https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/box-whisker-plots/a/box-plot-review (accessed 26/04/2021)\
+**[33]** Mode - Joel Carron. *Violin Plots 101: Visualizing Distribution and Probability Density* https://mode.com/blog/violin-plot-examples/ (accessed 26/04/2021)\
+**[34]** seaborn. *seaborn.boxplot* https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)\
+**[35]** seaborn. *Choosing color palettes* https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 22/04/2021)
+**[36]** seaborn. *seaborn.violinplot* https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)\
 
 ### Dataset Analysis
 
-[1] Pandas for Everyone - Section 3.1/n
-
+**[1]** Daniel Y. Chen. *Pandas for Everyone - 3.1 Introduction to Plotting Matplotlib* (2018, Addison-Wesley)
