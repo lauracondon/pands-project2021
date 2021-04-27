@@ -26,7 +26,10 @@ The Fisher Iris data set is a multivariate data set consisting of a total of one
 R.A. Fisher first published this dataset in the article 'The Use of Multiple Measurements in Taxonomic Problems' in 1936. In it, Fisher uses the dataset to create a linear discriminant model in order to classify the three different species of iris. Anderson also published an article in 1936, entitled 'The Species Problem in Iris' in which he uses the information from the dataset, in combination with additional research, to hypothesize that iris versicolor is an amphidiploid hybrid of iris setosa and iris virginica [2]. This hypothesis was confirmed by Yoong Lim et. al in 2007 in the article 'Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor' [3]. 
 
 ![Iris Species](/README-images/species-of-iris.PNG)
-*Petals and Sepals of the Three Iris Species* [4]. 
+
+<p align="center">
+    // *Petals and Sepals of the Three Iris Species* [4]. 
+</p>
 
 Since its publication, Fisher's iris dataset has become tremendously popular for use in machine learning and statistics. According to Wiley Online Library, it has been cited in other publications 8,336 times - 547 times in 2020 alone, reflecting its continued popularity [5]. Wiley also records that it has been referenced in 41 patents, ranging from medical devices to a data mining and analytics suite called KnowledgeSTUDIO first released in 1999 and still available today [6]. 
 
@@ -199,7 +202,9 @@ Nonetheless pairplot is an extremely handy tool to generate multiple subplots ea
 
 Box plots and violin plots are both used to show the distribution of quantitative data. Box plots show the minimum, first quartile, median, third quartile, and maximum [32] as indicated in the figure below: 
 
-![Box Plot](/README-images/boxplot-diagram.png)
+<p align="center">
+  <src="/README-images/boxplot-diagram.png" alt="Box Plot">
+</p>
 
 Violin plots are hybrids of a box plot and a kernel density plot [33] and are read as follows: 
 
