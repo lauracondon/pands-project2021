@@ -83,7 +83,7 @@ all_species_mad = iris.groupby(["species"])[["sepal length","sepal width","petal
 print(all_species_mad) 
 
 # saves the above dataframes to a text file with added introduction [7][8]
-tfile = open('summary.txt', 'w')
+tfile = open("summary.txt", "w")
 tfile.write("\n")
 tfile.write("The Fisher Iris data set is a multivariate data set consisting of a total of one hundred \nand fifty samples of iris flowers. ")
 tfile.write("Fifty samples were collected from each of three \ndifferent species of iris (iris setosa, iris virginica and iris versicolor) by Edgar Anderson. ")
@@ -152,7 +152,7 @@ plt.show()
 # the same process is repeated for each variable in the dataset 
 
 # histogram of sepal width
-plt.rc("grid", linestyle="dotted", color="gray", alpha = 0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
 ax = sns.histplot(data = iris, x = "sepal width", hue = "species", kde = True, bins = 25, element = "step") 
 plt.title("Sepal Width Histogram with Kernel Density Estimate", weight = "bold")
@@ -185,7 +185,7 @@ set_2 = iris[iris["species"] == "Iris-versicolor"]
 set_3 = iris[iris["species"] == "Iris-virginica"]
 
 # adds background grid and specifies its linestyle
-plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
+plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
 # using the sets, plots the sepal width vs. length for each species [13]
 plt.plot(set_1["sepal length"], set_1["sepal width"], 
