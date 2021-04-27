@@ -4,7 +4,7 @@
 2. [Summary of the Fisher Iris Data Set](https://github.com/lauracondon/pands-project2021/blob/main/README.md#2-summary-of-the-fisher-iris-data-set)
 3. [How to Run analysis.py](https://github.com/lauracondon/pands-project2021/blob/main/README.md#3-how-to-run-analysispy)
 4. [Code Explanation](https://github.com/lauracondon/pands-project2021/blob/main/README.md#4-code-explanation)
-5. [Dataset Analysis](https://github.com/lauracondon/pands-project2021/blob/main/README.md#5-dataset-analysis)
+5. [Analysis of Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#5-dataset-analysis)
 6. [Why Use Python?](https://github.com/lauracondon/pands-project2021/blob/main/README.md#6-why-use-python)
 7. [References](https://github.com/lauracondon/pands-project2021/blob/main/README.md#7-references)
 
@@ -276,7 +276,7 @@ plt.show()
 Following this, individual violin plots of each numeric variable divided by species are created **[35]**. It is easy to see from them where the key differences in the iris dataset lie and that is a real strength of this type of plot. 
 
 
-# 5. Dataset Analysis
+# 5. Analysis of Iris Dataset
 
 Now that the code itself has been explained, let's examine what can be determined about the iris dataset from analysis.py's outputs.
 
