@@ -7,42 +7,45 @@
 # 6. violinplots of each numeric variable grouped by iris species to png files
 
 # Author: Laura Condon
+# Note: references are indicated by numbers in square brackets
+# then listed in full at the end of the code
 
 #######################################################################################################################
 # Import Libraries & Dataset
 #######################################################################################################################
 
 # import libraries needed
+# as is used to specify how to refer to them in rest of code
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# import the data set and assign names to each column in it 
+# import the data set and assign names to each column in it [1]
 iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "species"]) 
 
-###################################################################################################################################
+#########################################################################################################################
 # Set Style of Plots
-####################################################################################################################################
+#########################################################################################################################
 
-# creates default color palette for use with sns plots
+# creates default color palette for use with sns plots [2]
 colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 
-# sets background of all graphs to dark
+# sets background of all graphs to dark [3]
 sns.set_style("dark")
 
-###########################################################################################################################
+#########################################################################################################################
 # 1. Summary Information on the Dataset
-###########################################################################################################################
+#########################################################################################################################
 
-# prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max 
+# prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max [4]
 print("Summary Statistics of Iris Dataset\n")
 describe = iris.describe()
 print(describe) 
 
 # the following sections of code all perform different calculations on the dataset
-# the dataset is divided/grouped based off the three species it contains
-# then different calculations are performed on each variable
+# the dataset is divided/grouped based off the three species it contains [5]
+# then different calculations are performed on each variable [6]
 # a new DataFrame containing the resulting calculation is created and outputted to the user 
 
 print("\nLowest Value")
@@ -79,7 +82,7 @@ print("\nMean Absolute Deviation")
 all_species_mad = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].mad() 
 print(all_species_mad) 
 
-# saves the above dataframes to a text file with added introduction
+# saves the above dataframes to a text file with added introduction [7][8]
 tfile = open('summary.txt', 'w')
 tfile.write("\n")
 tfile.write("The Fisher Iris data set is a multivariate data set consisting of a total of one hundred \nand fifty samples of iris flowers. ")
@@ -125,23 +128,23 @@ tfile.write(all_species_mad.to_string())
 tfile.write("\n\n")
 tfile.close()
 
-####################################################################################################################################
+##########################################################################################################################
 # 2. Histograms with Kernel Density Estimate
-####################################################################################################################################
+##########################################################################################################################
 
 # adds background grid and specifies its linestyle
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-# creates a histogram plot of the sepal length from the iris dataset 
+# creates a histogram plot of the sepal length from the iris dataset [9]
 ax = sns.histplot(data = iris, x = "sepal length", 
                          hue = "species", # assigns a colour to each species based on earlier sns palette
-                         kde = True, # adds a kernel density estimate overlay
+                         kde = True, # adds a kernel density estimate overlay [10]
                          bins = 25, # specifies how many bars to display in the histogram
                          element = "step") # specifies style of histogram bars
 
 # adds a title in bold font
 plt.title("Sepal Length Histogram with Kernel Density Estimate", weight = "bold")
-# saves the resulting plot as a png file to designated subfolder 
+# saves the resulting plot as a png file to designated subfolder [11]
 plt.savefig("data-visualizations/histogram - sepal length with density.png") 
 # displays the resulting plot in a pop up window to the user
 plt.show()
@@ -172,11 +175,11 @@ plt.title("Petal Width Histogram with Kernel Density Estimate", weight = "bold")
 plt.savefig("data-visualizations/histogram - petal width with density.png") 
 plt.show()
 
-####################################################################################################################################
+#########################################################################################################################
 # 3. Scatter Plots
-####################################################################################################################################
+#########################################################################################################################
 
-# divides the dataset into three 'sets' based off the species of iris
+# divides the dataset into three 'sets' based off the species of iris [12]
 set_1 = iris[iris["species"] == "Iris-setosa"]
 set_2 = iris[iris["species"] == "Iris-versicolor"]
 set_3 = iris[iris["species"] == "Iris-virginica"]
@@ -184,9 +187,9 @@ set_3 = iris[iris["species"] == "Iris-virginica"]
 # adds background grid and specifies its linestyle
 plt.rc("grid", linestyle="dotted", color="gray", alpha=0.7)
 plt.grid()
-# using the sets, plots the sepal width vs. length for each species
+# using the sets, plots the sepal width vs. length for each species [13]
 plt.plot(set_1["sepal length"], set_1["sepal width"], 
-                                            ".", # sets marker style as a small circle
+                                            ".", # sets marker style as a small circle [14]
                                             color = "#595959", # sets marker colour
                                             label = "setosa") # associate name with marker
 # the process is repeated for each set
@@ -220,32 +223,32 @@ plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show()
 
-##################################################################################################################################
+###########################################################################################################################
 # 4. Pairplot
-##################################################################################################################################
+###########################################################################################################################
 
 # creates scatter plots of different combinations of the iris dataset's numeric variables
 # and a kernel density estimate (KDE) for each individual numeric variable
-# displays all as subplots in one figure 
+# displays all as subplots in one figure [15]
 sns.pairplot(iris, 
             hue = "species", # specifies colour based off species of iris
             markers = [".", ".", "."], # sets marker style as a small circle
-            plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, # sets style, incl. opacity, for markers
+            plot_kws = {"alpha": 0.6, "s": 80, "edgecolor": "k"}, # sets style, incl. opacity, for markers [16]
             height = 2) # sets height of each subplot
 # saves the figure to specified subfolder
 plt.savefig("data-visualizations/pairplot.png")
 # displays figure to user in a pop up window
 plt.show()
 
-####################################################################################################################################
+##########################################################################################################################
 # 5. Boxplot and Violinplot of Entire Dataset
-####################################################################################################################################
+##########################################################################################################################
 
 # specifies linestyle of background grid
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
 plt.grid()
-# creates a boxplot based off entire iris dataset
-# uses inbuilt sns colour palette 'colorblind'
+# creates a boxplot based off entire iris dataset [17]
+# uses inbuilt sns colour palette 'colorblind' [18]
 sns.boxplot(data = iris, palette = "colorblind")
 # adds bold title to boxplot
 plt.title("Boxplot of Iris Variables", weight = "bold")
@@ -256,15 +259,15 @@ plt.show()
 
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha=0.7)
 plt.grid()
-# creates a violinplot based off entire iris dataset
+# creates a violinplot based off entire iris dataset [19]
 sns.violinplot(data = iris, palette = "colorblind")
 plt.title("Violinplot of Iris Variables", weight = "bold")
 plt.savefig("data-visualizations/violinplot - iris.png")
 plt.show()
 
-####################################################################################################################################
+#########################################################################################################################
 # 6. Violinplots of Each Variable 
-####################################################################################################################################
+#########################################################################################################################
 
 # the below code works the same as the above but instead of using the entire dataset,
 # individual numeric variables are chosen and plotted by species
@@ -302,3 +305,26 @@ plt.title("Violinplot of Petal Width by Species", weight = "bold")
 plt.savefig("data-visualizations/violinplot by petal width - iris.png")
 plt.show()
 
+#######################################################################################################################
+# References
+#######################################################################################################################
+
+# [1] https://towardsdatascience.com/an-overview-of-importing-data-in-python-ac6aa46e0889 (accessed 08/04/2021)
+# [2] https://towardsdatascience.com/how-to-use-your-own-color-palettes-with-seaborn-a45bf5175146 (accessed 20/04/2021)
+# [3] http://seaborn.pydata.org/tutorial/aesthetics.html (accessed 22/04/2021)
+# [4] https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/ (accessed 23/03/2021)
+# [5] Daniel Y. Chen. Pandas for Everyone - 1.4 Grouped and Aggregated Calculations 
+# [6] https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html (09/04/2021)
+# [7] https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file (accessed 10/04/2021)
+# [8] https://realpython.com/read-write-files-python/#reading-and-writing-opened-files (accessed 10/04/2021)
+# [9] https://seaborn.pydata.org/generated/seaborn.histplot.html (accessed 13/04/2021)
+# [10] https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html (accessed 16/04/2021)
+# [11] https://stackoverflow.com/questions/11373610/save-matplotlib-file-to-a-directory (accessed 13/04/2021)
+# [12] Daniel Y. Chen. Pandas for Everyone - 3.2 Matplotlib (2018, Addison-Wesley)
+# [13] https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html (accessed 11/04/2021)
+# [14] https://matplotlib.org/stable/api/markers_api.html (accessed 25/04/2021)
+# [15] https://seaborn.pydata.org/generated/seaborn.pairplot.html (accessed 25/04/2021)
+# [16] https://towardsdatascience.com/visualizing-data-with-pair-plots-in-python-f228cf529166 (accessed 22/04/2021)
+# [17] https://seaborn.pydata.org/generated/seaborn.boxplot.html (accessed 13/04/2021)
+# [18] https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 22/04/2021)
+# [19] https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)
