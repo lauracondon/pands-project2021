@@ -208,10 +208,8 @@ Box plots and violin plots are both used to show the distribution of quantitativ
 
 Violin plots are hybrids of a box plot and a kernel density plot [33] and are read as follows: 
 
-![Violin Plot](/README-images/violinplot-diagram.png)
-
 <p align="center">
-  <img width="200" src="/README-images/violinplot-diagram.png" alt="Violin Plot">
+  <img src="/README-images/violinplot-diagram.png" alt="Violin Plot">
 </p>
 
 ```
