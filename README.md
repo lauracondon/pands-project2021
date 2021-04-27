@@ -189,7 +189,9 @@ plt.legend()
 plt.savefig("data-visualizations/scatterplot - petal width v length.png")
 plt.show() 
 ```
-### image of output ###
+<p align="center">
+  <img src="/data-visualizations/scatterplot - petal width v length.png" alt="scatterplot - petal width v length">
+</p>
 
 The *plt.plot* function from Matplotlib is used to create the scatter plots **[23]**. Each set to be included in the plot is listed individually. Different styles can then be applied to each. There are many different marker styles that can be used with Matplotlib, including diamonds, triangles and stars **[24]**. Here point - *"."* - is used for all markers as its smaller size means they overlap less. The colour is specified for each species, in line with the colours used in the seaborn palette. 
 
@@ -206,7 +208,9 @@ sns.pairplot(iris, hue = "species", markers = [".", ".", "."], plot_kws = {"alph
 plt.savefig("data-visualizations/pairplot.png")
 plt.show()
 ```
-### image of output ###
+<p align="center">
+  <img src="/data-visualizations/pairplot.png" alt="pairplot">
+</p>
 
 Pairplot is an excellent way to easily generate a variety of plots from a dataset. Here pairplot is used to generate a figure containing scatter plots of different combinations of the iris dataset's variables and a KDE for each individual variable.
 
@@ -245,14 +249,15 @@ plt.show()
 
 As with pairplot, boxplot is easy to use. Here an overall box plot of each variable is generated. It is not divided by iris species. 
 
-
-### image of output ###
-
+<p align="center">
+  <img src="/data-visualizations/boxplot - iris.png" alt="box plot">
+</p>
 
 An inbuilt sns palette, colorblind, is used to visually distinguish it from the other graphs which do feature division by species **[34]**. A violin plot of the same is also created. Comparing the two handily shows the differences between the two types of plot. 
 
-## image of output ###
-
+<p align="center">
+  <img src="/data-visualizations/violinplot - iris.png" alt="violin plot">
+</p>
 
 ```
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -263,7 +268,9 @@ plt.savefig("data-visualizations/violinplot by sepal length - iris.png")
 plt.show()
 ```
 
-### image of output ###
+<p align="center">
+  <img src="/violinplot by sepal length - iris.png" alt="violin plot by sepal length">
+</p>
 
 Following this, individual violin plots of each numeric variable divided by species are created [35]. It is easy to see from them where the key differences in the iris dataset lie and that is the real strength of this type of plot. 
 
