@@ -153,7 +153,7 @@ plt.show()
 ```
 
 <p align="center">
-  <img src="/data-visualizations/histogram - sepal width with density.png.PNG" alt="histogram - sepal width with density">
+  <img src="/data-visualizations/histogram - sepal width with density.png" alt="histogram - sepal width with density">
 </p>
 
 Using seaborn, histograms for each of the four numeric variables are created **[16]**. Histograms are a common way to visualize distributions in data. 
