@@ -309,8 +309,8 @@ Looking at the histograms, scatter plots and pair plots the following can be sai
 - Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger.
 
 <p float="left">
-  <img src= "/data-visualizations/histogram - petal width with density.png" width="150" />
-  <img src="/data-visualizations/histogram - petal length with density.png" width="150" /> 
+  <img src= "/data-visualizations/histogram - petal width with density.png" width="400" />
+  <img src="/data-visualizations/histogram - petal length with density.png" width="400" /> 
 </p>
 
 
@@ -325,8 +325,8 @@ From the box plot and violin plots:
 - It’s clear that sepal width has the lowest range of values across all species. Whereas petal length has the largest range of possible values.
 
 <p float="left">
-  <img src= "/data-visualizations/boxplot - iris.png" width="150" />
-  <img src="/data-visualizations/boxplot - violinplot.png" width="150" /> 
+  <img src= "/data-visualizations/boxplot - iris.png" width="400" />
+  <img src="/data-visualizations/violinplot - iris.png" width="400" /> 
 </p>
 
 - Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
