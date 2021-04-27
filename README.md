@@ -269,7 +269,7 @@ plt.show()
 ```
 
 <p align="center">
-  <img src="/violinplot by sepal length - iris.png" alt="violin plot by sepal length">
+  <img src="/data-visualizations/violinplot by sepal length - iris.png" alt="violin plot by sepal length">
 </p>
 
 Following this, individual violin plots of each numeric variable divided by species are created [35]. It is easy to see from them where the key differences in the iris dataset lie and that is the real strength of this type of plot. 
