@@ -4,7 +4,7 @@
 2. [Summary of the Fisher Iris Data Set](https://github.com/lauracondon/pands-project2021/blob/main/README.md#2-summary-of-the-fisher-iris-data-set)
 3. [How to Run analysis.py](https://github.com/lauracondon/pands-project2021/blob/main/README.md#3-how-to-run-analysispy)
 4. [Code Explanation](https://github.com/lauracondon/pands-project2021/blob/main/README.md#4-code-explanation)
-5. [Analysis of Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#5-dataset-analysis)
+5. [Analysis of Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#5-analysis-of-iris-dataset)
 6. [Why Use Python?](https://github.com/lauracondon/pands-project2021/blob/main/README.md#6-why-use-python)
 7. [References](https://github.com/lauracondon/pands-project2021/blob/main/README.md#7-references)
 
