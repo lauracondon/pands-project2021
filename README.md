@@ -324,16 +324,21 @@ From the box plot and violin plots:
 
 - It’s clear that sepal width has the lowest range of values across all species. Whereas petal length has the largest range of possible values.
 
-<p float="left">
-  <img src= "/data-visualizations/boxplot - iris.png" width="400" />
-  <img src="/data-visualizations/violinplot - iris.png" width="400" /> 
+<p align="center">
+  <img src="/data-visualizations/boxplot - iris.png" alt="boxplot">
 </p>
 
 - Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
 
-<p align="center">
-  <img src="/data-visualizations/violinplot by sepal width - iris.png" alt="violinplot by sepal width">
+<p float="left">
+  <img src= "/data-visualizations/violinplot by petal width - iris.png" width="400" />
+  <img src="/data-visualizations/violinplot by petal length - iris.png" width="400" /> 
 </p>
+<p float="left">
+  <img src= "/data-visualizations/violinplot by sepal length - iris.png" width="400" />
+  <img src="/data-visualizations/violinplot by sepal width - iris.png" width="400" /> 
+</p>
+
 
 What can we conclude: 
 
