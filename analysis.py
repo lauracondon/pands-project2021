@@ -1,10 +1,11 @@
 # displays and saves the following: 
 # 1. summary information on the dataset to a single text file, 
-# 2. histograms with kernel density estimate of each variable to png files 
+# 2. histograms with kernel density estimate of each numeric variable to png files 
 # 3. scatterplots of petal and sepal pairs to png files
 # 4. pairplot of the entire dataset to png file
 # 5. boxplot and violinplot of the entire dataset to png files
-# 6. violinplots of each variable grouped by iris species to png files
+# 6. violinplots of each numeric variable grouped by iris species to png files
+
 # Author: Laura Condon
 
 #######################################################################################################################
@@ -27,14 +28,14 @@ iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal l
 colors = ["#595959", "#5f9ed1", "#ff800e"]
 sns.set_palette(sns.color_palette(colors))
 
-# sets background grid style for all plots
+# sets background of all graphs to dark
 sns.set_style("dark")
 
 ###########################################################################################################################
 # 1. Summary Information on the Dataset
 ###########################################################################################################################
 
-# prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max
+# prints summary statistics of the entire dataset - count, mean, std, min, quartiles, max 
 print("Summary Statistics of Iris Dataset\n")
 describe = iris.describe()
 print(describe) 
@@ -44,7 +45,6 @@ print(describe)
 # then different calculations are performed on each variable
 # a new DataFrame containing the resulting calculation is created and outputted to the user 
 
-# this segment displays the lowest value of each class of variable 
 print("\nLowest Value")
 all_species_min = iris.groupby(["species"])[["sepal length","sepal width","petal length", "petal width"]].min()
 print(all_species_min)
@@ -197,7 +197,7 @@ plt.xlabel("sepal length")
 plt.ylabel("sepal width")
 # add bold title to figure
 plt.title("Scatterplot of Sepal Width vs. Sepal Length", weight = "bold")
-# displays a legend - names are taken from label 
+# displays a legend - names are taken from label above
 plt.legend()
 # saves resulting plot to designated subfolder
 plt.savefig("data-visualizations/scatterplot - sepal width v length.png") 
@@ -224,8 +224,8 @@ plt.show()
 # 4. Pairplot
 ##################################################################################################################################
 
-# creates scatter plots of every combo of the iris dataset's variables
-# and a kernel density estimate (KDE) for each individual variable
+# creates scatter plots of different combinations of the iris dataset's numeric variables
+# and a kernel density estimate (KDE) for each individual numeric variable
 # displays all as subplots in one figure 
 sns.pairplot(iris, 
             hue = "species", # specifies colour based off species of iris
@@ -247,7 +247,7 @@ plt.grid()
 # creates a boxplot based off entire iris dataset
 # uses inbuilt sns colour palette 'colorblind'
 sns.boxplot(data = iris, palette = "colorblind")
-# add bold title to boxplot
+# adds bold title to boxplot
 plt.title("Boxplot of Iris Variables", weight = "bold")
 # saves resulting plot to designated subfolder
 plt.savefig("data-visualizations/boxplot - iris.png")
@@ -267,7 +267,7 @@ plt.show()
 ####################################################################################################################################
 
 # the below code works the same as the above but instead of using the entire dataset,
-# individual variables are chosen and plotted by species
+# individual numeric variables are chosen and plotted by species
 # no palette is mentioned so it uses the default set 'colors' palette
 
 # violinplot of sepal length
