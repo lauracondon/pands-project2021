@@ -317,8 +317,8 @@ Looking at the histograms, scatter plots and pair plots the following can be sai
 - Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger:
 
 <p float="left">
-  <img src= "/data-visualizations/histogram - petal width with density.png" width="450" />
-  <img src="/data-visualizations/histogram - petal length with density.png" width="450" /> 
+  <img src= "/data-visualizations/histogram - petal width with density.png" width="400" />
+  <img src="/data-visualizations/histogram - petal length with density.png" width="400" /> 
 </p>
 
 - While there is a lot more overlap in regards to sepal length and width, the sepals of iris setosa tend to be both shorter and wider than those of the other iris species:
@@ -338,12 +338,12 @@ From the box plot and violin plots:
 - Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
 
 <p float="left">
-  <img src= "/data-visualizations/violinplot by petal width - iris.png" width="450" />
-  <img src="/data-visualizations/violinplot by petal length - iris.png" width="450" /> 
+  <img src= "/data-visualizations/violinplot by petal width - iris.png" width="400" />
+  <img src="/data-visualizations/violinplot by petal length - iris.png" width="400" /> 
 </p>
 <p float="left">
-  <img src= "/data-visualizations/violinplot by sepal length - iris.png" width="450" />
-  <img src="/data-visualizations/violinplot by sepal width - iris.png" width="450" /> 
+  <img src= "/data-visualizations/violinplot by sepal length - iris.png" width="400" />
+  <img src="/data-visualizations/violinplot by sepal width - iris.png" width="400" /> 
 </p>
 
 What can we conclude: 
