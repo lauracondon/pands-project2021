@@ -68,7 +68,7 @@ Jump to:
 [Step 2 - Set Default Style](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-2---set-default-style)\
 [Step 3 - Summarise the Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-3---summarise-the-dataset)\
 [Step 4 - Histogram with Kernel Density Estimate](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-4---histogram-with-kernel-density-estimate)\
-[Step 5 - Scatterplots](https://github.com/lauracondon/\pands-project2021/blob/main/README.md#step-5---scatterplots)\
+[Step 5 - Scatter plots](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-5---scatter-plots)\
 [Step 6 - Pairplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-6---pairplot)\
 [Step 7 - Boxplot and Violinplot](https://github.com/lauracondon/pands-project2021/blob/main/README.md#step-7---boxplot-and-violinplot)
 
@@ -372,7 +372,7 @@ The data analysis demonstrated in analysis.py is just a small fraction of what P
 
 ### Introduction 
 
-**[1]** UCI Machine Learning Repository. *Iris Data Set* https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\ 
+**[1]** UCI Machine Learning Repository. *Iris Data Set* https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)
 
 Note: bezdekIris.data was downloaded and used for this project, which is the corrected version of Fisher's Iris dataset. 
 
@@ -381,12 +381,12 @@ Note: bezdekIris.data was downloaded and used for this project, which is the cor
 **[1]** R.A. Fisher. *The Use of Multiple Measurements in Taxonomic Problems* https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x (accessed 25/03/2021)\
 **[2]** E. Anderson. *The Species Problem in Iris* https://www.biodiversitylibrary.org/page/16048445#page/468/mode/1up (accessed 25/03/2021)\
 **[3]** Yoong Lim et. al. *Parental Origin and Genome Evolution in the Allopolyploid Iris versicolor* https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2735315/ (accessed 25/03/2021)\
-**[4]** Towards Data Science - Yong Cui. *The Iris Dataset — A Little Bit of History and Biology* https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5 (accessed 25/03/2021)\
+**[4]** Towards Data Science - Yong Cui. *The Iris Dataset - A Little Bit of History and Biology* https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5 (accessed 25/03/2021)\
 **[5]** Dimensions. *Publication Citations for 'The Species Problem in Iris'* https://app.dimensions.ai/details/publication/pub.1036660865 (accessed 26/04/2021)\
 **[6]** Altair. *Knowledge Studio* https://www.altair.com/knowledge-studio/ (accessed 26/04/2021)\
 **[7]** Bezdek et. al. *Will the Real Iris Data Please Stand Up?* https://lucykuncheva.co.uk/papers/jbjkrklknptfs99.pdf (accessed 25/03/2021)\
 **[8]** UCI Machine Learning Repository. *Iris Data Set* https://archive.ics.uci.edu/ml/datasets/iris (accessed 25/03/2021)\
-**[9]** Kozak & Lotocka. *What should we know about the famous Iris data?* https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)\
+**[9]** Kozak & Lotocka. *What should we know about the famous Iris data?* https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data (accessed 25/03/2021)
 
 ### Code Explanation
 
@@ -427,6 +427,6 @@ Note: bezdekIris.data was downloaded and used for this project, which is the cor
 **[35]** seaborn. *Choosing color palettes* https://seaborn.pydata.org/tutorial/color_palettes.html (accessed 22/04/2021)\
 **[36]** seaborn. *seaborn.violinplot* https://seaborn.pydata.org/generated/seaborn.violinplot.html (accessed 13/04/2021)
 
-### Dataset Analysis
+### Analysis of the Iris Dataset
 
 **[1]** Daniel Y. Chen. *Pandas for Everyone - 3.1 Introduction to Plotting Matplotlib* (2018, Addison-Wesley)
