@@ -4,7 +4,7 @@
 2. [Summary of the Fisher Iris Data Set](https://github.com/lauracondon/pands-project2021/blob/main/README.md#2-summary-of-the-fisher-iris-data-set)
 3. [How to Run analysis.py](https://github.com/lauracondon/pands-project2021/blob/main/README.md#3-how-to-run-analysispy)
 4. [Code Explanation](https://github.com/lauracondon/pands-project2021/blob/main/README.md#4-code-explanation)
-5. [Analysis of the Iris Dataset](https://github.com/lauracondon/pands-project2021/blob/main/README.md#5-analysis-of-iris-dataset)
+5. [Analysis of the Iris Dataset](https://github.com/lauracondon/pands-project2021#5-analysis-of-the-iris-dataset)
 6. [Why Use Python?](https://github.com/lauracondon/pands-project2021/blob/main/README.md#6-why-use-python)
 7. [References](https://github.com/lauracondon/pands-project2021/blob/main/README.md#7-references)
 
@@ -317,8 +317,8 @@ Looking at the histograms, scatter plots and pair plots the following can be sai
 - Iris setosa has the smallest petals in terms of both width and length. While there is some overlap in petal length and width between iris versicolor and iris virginica, iris virginica is commonly larger:
 
 <p float="left">
-  <img src= "/data-visualizations/histogram - petal width with density.png" width="500" />
-  <img src="/data-visualizations/histogram - petal length with density.png" width="500" /> 
+  <img src= "/data-visualizations/histogram - petal width with density.png" width="450" />
+  <img src="/data-visualizations/histogram - petal length with density.png" width="450" /> 
 </p>
 
 - While there is a lot more overlap in regards to sepal length and width, the sepals of iris setosa tend to be both shorter and wider than those of the other iris species:
@@ -338,12 +338,12 @@ From the box plot and violin plots:
 - Although iris setosa has the smallest range of possible values for sepal length, petal width and petal length, it has the largest range of values for sepal width.
 
 <p float="left">
-  <img src= "/data-visualizations/violinplot by petal width - iris.png" width="500" />
-  <img src="/data-visualizations/violinplot by petal length - iris.png" width="500" /> 
+  <img src= "/data-visualizations/violinplot by petal width - iris.png" width="450" />
+  <img src="/data-visualizations/violinplot by petal length - iris.png" width="450" /> 
 </p>
 <p float="left">
-  <img src= "/data-visualizations/violinplot by sepal length - iris.png" width="500" />
-  <img src="/data-visualizations/violinplot by sepal width - iris.png" width="500" /> 
+  <img src= "/data-visualizations/violinplot by sepal length - iris.png" width="450" />
+  <img src="/data-visualizations/violinplot by sepal width - iris.png" width="450" /> 
 </p>
 
 What can we conclude: 
