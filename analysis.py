@@ -14,13 +14,13 @@
 # Import Libraries & Dataset
 #######################################################################################################################
 
-# import libraries needed
-# as is used to specify how to refer to them in rest of code
+# imports libraries needed
+# 'as' is used to specify how to refer to them in the code
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# import the data set and assign names to each column in it [1]
+# imports the data set and assigns names to each column in it [1]
 iris = pd.read_csv("iris.data", names = ["sepal length", "sepal width", "petal length", "petal width", "species"]) 
 
 #########################################################################################################################
@@ -149,7 +149,7 @@ plt.savefig("data-visualizations/histogram - sepal length with density.png")
 # displays the resulting plot in a pop up window to the user
 plt.show()
 
-# the same process is repeated for each variable in the dataset 
+# the same process is repeated for each numeric variable in the dataset 
 
 # histogram of sepal width
 plt.rc("grid", linestyle = "dotted", color = "gray", alpha = 0.7)
@@ -191,14 +191,14 @@ plt.grid()
 plt.plot(set_1["sepal length"], set_1["sepal width"], 
                                             ".", # sets marker style as a small circle [14]
                                             color = "#595959", # sets marker colour
-                                            label = "setosa") # associate name with marker
+                                            label = "setosa") # associate species name with marker
 # the process is repeated for each set
 plt.plot(set_2["sepal length"], set_2["sepal width"], ".",  color = "#5f9ed1", label = "versicolor")
 plt.plot(set_3["sepal length"], set_3["sepal width"], ".",  color = "#ff800e" , label = "virginica")
 # adds relevant label to x and y axis
 plt.xlabel("sepal length")
 plt.ylabel("sepal width")
-# add bold title to figure
+# adds bold title to graph
 plt.title("Scatterplot of Sepal Width vs. Sepal Length", weight = "bold")
 # displays a legend - names are taken from label above
 plt.legend()
